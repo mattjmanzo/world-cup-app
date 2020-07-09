@@ -1,728 +1,352 @@
-[
-  {
-    "Team": "Russia",
-    "Group": "A",
-    "Previous \nappearances": 10,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 1,
-    "Current \nFIFA rank": 65,
-    "First match \nagainst": "Saudi Arabia",
-    "Match index": 1,
-    "history with \nfirst opponent\n W-L": -1,
-    "history with\n first opponent\n goals": -2,
-    "Second match\n against": "Egypt",
-    "Match index__1": 17,
-    "history with\n second opponent\n W-L": "N/A",
-    "history with\n second opponent\n goals": "N/A",
-    "Third match\n against": "Uruguay",
-    "Match index__2": 33,
-    "history with\n third opponent\n W-L": 0,
-    "history with\n third opponent\n goals": 0,
-    "": ""
-  },
-  {
-    "Team": "Saudi Arabia",
-    "Group": "A",
-    "Previous \nappearances": 4,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 63,
-    "First match \nagainst": "Russia",
-    "Match index": 1,
-    "history with \nfirst opponent\n W-L": 1,
-    "history with\n first opponent\n goals": 2,
-    "Second match\n against": "Uruguay",
-    "Match index__1": 18,
-    "history with\n second opponent\n W-L": 1,
-    "history with\n second opponent\n goals": 1,
-    "Third match\n against": "Egypt",
-    "Match index__2": 34,
-    "history with\n third opponent\n W-L": -5,
-    "history with\n third opponent\n goals": -5,
-    "": ""
-  },
-  {
-    "Team": "Egypt",
-    "Group": "A",
-    "Previous \nappearances": 2,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 31,
-    "First match \nagainst": "Uruguay",
-    "Match index": 2,
-    "history with \nfirst opponent\n W-L": -1,
-    "history with\n first opponent\n goals": -2,
-    "Second match\n against": "Russia",
-    "Match index__1": 17,
-    "history with\n second opponent\n W-L": "N/A",
-    "history with\n second opponent\n goals": "N/A",
-    "Third match\n against": "Saudi Arabia",
-    "Match index__2": 34,
-    "history with\n third opponent\n W-L": 5,
-    "history with\n third opponent\n goals": 5,
-    "": ""
-  },
-  {
-    "Team": "Uruguay",
-    "Group": "A",
-    "Previous \nappearances": 12,
-    "Previous \ntitles": 2,
-    "Previous\n finals": 2,
-    "Previous\n semifinals": 5,
-    "Current \nFIFA rank": 21,
-    "First match \nagainst": "Egypt",
-    "Match index": 2,
-    "history with \nfirst opponent\n W-L": 1,
-    "history with\n first opponent\n goals": 2,
-    "Second match\n against": "Saudi Arabia",
-    "Match index__1": 18,
-    "history with\n second opponent\n W-L": -1,
-    "history with\n second opponent\n goals": -1,
-    "Third match\n against": "Russia",
-    "Match index__2": 33,
-    "history with\n third opponent\n W-L": 0,
-    "history with\n third opponent\n goals": 0,
-    "": ""
-  },
-  {
-    "Team": "Porugal",
-    "Group": "B",
-    "Previous \nappearances": 6,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 2,
-    "Current \nFIFA rank": 3,
-    "First match \nagainst": "Spain",
-    "Match index": 3,
-    "history with \nfirst opponent\n W-L": -12,
-    "history with\n first opponent\n goals": -31,
-    "Second match\n against": "Morocco",
-    "Match index__1": 19,
-    "history with\n second opponent\n W-L": -1,
-    "history with\n second opponent\n goals": -2,
-    "Third match\n against": "Iran",
-    "Match index__2": 35,
-    "history with\n third opponent\n W-L": 2,
-    "history with\n third opponent\n goals": 5,
-    "": ""
-  },
-  {
-    "Team": "Spain",
-    "Group": "B",
-    "Previous \nappearances": 14,
-    "Previous \ntitles": 1,
-    "Previous\n finals": 1,
-    "Previous\n semifinals": 2,
-    "Current \nFIFA rank": 6,
-    "First match \nagainst": "Portugal",
-    "Match index": 3,
-    "history with \nfirst opponent\n W-L": 12,
-    "history with\n first opponent\n goals": 31,
-    "Second match\n against": "Iran",
-    "Match index__1": 20,
-    "history with\n second opponent\n W-L": "N/A",
-    "history with\n second opponent\n goals": "N/A",
-    "Third match\n against": "Morocco",
-    "Match index__2": 36,
-    "history with\n third opponent\n W-L": 5,
-    "history with\n third opponent\n goals": 7,
-    "": ""
-  },
-  {
-    "Team": "Morocco",
-    "Group": "B",
-    "Previous \nappearances": 4,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 40,
-    "First match \nagainst": "Iran",
-    "Match index": 4,
-    "history with \nfirst opponent\n W-L": -2,
-    "history with\n first opponent\n goals": -2,
-    "Second match\n against": "Portugal",
-    "Match index__1": 19,
-    "history with\n second opponent\n W-L": 1,
-    "history with\n second opponent\n goals": 2,
-    "Third match\n against": "Spain",
-    "Match index__2": 36,
-    "history with\n third opponent\n W-L": -5,
-    "history with\n third opponent\n goals": -7,
-    "": ""
-  },
-  {
-    "Team": "IRAN",
-    "Group": "B",
-    "Previous \nappearances": 4,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 32,
-    "First match \nagainst": "Morocco",
-    "Match index": 4,
-    "history with \nfirst opponent\n W-L": 2,
-    "history with\n first opponent\n goals": 2,
-    "Second match\n against": "Spain",
-    "Match index__1": 20,
-    "history with\n second opponent\n W-L": "N/A",
-    "history with\n second opponent\n goals": "N/A",
-    "Third match\n against": "Portugal",
-    "Match index__2": 35,
-    "history with\n third opponent\n W-L": -2,
-    "history with\n third opponent\n goals": -5,
-    "": ""
-  },
-  {
-    "Team": "France",
-    "Group": "C",
-    "Previous \nappearances": 14,
-    "Previous \ntitles": 1,
-    "Previous\n finals": 2,
-    "Previous\n semifinals": 5,
-    "Current \nFIFA rank": 9,
-    "First match \nagainst": "Australia",
-    "Match index": 5,
-    "history with \nfirst opponent\n W-L": 1,
-    "history with\n first opponent\n goals": 6,
-    "Second match\n against": "Peru",
-    "Match index__1": 21,
-    "history with\n second opponent\n W-L": -1,
-    "history with\n second opponent\n goals": -1,
-    "Third match\n against": "Denmark",
-    "Match index__2": 37,
-    "history with\n third opponent\n W-L": 4,
-    "history with\n third opponent\n goals": 9,
-    "": ""
-  },
-  {
-    "Team": "Australia",
-    "Group": "C",
-    "Previous \nappearances": 4,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 39,
-    "First match \nagainst": "France",
-    "Match index": 5,
-    "history with \nfirst opponent\n W-L": -1,
-    "history with\n first opponent\n goals": -6,
-    "Second match\n against": "Denmark",
-    "Match index__1": 22,
-    "history with\n second opponent\n W-L": -1,
-    "history with\n second opponent\n goals": -3,
-    "Third match\n against": "Peru",
-    "Match index__2": 38,
-    "history with\n third opponent\n W-L": "N/A",
-    "history with\n third opponent\n goals": "N/A",
-    "": ""
-  },
-  {
-    "Team": "Peru",
-    "Group": "C",
-    "Previous \nappearances": 4,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 11,
-    "First match \nagainst": "Denmark",
-    "Match index": 6,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "France",
-    "Match index__1": 21,
-    "history with\n second opponent\n W-L": 1,
-    "history with\n second opponent\n goals": 1,
-    "Third match\n against": "Australia",
-    "Match index__2": 38,
-    "history with\n third opponent\n W-L": "N/A",
-    "history with\n third opponent\n goals": "N/A",
-    "": ""
-  },
-  {
-    "Team": "Denmark",
-    "Group": "C",
-    "Previous \nappearances": 4,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 12,
-    "First match \nagainst": "Peru",
-    "Match index": 6,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "Australia",
-    "Match index__1": 22,
-    "history with\n second opponent\n W-L": 1,
-    "history with\n second opponent\n goals": 3,
-    "Third match\n against": "France",
-    "Match index__2": 37,
-    "history with\n third opponent\n W-L": -4,
-    "history with\n third opponent\n goals": -9,
-    "": ""
-  },
-  {
-    "Team": "Argentina",
-    "Group": "D",
-    "Previous \nappearances": 16,
-    "Previous \ntitles": 2,
-    "Previous\n finals": 5,
-    "Previous\n semifinals": 5,
-    "Current \nFIFA rank": 4,
-    "First match \nagainst": "Iceland",
-    "Match index": 7,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "Croatia",
-    "Match index__1": 23,
-    "history with\n second opponent\n W-L": 1,
-    "history with\n second opponent\n goals": 0,
-    "Third match\n against": "Nigeria",
-    "Match index__2": 39,
-    "history with\n third opponent\n W-L": 3,
-    "history with\n third opponent\n goals": 1,
-    "": ""
-  },
-  {
-    "Team": "Iceland",
-    "Group": "D",
-    "Previous \nappearances": 0,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 22,
-    "First match \nagainst": "Argentina",
-    "Match index": 7,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "Nigeria",
-    "Match index__1": 24,
-    "history with\n second opponent\n W-L": 1,
-    "history with\n second opponent\n goals": 3,
-    "Third match\n against": "Croatia",
-    "Match index__2": 40,
-    "history with\n third opponent\n W-L": -3,
-    "history with\n third opponent\n goals": -9,
-    "": ""
-  },
-  {
-    "Team": "Croatia",
-    "Group": "D",
-    "Previous \nappearances": 4,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 1,
-    "Current \nFIFA rank": 17,
-    "First match \nagainst": "Nigeria",
-    "Match index": 8,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "Argentina",
-    "Match index__1": 23,
-    "history with\n second opponent\n W-L": -1,
-    "history with\n second opponent\n goals": 0,
-    "Third match\n against": "Iceland",
-    "Match index__2": 40,
-    "history with\n third opponent\n W-L": 3,
-    "history with\n third opponent\n goals": 9,
-    "": ""
-  },
-  {
-    "Team": "Nigeria",
-    "Group": "D",
-    "Previous \nappearances": 5,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 50,
-    "First match \nagainst": "Croatia",
-    "Match index": 8,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "Iceland",
-    "Match index__1": 24,
-    "history with\n second opponent\n W-L": -1,
-    "history with\n second opponent\n goals": -3,
-    "Third match\n against": "Argentina",
-    "Match index__2": 39,
-    "history with\n third opponent\n W-L": -3,
-    "history with\n third opponent\n goals": -1,
-    "": ""
-  },
-  {
-    "Team": "Brazil",
-    "Group": "E",
-    "Previous \nappearances": 20,
-    "Previous \ntitles": 5,
-    "Previous\n finals": 7,
-    "Previous\n semifinals": 11,
-    "Current \nFIFA rank": 2,
-    "First match \nagainst": "Switzerland",
-    "Match index": 9,
-    "history with \nfirst opponent\n W-L": 1,
-    "history with\n first opponent\n goals": 2,
-    "Second match\n against": "Costarica",
-    "Match index__1": 25,
-    "history with\n second opponent\n W-L": 8,
-    "history with\n second opponent\n goals": 19,
-    "Third match\n against": "Serbia",
-    "Match index__2": 41,
-    "history with\n third opponent\n W-L": 1,
-    "history with\n third opponent\n goals": 1,
-    "": ""
-  },
-  {
-    "Team": "Switzerland",
-    "Group": "E",
-    "Previous \nappearances": 10,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 8,
-    "First match \nagainst": "Brazil",
-    "Match index": 9,
-    "history with \nfirst opponent\n W-L": -1,
-    "history with\n first opponent\n goals": -2,
-    "Second match\n against": "Serbia",
-    "Match index__1": 26,
-    "history with\n second opponent\n W-L": "N/A",
-    "history with\n second opponent\n goals": "N/A",
-    "Third match\n against": "Costarica",
-    "Match index__2": 42,
-    "history with\n third opponent\n W-L": 0,
-    "history with\n third opponent\n goals": 1,
-    "": ""
-  },
-  {
-    "Team": "Costarica",
-    "Group": "E",
-    "Previous \nappearances": 4,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 26,
-    "First match \nagainst": "Serbia",
-    "Match index": 10,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "Brazil",
-    "Match index__1": 25,
-    "history with\n second opponent\n W-L": -8,
-    "history with\n second opponent\n goals": -19,
-    "Third match\n against": "Switzerland",
-    "Match index__2": 42,
-    "history with\n third opponent\n W-L": 0,
-    "history with\n third opponent\n goals": -1,
-    "": ""
-  },
-  {
-    "Team": "Serbia",
-    "Group": "E",
-    "Previous \nappearances": 11,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 2,
-    "Current \nFIFA rank": 37,
-    "First match \nagainst": "Costarica",
-    "Match index": 10,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "Switzerland",
-    "Match index__1": 26,
-    "history with\n second opponent\n W-L": "N/A",
-    "history with\n second opponent\n goals": "N/A",
-    "Third match\n against": "Brazil",
-    "Match index__2": 41,
-    "history with\n third opponent\n W-L": -1,
-    "history with\n third opponent\n goals": -1,
-    "": ""
-  },
-  {
-    "Team": "Germany",
-    "Group": "F",
-    "Previous \nappearances": 18,
-    "Previous \ntitles": 4,
-    "Previous\n finals": 8,
-    "Previous\n semifinals": 13,
-    "Current \nFIFA rank": 1,
-    "First match \nagainst": "Mexico",
-    "Match index": 11,
-    "history with \nfirst opponent\n W-L": 4,
-    "history with\n first opponent\n goals": 13,
-    "Second match\n against": "Sweden",
-    "Match index__1": 27,
-    "history with\n second opponent\n W-L": 2,
-    "history with\n second opponent\n goals": 10,
-    "Third match\n against": "Korea",
-    "Match index__2": 43,
-    "history with\n third opponent\n W-L": 1,
-    "history with\n third opponent\n goals": 0,
-    "": ""
-  },
-  {
-    "Team": "Mexico",
-    "Group": "F",
-    "Previous \nappearances": 15,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 16,
-    "First match \nagainst": "Germany",
-    "Match index": 11,
-    "history with \nfirst opponent\n W-L": -4,
-    "history with\n first opponent\n goals": -13,
-    "Second match\n against": "Korea",
-    "Match index__1": 28,
-    "history with\n second opponent\n W-L": 1,
-    "history with\n second opponent\n goals": 12,
-    "Third match\n against": "Sweden",
-    "Match index__2": 44,
-    "history with\n third opponent\n W-L": -2,
-    "history with\n third opponent\n goals": -3,
-    "": ""
-  },
-  {
-    "Team": "Sweden",
-    "Group": "F",
-    "Previous \nappearances": 11,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 1,
-    "Previous\n semifinals": 4,
-    "Current \nFIFA rank": 18,
-    "First match \nagainst": "Korea",
-    "Match index": 12,
-    "history with \nfirst opponent\n W-L": 1,
-    "history with\n first opponent\n goals": 2,
-    "Second match\n against": "Germany",
-    "Match index__1": 27,
-    "history with\n second opponent\n W-L": -2,
-    "history with\n second opponent\n goals": -10,
-    "Third match\n against": "Mexico",
-    "Match index__2": 44,
-    "history with\n third opponent\n W-L": 2,
-    "history with\n third opponent\n goals": 3,
-    "": ""
-  },
-  {
-    "Team": "Korea",
-    "Group": "F",
-    "Previous \nappearances": 9,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 1,
-    "Current \nFIFA rank": 59,
-    "First match \nagainst": "Sweden",
-    "Match index": 12,
-    "history with \nfirst opponent\n W-L": -1,
-    "history with\n first opponent\n goals": -2,
-    "Second match\n against": "Mexico",
-    "Match index__1": 28,
-    "history with\n second opponent\n W-L": -1,
-    "history with\n second opponent\n goals": -10,
-    "Third match\n against": "Germany",
-    "Match index__2": 43,
-    "history with\n third opponent\n W-L": -1,
-    "history with\n third opponent\n goals": 0,
-    "": ""
-  },
-  {
-    "Team": "Belgium",
-    "Group": "G",
-    "Previous \nappearances": 12,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 1,
-    "Current \nFIFA rank": 5,
-    "First match \nagainst": "Panama",
-    "Match index": 13,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "Tunisia",
-    "Match index__1": 29,
-    "history with\n second opponent\n W-L": 0,
-    "history with\n second opponent\n goals": 0,
-    "Third match\n against": "England",
-    "Match index__2": 45,
-    "history with\n third opponent\n W-L": -17,
-    "history with\n third opponent\n goals": -70,
-    "": ""
-  },
-  {
-    "Team": "Panama",
-    "Group": "G",
-    "Previous \nappearances": 0,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 56,
-    "First match \nagainst": "Belgium",
-    "Match index": 13,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "England",
-    "Match index__1": 30,
-    "history with\n second opponent\n W-L": "N/A",
-    "history with\n second opponent\n goals": "N/A",
-    "Third match\n against": "Tunisia",
-    "Match index__2": 46,
-    "history with\n third opponent\n W-L": "N/A",
-    "history with\n third opponent\n goals": "N/A",
-    "": ""
-  },
-  {
-    "Team": "Tunisia",
-    "Group": "G",
-    "Previous \nappearances": 4,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 27,
-    "First match \nagainst": "England",
-    "Match index": 14,
-    "history with \nfirst opponent\n W-L": -1,
-    "history with\n first opponent\n goals": -2,
-    "Second match\n against": "Belgium",
-    "Match index__1": 29,
-    "history with\n second opponent\n W-L": 0,
-    "history with\n second opponent\n goals": 0,
-    "Third match\n against": "Panama",
-    "Match index__2": 46,
-    "history with\n third opponent\n W-L": "N/A",
-    "history with\n third opponent\n goals": "N/A",
-    "": ""
-  },
-  {
-    "Team": "England",
-    "Group": "G",
-    "Previous \nappearances": 14,
-    "Previous \ntitles": 1,
-    "Previous\n finals": 1,
-    "Previous\n semifinals": 2,
-    "Current \nFIFA rank": 15,
-    "First match \nagainst": "Tunisia",
-    "Match index": 14,
-    "history with \nfirst opponent\n W-L": 1,
-    "history with\n first opponent\n goals": 2,
-    "Second match\n against": "Panama",
-    "Match index__1": 30,
-    "history with\n second opponent\n W-L": "N/A",
-    "history with\n second opponent\n goals": "N/A",
-    "Third match\n against": "Belgium",
-    "Match index__2": 45,
-    "history with\n third opponent\n W-L": 17,
-    "history with\n third opponent\n goals": 70,
-    "": ""
-  },
-  {
-    "Team": "Poland",
-    "Group": "H",
-    "Previous \nappearances": 7,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 2,
-    "Current \nFIFA rank": 7,
-    "First match \nagainst": "Senegal",
-    "Match index": 15,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "Columbia",
-    "Match index__1": 31,
-    "history with\n second opponent\n W-L": "N/A",
-    "history with\n second opponent\n goals": "N/A",
-    "Third match\n against": "Japan",
-    "Match index__2": 47,
-    "history with\n third opponent\n W-L": 2,
-    "history with\n third opponent\n goals": 3,
-    "": ""
-  },
-  {
-    "Team": "Senegal",
-    "Group": "H",
-    "Previous \nappearances": 1,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 23,
-    "First match \nagainst": "Poland",
-    "Match index": 15,
-    "history with \nfirst opponent\n W-L": "N/A",
-    "history with\n first opponent\n goals": "N/A",
-    "Second match\n against": "Japan",
-    "Match index__1": 32,
-    "history with\n second opponent\n W-L": 2,
-    "history with\n second opponent\n goals": 3,
-    "Third match\n against": "Columbia",
-    "Match index__2": 48,
-    "history with\n third opponent\n W-L": 0,
-    "history with\n third opponent\n goals": 0,
-    "": ""
-  },
-  {
-    "Team": "Columbia",
-    "Group": "H",
-    "Previous \nappearances": 5,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 13,
-    "First match \nagainst": "Japan",
-    "Match index": 16,
-    "history with \nfirst opponent\n W-L": 2,
-    "history with\n first opponent\n goals": 2,
-    "Second match\n against": "Poland",
-    "Match index__1": 31,
-    "history with\n second opponent\n W-L": "N/A",
-    "history with\n second opponent\n goals": "N/A",
-    "Third match\n against": "Senegal",
-    "Match index__2": 48,
-    "history with\n third opponent\n W-L": 0,
-    "history with\n third opponent\n goals": 0,
-    "": ""
-  },
-  {
-    "Team": "Japan",
-    "Group": "H",
-    "Previous \nappearances": 5,
-    "Previous \ntitles": 0,
-    "Previous\n finals": 0,
-    "Previous\n semifinals": 0,
-    "Current \nFIFA rank": 55,
-    "First match \nagainst": "Columbia",
-    "Match index": 16,
-    "history with \nfirst opponent\n W-L": -2,
-    "history with\n first opponent\n goals": -2,
-    "Second match\n against": "Senegal",
-    "Match index__1": 32,
-    "history with\n second opponent\n W-L": -2,
-    "history with\n second opponent\n goals": -3,
-    "Third match\n against": "Poland",
-    "Match index__2": 47,
-    "history with\n third opponent\n W-L": -2,
-    "history with\n third opponent\n goals": -3,
-    "": ""
-  },
-  {
-    "Team": "",
-    "Group": "",
-    "Previous \nappearances": "",
-    "Previous \ntitles": "",
-    "Previous\n finals": "",
-    "Previous\n semifinals": "",
-    "Current \nFIFA rank": "",
-    "First match \nagainst": "",
-    "Match index": "",
-    "history with \nfirst opponent\n W-L": "",
-    "history with\n first opponent\n goals": "",
-    "Second match\n against": "",
-    "Match index__1": "",
-    "history with\n second opponent\n W-L": "",
-    "history with\n second opponent\n goals": "",
-    "Third match\n against": "",
-    "Match index__2": "",
-    "history with\n third opponent\n W-L": "",
-    "history with\n third opponent\n goals": "",
-    "": ""
-  }
-]
+
+Russia {
+  "StartingXI" : {
+  "Goalkeeper": "Akinfeev",
+  "Defenders": ["Kudryashov", "Neustadter", "Granat"],
+  "Midfielders": ["Zhirkov", "Golovin", "Dzagoev", "Erokhin", "Samedov"],
+  "Attackers": ["Smolov", "Miranchuk"]
+},
+  "Formation": "3-5-2", 
+  "T-shirt-color": "Red", 
+}
+
+Saudi Arabia  {
+  "StartingXI" : {
+  "Goalkeeper": "Al Owais",
+  "Defenders": ["Al-Harbi", "Om. Hawsawi", "Os. Hawsawi", "Al-Sharani"],
+  "Midfielders": ["Al-Jassim", "Otayf", "Al-Faraj"],
+  "Attackers": ["Al-Dawsari", "Al-Sahlawi", "Al-Muwallad"]
+},
+  "Formation": "4-3-3",
+  "T-shirt-color": "Green and White", 
+}
+
+Egypt  {
+  "StartingXI" : {
+  "Goalkeeper": "El Hadary",
+  "Defenders": ["Abdel Shafy", "Samir", "Hezagy", "Fathy"],
+  "Midfielders": ["Sobhi", "Elney", "Said", "Hamed", "Salah"],
+  "Attackers": "Mohsen"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "Red", 
+}
+
+Uruguay {
+  "StartingXI" : {
+  "Goalkeeper": "Muslera",
+  "Defenders": ["Caceres", "Gimenez", "Godin", "Varela"],
+  "Midfielders": ["Cebolla", "Bentacur", "Vecino", "Nandez"],
+  "Attackers": ["Luis Suarez", "Cavani"]
+},
+  "Formation": "4-4-2",
+  "T-shirt-color": "White and Blue",
+}
+
+Portugal {
+  "StartingXI" : {
+  "Goalkeeper": "Rui Patricio",
+  "Defenders": ["Guerreiro", "Pepe", "Jose Fonte", "Cedric"],
+  "Midfielders": ["Bernardo Silva", "Moutinho", "Carvalho", "Joao Mario"],
+  "Attackers": ["Andre Silva", "Cristiano"]
+},
+  "Formation": "4-4-2", 
+  "T-shirt-color": "Red", 
+}
+
+Spain {
+  "StartingXI" : {
+  "Goalkeeper": "De Gea",
+  "Defenders": ["Jordi Alba", "Ramos", "Pique", "Carvajal"],
+  "Midfielders": ["Iniesta", "Isco", "Busquets", "Thiago", "Silva"],
+  "Attackers": "Diego Costa"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "Red", 
+}
+
+Morocco {
+  "StartingXI" : {
+  "Goalkeeper": "Munir",
+  "Defenders": ["Achraf", "Benatia", "Saiss", "Dirar"],
+  "Midfielders": ["Ziyech", "Boussoufa", "El Ahmadi", "Belhanda", "Amrabat"],
+  "Attackers": "Boutaib"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "Red", 
+}
+
+Iran {
+  "StartingXI" : {
+  "Goalkeeper": "Beiranvad",
+  "Defenders": ["Mohammadi", "Pouraliganji", "Montazeri", "Chafouri"],
+  "Midfielders": ["Tarem", "Ezatolahi", "Masoud", "Hajsafi", "Jahanbakhsh"],
+  "Attackers": "Azmoun"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "White", 
+}
+
+France {
+  "StartingXI" : {
+  "Goalkeeper": "Lloris",
+  "Defenders": ["Mendy", "Umtiti", "Varane", "Sidibe"],
+  "Midfielders": ["Mbappe", "Pogba", "Kante", "Dembele"],
+  "Attackers": ["Griezmann", "Giroud"]
+},
+  "Formation": "4-4-2", 
+  "T-shirt-color": "Blue",
+}
+
+Australia {
+  "StartingXI" : {
+  "Goalkeeper": "Ryan",
+  "Defenders": ["Behich", "Degenek", "Milligan", "Ridson"],
+  "Midfielders": ["Kruse", "Mooy", "Luongo", "Jedinak", "Leckie"],
+  "Attackers": "Cahill"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "Gold and Green",
+}
+
+Germany {
+  "StartingXI" : {
+  "Goalkeeper": "Neuer",
+  "Defenders": ["Hector", "Hummels", "Boateng", "Kimmich"],
+  "Midfielders": ["Draxler", "Khedira", "Ozil", "Kroos", "Muller"],
+  "Attackers": "Werner"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "Green", 
+}
+
+Mexico {
+  "StartingXI" : {
+  "Goalkeeper": "Ochoa",
+  "Defenders": ["Layun", "Moreno", "Reyes", "Salcedo"],
+  "Midfielders": ["Vela", "Guardado", "Herrera", "Lozano"],
+  "Attackers": ["Chicharito", "Gio dos Santos"]
+},
+  "Formation": "4-4-2", 
+  "T-shirt-color": "Green",
+}
+
+Sweden {
+	"StartingXI" : {
+	"Goalkeeper": "Olsen",
+	"Defenders": ["Agustinsson", "Granqvist", "Lindelöf", "Lustig"],
+	"Midfielders": ["Forsberg", "Larsson", "Svensson", "Claesson"],
+	"Attackers": ["Berg", "Toivonen"]
+},
+  "Formation": "4-4-2",
+  "T-shirt-color": "Yellow",
+}
+
+South-Korea {
+  "StartingXI" : {
+	"Goalkeeper": "Kim Seung-Gyu",
+	"Defenders": ["Hong-Chul", "Kim Young-Gwon", "Jang Hyun-Soo", "Lee Yong"],
+	"Midfielders": ["Jung Woo-Young", "Ki Sung-Yueng", "Park Joo-Ho"],
+	"Attackers": ["Son Heung-Min", "Lee Jae-Sung", "Kwon Chang-Hoo"]
+},
+  "Formation": "4-3-3",
+  "T-shirt-color": "Red",
+}
+
+Belgium {
+  "StartingXI" : {
+	"Goalkeeper": "Courtois",
+	"Defenders": ["Vertonghen", "Alderweireld", "Kompany"],
+	"Midfielders": ["Carrasco", "De Bruyne", "Witsel", "Meunier"],
+	"Attackers": ["Mertens, Hazard, Lukaku"]
+},
+  "Formation": "3-4-3",
+  "T-shirt-color": "Red",
+}
+
+Panama {
+  "StartingXI" : {
+	"Goalkeeper": "Penedo",
+	"Defenders": ["Ovalle", "Torres", "Baloy", "Escobar", "Murillo"],
+	"Midfielders": ["Quintero", "Godoy", "Gómez", "Bárcenas"],
+	"Attackers": "Blas Pérez"
+},
+  "Formation": "5-4-1",
+  "T-shirt-color": "Red",
+}
+
+Tunisia {
+	"StartingXI" : {
+	"Goalkeeper": "Hassen",
+	"Defenders": ["Maaloul", "Meriah", "Benalouane", "Nagguez"],
+	"Midfielders": ["Badri", "Skhiri", "Ben amor", "Sassi", "Sliti"],
+	"Attackers": "Khazri"
+},
+  "Formation": "4-5-1",
+  "T-shirt-color": "Red",
+}
+
+England {
+	"StartingXI" : {
+	"Goalkeeper": "Pickford",
+	"Defenders": ["Walker", "Stones", "Maguire"],
+	"Midfielders": ["Trippier", "Henderson", "Young", "Lingard", "Alli"],
+	"Attackers": ["Sterling", "Kane"]
+},
+  "Formation": "3-5-2",
+  "T-shirt-color": "White",
+}
+
+Poland {
+	"StartingXI" : {
+	"Goalkeeper": "Szczesny",
+	"Defenders": ["Piszczek", "Glik", "Pazdan", "Rybus"],
+	"Midfielders": ["Blaszczykowski", "Krychowiak", "Zielinski", "Grosicki"],
+	"Attackers": ["Milik", "Lewandowski"]
+},
+  "Formation": "4-4-2",
+  "T-shirt-color": "White",
+}
+
+Senegal {
+	"StartingXI" : {
+	"Goalkeeper": "K. Ndiaye",
+	"Defenders": ["Sabaly", "Koulibaly", "Sane", "Gassama"],
+	"Midfielders": ["Gueye", "Kouyate", "Sarr"],
+	"Attackers": ["Mané", "Niang", "Keita Balde"]
+},
+  "Formation": "4-5-1",
+  "T-shirt-color": "Blue",
+}  
+
+Japan {
+	"StartingXI" : {
+	"Goalkeeper": "Kawashima",
+	"Defenders": ["Sakai", "Shoji", "Yoshida", "Nagatomo"],
+	"Midfielders": ["Shibasaki", "Hasebe", "Inui", "Kagawa", "Haraguchi"],
+	"Attackers": "Osako"
+},
+  "Formation": "4-5-1",
+  "T-shirt-color": "Blue",
+}
+
+Colombia {
+	"StartingXI" : {
+	"Goalkeeper": "Ospina",
+	"Defenders": ["Arias", "Mina", "D-Sanchez", "Fabra"],
+	"Midfielders": ["Aguilar", "C-Sanchez", "Cuadrado", "James", "Muriel"],
+	"Attackers": "Falcao"
+},
+	"Formation": "4-5-1",
+	"T-shirt-color": "Yellow",
+}
+
+Peru = {
+  "StartingXI" : {
+  "Goalkeeper": "Gallese",
+  "Defenders": ["Advincula", "Rodriguez", "Ramos", "Trauco"],
+  "Midfielders": ["Aquino","Yotun", "Carrillo", "Cueva", "Flores"],
+  "Attackers": "Guerrero"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "Red",
+} 
+
+Denmark = {
+  "StartingXI" : {
+  "Goalkeeper": "Schmeichel",
+  "Defenders": ["Larsen", "Christensen", "Kjaer", "Dalsgaard"],
+  "Midfielders": ["Sisto", "Delaney", "Eriksen"; "Kvist", "Poulsen"],
+  "Attackers": "Jorgensen"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "Red",
+}
+
+Argentina = {
+  "StartingXI" : {
+  "Goalkeeper": "Caballero",
+  "Defenders": ["Tagliafico", "Fazio", "Otamendi", "Mercado"],
+  "Midfielders": ["Di María", "Mascherano", "Lo Celso", "Dybala"],
+  "Attackers": ["Messi", "Agüero"]
+},
+  "Formation": "4-4-2",
+  "T-shirt Color": "blue",
+}
+
+Iceland = {
+  "StartingXI" : {
+  "Goalkeeper": "Halldorsson",
+  "Defenders": ["Skulason", "Sigurdsson", "Arnason", "Saevarsson"],
+  "Midfielders": ["Gudmunsson", "Hallfredsson", "Sidgursson", "Gunnarsson", "Bjarnasson"],
+  "Attackers": "Bodvarsson"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "blue",
+}
+
+Croatia = {
+  "StartingXI" : {
+  "Goalkeeper": "Subasic",
+  "Defenders": ["Vida", "Lovren", "Corluka", "Vrsaljko"],
+  "Midfielders": ["Rakitic", "Badelj", "Modric",],
+  "Attackers": ["Perisic", "Kramaric", "Mandzukic"]
+},
+  "Formation": "4-3-3",
+  "T-shirt Color": "Red",
+}
+
+Nigeria = {
+  "StartingXI" : {
+  "Goalkeeper": "Francis",
+  "Defenders": ["Idowu", "Troost-Ekong", "Balogun", "Ebuehi"],
+  "Midfielders": ["Iwobi", "Obi", "Ndidi", "Moses"],
+  "Attackers": ["Iheanacho", "Ighalo"]
+},
+  "Formation": "4-4-2",
+  "T-shirt Color": "Green",
+}
+
+Brazil = {
+  "StartingXI" : {
+  "Goalkeeper": "Alisson",
+  "Defenders": ["Marcelo", "Miranda", "Thiago Silva", "Danilo"],
+  "Midfielders": ["Paulinho", "Casemiro", "Fernandinho"],
+  "Attackers": ["Neymar", "Gabriel Jesús", "Coutinho"]
+},
+  "Formation": "4-3-3",
+  "T-shirt Color": "Yellow",
+}
+
+Switzerland = {
+  "StartingXI" : {
+  "Goalkeeper": "Sommer",
+  "Defenders": ["Rodríguez", "Akanji", "Schär", "Lichsteiner"],
+  "Midfielders": ["Zuber", "Zakkaria", "Dzemaili", "Xhaka", "Shaqiri"],
+  "Attackers": "Seferovic"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "Red",
+}
+
+Costa Rica = {
+  "StartingXI" : {
+  "Goalkeeper": "Keylor Navas",
+  "Defenders": ["Oviedo", "Duarte", "Calvo", "Acosta", "Gamboa"],
+  "Midfielders": ["Bryan Ruiz", "Borges", "Guzmán", "Bolaños"],
+  "Attackers": "Ureña"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "Red",
+}
+
+Serbia = {
+  "StartingXI" : {
+  "Goalkeeper": "Dimitrovic",
+  "Defenders": ["Kolarov", "Tosic", "Ivanovic", "Rukavina"],
+  "Midfielders": ["Tadic", "Matic", "Milinkovic-Savic", "Milivojevic", "Kostig"],
+  "Attackers": "Guerrero"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "Red",
+}
