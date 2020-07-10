@@ -1,3 +1,5 @@
+// 11 players for Argentina with respecive key-values
+
 const Argentina = {
   StartingXI: [
     {
@@ -124,4 +126,249 @@ const Argentina = {
   Formation: "4-4-2",
 };
 
-export { Argentina };
+// 11 players for Team Brazil with respective key-value pairs
+
+const Brazil = {
+  StartingXI: [
+    {
+      Name: "Alisson",
+      Position: "Goalkeeper",
+      DOB: "02/10/1992",
+      ZodiacSign: "Libra",
+      JerseyNumber: 1,
+      JerseyColor: "Black",
+      SuperstarStatus: true,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/248681.jpg",
+    },
+    {
+      Name: "Marcelo",
+      Position: "Defender",
+      DOB: "02/03/1990",
+      ZodiacSign: "Pisces",
+      JerseyNumber: 12,
+      JerseyColor: "Yellow",
+      SuperstarStatus: true,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/52947.jpg",
+    },
+    {
+      Name: "Miranda",
+      Position: "Defender",
+      DOB: "13/12/1987",
+      ZodiacSign: "Sagittarius",
+      JerseyNumber: 3,
+      JerseyColor: "Yellow",
+      SuperstarStatus: false,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/37192.jpg",
+    },
+    {
+      Name: "Thiago Silva",
+      Position: "Defender",
+      DOB: "22/09/1984",
+      ZodiacSign: "Libra",
+      JerseyNumber: 2,
+      JerseyColor: "Yellow",
+      SuperstarStatus: true,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/29391.jpg",
+    },
+    {
+      Name: "Danilo",
+      Position: "Midfielder",
+      DOB: "15/06/1991",
+      ZodiacSign: "Gemini",
+      JerseyNumber: 14,
+      JerseyColor: "Yellow",
+      SuperstarStatus: false,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/168483.jpg",
+    },
+    {
+      Name: "Paulinho",
+      Position: "Midfielder",
+      DOB: "25/07/1988",
+      ZodiacSign: "Leo",
+      JerseyNumber: 15,
+      JerseyColor: "Yellow",
+      SuperstarStatus: false,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/81998.jpg",
+    },
+    {
+      Name: "Casemiro",
+      Position: "Midfielder",
+      DOB: "23/02/1992",
+      ZodiacSign: "Pisces",
+      JerseyNumber: 5,
+      JerseyColor: "Yellow",
+      SuperstarStatus: true,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/168874.jpg",
+    },
+    {
+      Name: "Fernandinho",
+      Position: "Midfielder",
+      DOB: "04/05/1985",
+      ZodiacSign: "Taurus",
+      JerseyNumber: 17,
+      JerseyColor: "Yellow",
+      SuperstarStatus: false,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/37189.jpg",
+    },
+    {
+      Name: "Neymar",
+      Position: "Forward",
+      DOB: "05/02/1992",
+      ZodiacSign: "Aquarius",
+      JerseyNumber: 10,
+      JerseyColor: "Yellow",
+      SuperstarStatus: true,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/142105.jpg",
+    },
+    {
+      Name: "Gabriel Jesús",
+      Position: "Forward",
+      DOB: "30/08/1996",
+      ZodiacSign: "Virgo",
+      JerseyNumber: 9,
+      JerseyColor: "Yellow",
+      SuperstarStatus: false,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/307889.jpg",
+    },
+    {
+      Name: "Coutinho",
+      Position: "Forward",
+      DOB: "12/06/1992",
+      ZodiacSign: "Gemini",
+      JerseyNumber: 11,
+      JerseyColor: "Yellow",
+      SuperstarStatus: false,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/120694.jpg",
+    },
+  ],
+  Formation: "4-3-3",
+};
+
+// 11 players for Spain with respective key-value pairs
+
+const Spain = {
+  StartingXI: [
+    {
+      Name: "David de Gea",
+      Position: "Goalkeeper",
+      DOB: "11/07/1990",
+      ZodiacSign: "Scorpio",
+      JerseyNumber: "1",
+      JerseyColor: "Red",
+      SuperstarStatus: "False",
+      PlayerPicture:
+        "https://upload.wikimedia.org/wikipedia/commons/6/68/David_de_Gea_2017.jpg",
+    },
+    {
+      Name: "Jordi Alba",
+      Position: "Defender",
+      DOB: "03/21/1989",
+      ZodiacSign: "Aries",
+      JerseyNumber: "18",
+      JerseyColor: "Red",
+      SuperstarStatus: "True",
+      PlayerPicture:
+        "https://en.as.com/futbol/imagenes/2020/01/23/copa_del_rey/1579771260_194272_1579771436_noticia_normal.jpg",
+    },
+    {
+      Name: "Sergio Ramos",
+      Position: "Defender",
+      DOB: "03/30/1986",
+      ZodiacSign: "Aries",
+      JerseyNumber: "15",
+      JerseyColor: "Red",
+      SuperstarStatus: "False",
+      PlayerPicture:
+        "https://en.as.com/tikitakas/imagenes/2019/02/23/portada/1550919555_521513_1550919850_noticia_normal.jpg",
+    },
+    {
+      Name: "Gerard Pique",
+      Position: "Defender",
+      DOB: "02/02/1987",
+      ZodiacSign: "Aquarius",
+      JerseyNumber: "3",
+      JerseyColor: "Red",
+      SuperstarStatus: "True",
+      PlayerPicture:
+        "https://icdn.football-espana.net/wp-content/uploads/2020/06/Pique-Sevilla.jpg",
+    },
+    {
+      Name: "Dani Carvajal",
+      Position: "Defender",
+      DOB: "01/11/1992",
+      ZodiacSign: "Capricorn",
+      JerseyNumber: "2",
+      JerseyColor: "Red",
+      SuperstarStatus: "False",
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/191377.jpg",
+    },
+    {
+      Name: "Andres Iniesta",
+      Position: "Midfielder",
+      DOB: "05/11/1984",
+      ZodiacSign: "Taurus",
+      JerseyNumber: "8",
+      JerseyColor: "Red",
+      SuperstarStatus: "True",
+      PlayerPicture:
+        "https://upload.wikimedia.org/wikipedia/commons/6/67/Andrés_Iniesta.jpg",
+    },
+    {
+      Name: "Isco",
+      Position: "Midfielder",
+      DOB: "04/21/1992",
+      ZodiacSign: "Taurus",
+      JerseyNumber: "22",
+      JerseyColor: "Red",
+      SuperstarStatus: "False",
+      PlayerPicture:
+        "https://en.as.com/futbol/imagenes/2019/03/14/primera/1552554947_117211_1552555120_noticia_normal.jpg",
+    },
+    {
+      Name: "Sergio Busquets",
+      Position: "Midfielder",
+      DOB: "07/16/1988",
+      ZodiacSign: "Cancer",
+      JerseyNumber: "5",
+      JerseyColor: "Red",
+      SuperstarStatus: "False",
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/124973.jpg",
+    },
+    {
+      Name: "Thiago Silva",
+      Position: "Midfielder",
+      DOB: "09/22/1984",
+      ZodiacSign: "Virgo",
+      JerseyNumber: "2",
+      JerseyColor: "Red",
+      SuperstarStatus: "True",
+      PlayerPicture:
+        "https://en.as.com/en/imagenes/2020/05/10/football/1589115185_787877_noticia_normal.jpg",
+    },
+    {
+      Name: "Koke",
+      Position: "Midfielder",
+      DOB: "01/08/1992",
+      ZodiacSign: "Capricorn",
+      JerseyNumber: "6",
+      JerseyColor: "Red",
+      SuperstarStatus: "False",
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/154352.jpg",
+    },
+    {
+      Name: "Diego Costa",
+      Position: "Attacker",
+      DOB: "10/07/1988",
+      ZodiacSign: "Libra",
+      JerseyNumber: "19",
+      JerseyColor: "Red",
+      SuperstarStatus: "True",
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/73586.jpg",
+    },
+  ],
+  Formation: "4-5-1",
+};
+
+const teams = { Argentina, Brazil, Spain }; //Peru,
+
+export default teams;

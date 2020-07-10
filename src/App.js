@@ -5,9 +5,9 @@ import Sentiment from "sentiment";
 import { Switch, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import GameSim from "./components/GameSim";
-import { Argentina } from "./teams";
+// import { Argentina } from "./teams";
 
-console.log(Argentina);
+// console.log(Argentina);
 
 const randomMoods = ["happy", "sad", "jolly"];
 
@@ -25,27 +25,27 @@ class App extends Component {
       "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
     );
 
-    const promises = Argentina.StartingXI.map(async (player) => {
-      let r = await axios.post(
-        `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
-      );
-      console.log(r);
-      let randomMood = {
-        rmood: randomMoods[Math.floor(Math.random() * randomMoods.length)],
-      };
-      return { ...r.data, ...player, ...randomMood };
-    });
-    Promise.all(promises).then((infoData) => {
-      console.log(infoData);
-      this.setState({
-        team: infoData,
-      });
-    });
-    console.log(promises);
-    console.log(res);
-    console.log(res.data.horoscope);
-    let horoscope = sentiment.analyze(res.data.horoscope);
-    console.log(horoscope);
+    // const promises = Argentina.StartingXI.map(async (player) => {
+    //   let r = await axios.post(
+    //     `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
+    //   );
+    //   console.log(r);
+    //   let randomMood = {
+    //     rmood: randomMoods[Math.floor(Math.random() * randomMoods.length)],
+    //   };
+    //   return { ...r.data, ...player, ...randomMood };
+    // });
+    // Promise.all(promises).then((infoData) => {
+    //   console.log(infoData);
+    //   this.setState({
+    //     team: infoData,
+    //   });
+    // });
+    // console.log(promises);
+    // console.log(res);
+    // console.log(res.data.horoscope);
+    // let horoscope = sentiment.analyze(res.data.horoscope);
+    // console.log(horoscope);
     // console.log(soccer);
   }
 
