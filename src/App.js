@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import './App.css';
-import soccer from "./csvjson.json";
-// import soccer from "./csvjson.json";
+import soccer from "./csvjson";
+import Header from './components/Header';
 import Sentiment from "sentiment";
 import { Switch, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
@@ -23,9 +23,9 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    let res = await axios.get(
-      "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
-    );
+    // let res = await axios.get(
+    //   "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
+    // );
 
     const promises = Argentina.StartingXI.map(async (player) => {
       let r = await axios.post(
@@ -43,11 +43,11 @@ class App extends Component {
         team: infoData,
       });
     });
-    console.log(promises);
-    console.log(res);
-    console.log(res.data.horoscope);
-    let horoscope = sentiment.analyze(res.data.horoscope);
-    console.log(horoscope);
+    // console.log(promises);
+    // console.log(res);
+    // console.log(res.data.horoscope);
+    // let horoscope = sentiment.analyze(res.data.horoscope);
+    // console.log(horoscope);
     // console.log(soccer);
   }
 
@@ -72,7 +72,8 @@ class App extends Component {
           <Route path="/game-sim" component={GameSim} />
           <Route path="/" component={LandingPage} />
         </Switch>
-        {this.showTeamData()}
+        <Header />
+        {/* {this.showTeamData()} */}
       </div>
     );
   }
