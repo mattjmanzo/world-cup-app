@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import './App.css';
 import soccer from "./csvjson.json";
 import Sentiment from "sentiment";
 

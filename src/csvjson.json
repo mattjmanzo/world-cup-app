@@ -256,7 +256,7 @@ Denmark = {
   "StartingXI" : {
   "Goalkeeper": "Schmeichel",
   "Defenders": ["Larsen", "Christensen", "Kjaer", "Dalsgaard"],
-  "Midfielders": ["Sisto", "Delaney", "Eriksen"; "Kvist", "Poulsen"],
+  "Midfielders": ["Sisto", "Delaney", "Eriksen", "Kvist", "Poulsen"],
   "Attackers": "Jorgensen"
 },
   "Formation": "4-5-1",
