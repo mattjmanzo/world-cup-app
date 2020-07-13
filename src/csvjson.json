@@ -1,0 +1,367 @@
+
+ {
+  "Name": "Russia",
+  "StartingXI" : {
+  "Goalkeeper": "Akinfeev",
+  "Defenders": ["Kudryashov", "Neustadter", "Granat"],
+  "Midfielders": ["Zhirkov", "Golovin", "Dzagoev", "Erokhin", "Samedov"],
+  "Attackers": ["Smolov", "Miranchuk"]
+},
+  "Formation": "3-5-2", 
+  "T-shirt-color": "Red"
+}
+
+ {
+  "Name": "Saudi Arabia",
+  "StartingXI" : {
+  "Goalkeeper": "Al Owais",
+  "Defenders": ["Al-Harbi", "Om. Hawsawi", "Os. Hawsawi", "Al-Sharani"],
+  "Midfielders": ["Al-Jassim", "Otayf", "Al-Faraj"],
+  "Attackers": ["Al-Dawsari", "Al-Sahlawi", "Al-Muwallad"]
+},
+  "Formation": "4-3-3",
+  "T-shirt-color": "Green and White", 
+}
+
+Egypt  {
+  "StartingXI" : {
+  "Goalkeeper": "El Hadary",
+  "Defenders": ["Abdel Shafy", "Samir", "Hezagy", "Fathy"],
+  "Midfielders": ["Sobhi", "Elney", "Said", "Hamed", "Salah"],
+  "Attackers": "Mohsen"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "Red", 
+}
+
+Uruguay {
+  "StartingXI" : {
+  "Goalkeeper": "Muslera",
+  "Defenders": ["Caceres", "Gimenez", "Godin", "Varela"],
+  "Midfielders": ["Cebolla", "Bentacur", "Vecino", "Nandez"],
+  "Attackers": ["Luis Suarez", "Cavani"]
+},
+  "Formation": "4-4-2",
+  "T-shirt-color": "White and Blue",
+}
+
+Portugal {
+  "StartingXI" : {
+  "Goalkeeper": "Rui Patricio",
+  "Defenders": ["Guerreiro", "Pepe", "Jose Fonte", "Cedric"],
+  "Midfielders": ["Bernardo Silva", "Moutinho", "Carvalho", "Joao Mario"],
+  "Attackers": ["Andre Silva", "Cristiano"]
+},
+  "Formation": "4-4-2", 
+  "T-shirt-color": "Red", 
+}
+
+Spain {
+  "StartingXI" : {
+  "Goalkeeper": "De Gea",
+  "Defenders": ["Jordi Alba", "Ramos", "Pique", "Carvajal"],
+  "Midfielders": ["Iniesta", "Isco", "Busquets", "Koke", "Silva"],
+  "Attackers": "Diego Costa"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "Red", 
+}
+
+Morocco {
+  "StartingXI" : {
+  "Goalkeeper": "Munir",
+  "Defenders": ["Achraf", "Benatia", "Saiss", "Dirar"],
+  "Midfielders": ["Ziyech", "Boussoufa", "El Ahmadi", "Belhanda", "Amrabat"],
+  "Attackers": "Boutaib"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "Red", 
+}
+
+Iran {
+  "StartingXI" : {
+  "Goalkeeper": "Beiranvad",
+  "Defenders": ["Mohammadi", "Pouraliganji", "Montazeri", "Chafouri"],
+  "Midfielders": ["Tarem", "Ezatolahi", "Masoud", "Hajsafi", "Jahanbakhsh"],
+  "Attackers": "Azmoun"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "White", 
+}
+
+France {
+  "StartingXI" : {
+  "Goalkeeper": "Lloris",
+  "Defenders": ["Mendy", "Umtiti", "Varane", "Sidibe"],
+  "Midfielders": ["Mbappe", "Pogba", "Kante", "Dembele"],
+  "Attackers": ["Griezmann", "Giroud"]
+},
+  "Formation": "4-4-2", 
+  "T-shirt-color": "Blue",
+}
+
+Australia {
+  "StartingXI" : {
+  "Goalkeeper": "Ryan",
+  "Defenders": ["Behich", "Degenek", "Milligan", "Ridson"],
+  "Midfielders": ["Kruse", "Mooy", "Luongo", "Jedinak", "Leckie"],
+  "Attackers": "Cahill"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "Gold and Green",
+}
+
+Germany {
+  "StartingXI" : {
+  "Goalkeeper": "Neuer",
+  "Defenders": ["Hector", "Hummels", "Boateng", "Kimmich"],
+  "Midfielders": ["Draxler", "Khedira", "Ozil", "Kroos", "Muller"],
+  "Attackers": "Werner"
+},
+  "Formation": "4-5-1", 
+  "T-shirt-color": "Green", 
+}
+
+Mexico {
+  "StartingXI" : {
+  "Goalkeeper": "Ochoa",
+  "Defenders": ["Layun", "Moreno", "Reyes", "Salcedo"],
+  "Midfielders": ["Vela", "Guardado", "Herrera", "Lozano"],
+  "Attackers": ["Chicharito", "Gio dos Santos"]
+},
+  "Formation": "4-4-2", 
+  "T-shirt-color": "Green",
+}
+
+Sweden {
+	"StartingXI" : {
+	"Goalkeeper": "Olsen",
+	"Defenders": ["Agustinsson", "Granqvist", "Lindelöf", "Lustig"],
+	"Midfielders": ["Forsberg", "Larsson", "Svensson", "Claesson"],
+	"Attackers": ["Berg", "Toivonen"]
+},
+  "Formation": "4-4-2",
+  "T-shirt-color": "Yellow",
+}
+
+South-Korea {
+  "StartingXI" : {
+	"Goalkeeper": "Kim Seung-Gyu",
+	"Defenders": ["Hong-Chul", "Kim Young-Gwon", "Jang Hyun-Soo", "Lee Yong"],
+	"Midfielders": ["Jung Woo-Young", "Ki Sung-Yueng", "Park Joo-Ho"],
+	"Attackers": ["Son Heung-Min", "Lee Jae-Sung", "Kwon Chang-Hoo"]
+},
+  "Formation": "4-3-3",
+  "T-shirt-color": "Red",
+}
+
+Belgium {
+  "StartingXI" : {
+	"Goalkeeper": "Courtois",
+	"Defenders": ["Vertonghen", "Alderweireld", "Kompany"],
+	"Midfielders": ["Carrasco", "De Bruyne", "Witsel", "Meunier"],
+	"Attackers": ["Mertens, Hazard, Lukaku"]
+},
+  "Formation": "3-4-3",
+  "T-shirt-color": "Red",
+}
+
+Panama {
+  "StartingXI" : {
+	"Goalkeeper": "Penedo",
+	"Defenders": ["Ovalle", "Torres", "Baloy", "Escobar", "Murillo"],
+	"Midfielders": ["Quintero", "Godoy", "Gómez", "Bárcenas"],
+	"Attackers": "Blas Pérez"
+},
+  "Formation": "5-4-1",
+  "T-shirt-color": "Red",
+}
+
+Tunisia {
+	"StartingXI" : {
+	"Goalkeeper": "Hassen",
+	"Defenders": ["Maaloul", "Meriah", "Benalouane", "Nagguez"],
+	"Midfielders": ["Badri", "Skhiri", "Ben amor", "Sassi", "Sliti"],
+	"Attackers": "Khazri"
+},
+  "Formation": "4-5-1",
+  "T-shirt-color": "Red",
+}
+
+England {
+	"StartingXI" : {
+	"Goalkeeper": "Pickford",
+	"Defenders": ["Walker", "Stones", "Maguire"],
+	"Midfielders": ["Trippier", "Henderson", "Young", "Lingard", "Alli"],
+	"Attackers": ["Sterling", "Kane"]
+},
+  "Formation": "3-5-2",
+  "T-shirt-color": "White",
+}
+
+Poland {
+	"StartingXI" : {
+	"Goalkeeper": "Szczesny",
+	"Defenders": ["Piszczek", "Glik", "Pazdan", "Rybus"],
+	"Midfielders": ["Blaszczykowski", "Krychowiak", "Zielinski", "Grosicki"],
+	"Attackers": ["Milik", "Lewandowski"]
+},
+  "Formation": "4-4-2",
+  "T-shirt-color": "White",
+}
+
+Senegal {
+	"StartingXI" : {
+	"Goalkeeper": "K. Ndiaye",
+	"Defenders": ["Sabaly", "Koulibaly", "Sane", "Gassama"],
+	"Midfielders": ["Gueye", "Kouyate", "Sarr"],
+	"Attackers": ["Mané", "Niang", "Keita Balde"]
+},
+  "Formation": "4-5-1",
+  "T-shirt-color": "Blue",
+}  
+
+Japan {
+	"StartingXI" : {
+	"Goalkeeper": "Kawashima",
+	"Defenders": ["Sakai", "Shoji", "Yoshida", "Nagatomo"],
+	"Midfielders": ["Shibasaki", "Hasebe", "Inui", "Kagawa", "Haraguchi"],
+	"Attackers": "Osako"
+},
+  "Formation": "4-5-1",
+  "T-shirt-color": "Blue",
+}
+
+Colombia {
+	"StartingXI" : {
+	"Goalkeeper": "Ospina",
+	"Defenders": ["Arias", "Mina", "D-Sanchez", "Fabra"],
+	"Midfielders": ["Aguilar", "C-Sanchez", "Cuadrado", "James", "Muriel"],
+	"Attackers": "Falcao"
+},
+	"Formation": "4-5-1",
+	"T-shirt-color": "Yellow",
+}
+
+Peru = {
+  "StartingXI" : {
+  "Goalkeeper": "Gallese",
+  "Defenders": ["Advincula", "Rodriguez", "Ramos", "Trauco"],
+  "Midfielders": ["Aquino","Yotun", "Carrillo", "Cueva", "Flores"],
+  "Attackers": "Guerrero"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "Red",
+} 
+
+Denmark = {
+  "StartingXI" : {
+  "Goalkeeper": "Schmeichel",
+  "Defenders": ["Larsen", "Christensen", "Kjaer", "Dalsgaard"],
+  "Midfielders": ["Sisto", "Delaney", "Eriksen"; "Kvist", "Poulsen"],
+  "Attackers": "Jorgensen"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "Red",
+}
+
+Argentina = {
+  "StartingXI" : {
+  "Goalkeeper": "Caballero",
+  "Defenders": ["Tagliafico", "Fazio", "Otamendi", "Mercado"],
+  "Midfielders": ["Di María", "Mascherano", "Lo Celso", "Dybala"],
+  "Attackers": ["Messi", "Agüero"]
+},
+  "Formation": "4-4-2",
+  "T-shirt Color": "blue",
+}
+
+Iceland = {
+  "StartingXI" : {
+  "Goalkeeper": "Halldorsson",
+  "Defenders": ["Skulason", "Sigurdsson", "Arnason", "Saevarsson"],
+  "Midfielders": ["Gudmunsson", "Hallfredsson", "Sidgursson", "Gunnarsson", "Bjarnasson"],
+  "Attackers": "Bodvarsson"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "blue",
+}
+
+Croatia = {
+  "StartingXI" : {
+  "Goalkeeper": "Subasic",
+  "Defenders": ["Vida", "Lovren", "Corluka", "Vrsaljko"],
+  "Midfielders": ["Rakitic", "Badelj", "Modric",],
+  "Attackers": ["Perisic", "Kramaric", "Mandzukic"]
+},
+  "Formation": "4-3-3",
+  "T-shirt Color": "Red",
+}
+
+Nigeria = {
+  "StartingXI" : {
+  "Goalkeeper": "Francis",
+  "Defenders": ["Idowu", "Troost-Ekong", "Balogun", "Ebuehi"],
+  "Midfielders": ["Iwobi", "Obi", "Ndidi", "Moses"],
+  "Attackers": ["Iheanacho", "Ighalo"]
+},
+  "Formation": "4-4-2",
+  "T-shirt Color": "Green",
+}
+
+Brazil = {
+  "StartingXI" : {
+  "Goalkeeper": "Alisson",
+  "Defenders": ["Marcelo", "Miranda", "Thiago Silva", "Danilo"],
+  "Midfielders": ["Paulinho", "Casemiro", "Fernandinho"],
+  "Attackers": ["Neymar", "Gabriel Jesús", "Coutinho"]
+},
+  "Formation": "4-3-3",
+  "T-shirt Color": "Yellow",
+}
+
+Switzerland = {
+  "StartingXI" : {
+  "Goalkeeper": "Sommer",
+  "Defenders": ["Rodríguez", "Akanji", "Schär", "Lichsteiner"],
+  "Midfielders": ["Zuber", "Zakkaria", "Dzemaili", "Xhaka", "Shaqiri"],
+  "Attackers": "Seferovic"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "Red",
+}
+
+Costa Rica = {
+  "StartingXI" : {
+  "Goalkeeper": "Keylor Navas",
+  "Defenders": ["Oviedo", "Duarte", "Calvo", "Acosta", "Gamboa"],
+  "Midfielders": ["Bryan Ruiz", "Borges", "Guzmán", "Bolaños"],
+  "Attackers": "Ureña"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "Red",
+}
+
+Serbia = {
+  "StartingXI" : {
+  "Goalkeeper": "Dimitrovic",
+  "Defenders": ["Kolarov", "Tosic", "Ivanovic", "Rukavina"],
+  "Midfielders": ["Tadic", "Matic", "Milinkovic-Savic", "Milivojevic", "Kostig"],
+  "Attackers": "Guerrero"
+},
+  "Formation": "4-5-1",
+  "T-shirt Color": "Red",
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

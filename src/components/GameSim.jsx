@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import teams from "../teams";
 
-const teams = ["France", "Iran", "Germany"];
 class GameSim extends Component {
   state = {
     teams: teams,
     selectedTeam: "",
   };
   onChangeHandler = (e) => {
+    console.log(e.target.name, e.target.value);
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -14,11 +15,34 @@ class GameSim extends Component {
   render() {
     return (
       <div>
-        <select name="selectedTeam" id="">
-          {this.state.teams.map((team) => (
-            <option value={team}>{team}</option>
-          ))}
-        </select>
+        <div>
+          <select name="selectedTeam" id="" onChange={this.onChangeHandler}>
+            {Object.keys(this.state.teams)
+              .filter((team) => team !== this.state.selectedTeam2)
+              .map((team) => (
+                <option value={team} key={team}>
+                  {team}
+                </option>
+              ))}
+          </select>
+          {this.state.selectedTeam &&
+            this.state.teams[this.state.selectedTeam].StartingXI.map((play) => (
+              <li key={play.Name}>{play.Name}</li>
+            ))}
+        </div>
+        <div>
+          <select name="selectedTeam2" id="" onChange={this.onChangeHandler}>
+            {Object.keys(this.state.teams)
+              .filter((team) => team !== this.state.selectedTeam)
+              .map((team) => (
+                <option value={team} key={team}>
+                  {team}
+                </option>
+              ))}
+          </select>
+          {this.state.selectedTeam2 &&
+            this.state.teams[this.state.selectedTeam2].Formation}
+        </div>
       </div>
     );
   }
