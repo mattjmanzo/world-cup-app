@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import axios from "axios";
+import teams from "../teams.js";
 
 class GameSim extends Component {
   state = {
     teams: teams,
-    selectedTeam: "",
+    display: false,
   };
 
   onChangeHandler = (e) => {
@@ -88,10 +90,9 @@ class GameSim extends Component {
     return team2;
   };
 
-  submitForm = (event) => {
-    event.preventDefault();
+  submitForm = (e) => {
+    e.preventDefault();
     this.astrologicalStats();
->>>>>>> 37285cf50fcc6d8f3a1d217b092cca0f19a4bf6e
     this.setState({
       [e.target.name]: e.target.value,
     });
