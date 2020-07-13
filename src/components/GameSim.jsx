@@ -17,9 +17,9 @@ class GameSim extends Component {
   };
 
   async astrologicalStats() {
-    // let res = await axios.get(
-    //     "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
-    //   );
+    let res = await axios.get(
+      "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
+    );
     console.log(this.state);
     let team1 = this.state.teams[this.state.selectedTeam1];
     const promises = team1.map(async (eachPlayer) => {
@@ -137,3 +137,31 @@ class GameSim extends Component {
 }
 
 export default GameSim;
+
+// let team1 = this.state.teams[this.state.selectedTeam1];
+// let signs = this.state.teams[this.state.selectedTeam1]
+//   .concat(this.state.teams[this.state.selectedTeam2])
+//   .reduce(
+//     (a, v) => (a.includes(v.ZodiacSign) ? a : [...a, v.ZodiacSign]),
+//     []
+//   );
+// // console.log(signs);
+// const promises = signs.map(async (sign) => {
+//   return await axios.post(
+//     `https://aztro.sameerkumar.website/?sign=${sign}&day=today`
+//   );
+// });
+// // console.log(promises);
+
+// let newArray = await Promise.all(promises);
+// let changedPlayers = this.state.teams[this.state.selectedTeam1]
+//   .concat(this.state.teams[this.state.selectedTeam2])
+//   .map((player) => {
+//     return {
+//       ...player,
+//       ZodiacSign: newArray.find(
+//         (v) => v.data.compatibility.toLowerCase() === player.ZodiacSign
+//       ),
+//     };
+//   });
+// console.log(newArray, changedPlayers);
