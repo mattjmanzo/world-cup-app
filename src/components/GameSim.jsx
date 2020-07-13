@@ -22,6 +22,11 @@ class GameSim extends Component {
   //     "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
   //   );
 
+  //  let res = this.state.teams[this.state.selectedTeam1].map(
+  //   async await axios.post(
+  //       `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
+  //     );
+
   // const promises = this.state.teams[this.state.selectedTeam1].map(
   //   async (player) => {
   //     let r = await axios.post(

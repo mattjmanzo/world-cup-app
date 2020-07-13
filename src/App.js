@@ -64,19 +64,19 @@ class App extends Component {
     // console.log(soccer);
   }
 
-  showTeamData = () => {
-    return this.state.team.map((eachPlayer) => {
-      return (
-        <li>
-          <h4>{eachPlayer.Name}</h4>
-          <img src={eachPlayer.PlayerPicture}></img>
-          <h4>{eachPlayer.description}</h4>
-          <h4>{eachPlayer.mood}</h4>
-          <h4>{eachPlayer.ZodiacSign}</h4>
-        </li>
-      );
-    });
-  };
+  // showTeamData = () => {
+  //   return this.state.team.map((eachPlayer) => {
+  //     return (
+  //       <li>
+  //         <h4>{eachPlayer.Name}</h4>
+  //         <img src={eachPlayer.PlayerPicture}></img>
+  //         <h4>{eachPlayer.description}</h4>
+  //         <h4>{eachPlayer.mood}</h4>
+  //         <h4>{eachPlayer.ZodiacSign}</h4>
+  //       </li>
+  //     );
+  //   });
+  // };
 
   render() {
     return (

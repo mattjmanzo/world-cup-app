@@ -362,4 +362,4 @@ let Spain = [
 
 let teams = { Argentina, Brazil, Spain }; //Peru,
 
-export default teams;
+export { Argentina, Brazil, Spain };
