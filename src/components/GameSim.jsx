@@ -1,40 +1,43 @@
 import React, { Component } from "react";
 
-
 class GameSim extends Component {
   state = {
     teams: teams,
     selectedTeam: "",
   };
 
-  // async componentDidMount() {
-  //   let res = await axios.get(
-  //     "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
-  //   );
+  onChangeHandler = (e) => {
+    console.log(e.target.name, e.target.value);
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+    console.log(this.state);
+  };
 
-  //   const promises = Argentina.StartingXI.map(async (player) => {
-  //     let r = await axios.post(
-  //       `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
-  //     );
-  //     console.log(r);
-  //     let randomMood = {
-  //       rmood: randomMoods[Math.floor(Math.random() * randomMoods.length)],
-  //     };
-  //     return { ...r.data, ...player, ...randomMood };
-  //   });
-  //   Promise.all(promises).then((infoData) => {
-  //     console.log(infoData);
-  //     this.setState({
-  //       team: infoData,
-  //     });
-  //   });
-  //   console.log(promises);
-  //   console.log(res);
-  //   console.log(res.data.horoscope);
-  //   let horoscope = sentiment.analyze(res.data.horoscope);
-  //   console.log(horoscope);
-  //   console.log(soccer);
-  // }
+  async astrologicalStats() {
+    // let res = await axios.get(
+    //     "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
+    //   );
+    console.log(this.state);
+    let team1 = this.state.teams[this.state.selectedTeam1];
+    const promises = team1.map(async (eachPlayer) => {
+      return await axios.post(
+        `https://aztro.sameerkumar.website/?sign=${eachPlayer.ZodiacSign}&day=today`
+      );
+    });
+    console.log(promises);
+
+    let newArray = await Promise.all(promises);
+    console.log(newArray);
+    // Promise.all(promises)
+    // .then((response) => console.log(response))
+    // .catch((error) => console.log(error));
+    // const promises = this.state.teams[this.state.selectedTeam1].map(
+    // async (player) => {
+    //   let r = await axios.post(
+    //     `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
+    //   );
+    //   console.log(r);
 
     // let randomMood = {
     //   rmood: randomMoods[Math.floor(Math.random() * randomMoods.length)],
