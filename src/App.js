@@ -10,8 +10,6 @@ import GameSim from "./components/GameSim";
 
 // console.log(Argentina);
 
-const randomMoods = ["happy", "sad", "jolly"];
-
 var sentiment = new Sentiment();
 var result = sentiment.analyze("Dogs are awesome.");
 console.dir(result);
