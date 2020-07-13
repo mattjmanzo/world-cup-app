@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import teams from "../teams.js";
-import axios from "axios";
-import Match from "./Match.js";
+
 
 class GameSim extends Component {
   state = {
-    teams: teams,
+    teams: [],
     display: false,
   };
 
+<<<<<<< HEAD
   onChangeHandler = (e) => {
     console.log(e.target.name, e.target.value);
     this.setState({
@@ -41,6 +40,36 @@ class GameSim extends Component {
     //     `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
     //   );
     //   console.log(r);
+=======
+  // async componentDidMount() {
+  //   let res = await axios.get(
+  //     "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
+  //   );
+
+  //   const promises = Argentina.StartingXI.map(async (player) => {
+  //     let r = await axios.post(
+  //       `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
+  //     );
+  //     console.log(r);
+  //     let randomMood = {
+  //       rmood: randomMoods[Math.floor(Math.random() * randomMoods.length)],
+  //     };
+  //     return { ...r.data, ...player, ...randomMood };
+  //   });
+  //   Promise.all(promises).then((infoData) => {
+  //     console.log(infoData);
+  //     this.setState({
+  //       team: infoData,
+  //     });
+  //   });
+  //   console.log(promises);
+  //   console.log(res);
+  //   console.log(res.data.horoscope);
+  //   let horoscope = sentiment.analyze(res.data.horoscope);
+  //   console.log(horoscope);
+  //   console.log(soccer);
+  // }
+>>>>>>> bf232ab859865dce390921d79398b853dadfc880
 
     // let randomMood = {
     //   rmood: randomMoods[Math.floor(Math.random() * randomMoods.length)],
