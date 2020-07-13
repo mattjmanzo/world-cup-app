@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import axios from "axios";
+import teams from "../teams.js";
 
 class GameSim extends Component {
   state = {
-    teams: [],
+    teams: teams,
     display: false,
   };
 
