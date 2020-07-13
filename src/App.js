@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import axios from "axios";
-import './App.css';
+import "./App.css";
 import soccer from "./csvjson";
-import Header from './components/Header';
+import Header from "./components/Header";
 import Sentiment from "sentiment";
 import { Switch, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import GameSim from "./components/GameSim";
-// import { Argentina } from "./teams";
+// import Form from "./components/Form";
 
-// console.log(Argentina);
+// const randomMoods = ["happy", "sad", "jolly"];
 
-const randomMoods = ["happy", "sad", "jolly"];
-
-var sentiment = new Sentiment();
-var result = sentiment.analyze("Dogs are awesome.");
-console.dir(result);
+// var sentiment = new Sentiment();
+// var result = sentiment.analyze("Dogs are awesome.");
+// console.dir(result);
 
 class App extends Component {
   state = {
@@ -26,8 +24,6 @@ class App extends Component {
     // let res = await axios.get(
     //   "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
     // );
-
-<<<<<<< HEAD
     // const promises = Argentina.StartingXI.map(async (player) => {
     //   let r = await axios.post(
     //     `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
@@ -44,24 +40,22 @@ class App extends Component {
     //     team: infoData,
     //   });
     // });
-=======
-    const promises = Argentina.StartingXI.map(async (player) => {
-      let r = await axios.post(
-        `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
-      );
-      console.log(r);
-      let randomMood = {
-        rmood: randomMoods[Math.floor(Math.random() * randomMoods.length)],
-      };
-      return { ...r.data, ...player, ...randomMood };
-    });
-    Promise.all(promises).then((infoData) => {
-      console.log(infoData);
-      this.setState({
-        team: infoData,
-      });
-    });
->>>>>>> 2abbbad960444f148e3ac9bd8c39217e13ed5c49
+    // const promises = Argentina.StartingXI.map(async (player) => {
+    //   let r = await axios.post(
+    //     `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
+    //   );
+    //   console.log(r);
+    //   let randomMood = {
+    //     rmood: randomMoods[Math.floor(Math.random() * randomMoods.length)],
+    //   };
+    //   return { ...r.data, ...player, ...randomMood };
+    // });
+    // Promise.all(promises).then((infoData) => {
+    //   console.log(infoData);
+    //   this.setState({
+    //     team: infoData,
+    //   });
+    // });
     // console.log(promises);
     // console.log(res);
     // console.log(res.data.horoscope);
@@ -88,8 +82,9 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/game-sim" component={GameSim} />
-          <Route path="/" component={LandingPage} />
+          <Route exact path="/game-sim" component={GameSim} />
+          <Route exact path="/" component={LandingPage} />
+          {/* <Route exact path="/form" component={Form} /> */}
         </Switch>
         <Header />
         {/* {this.showTeamData()} */}
