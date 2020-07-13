@@ -17,40 +17,49 @@ class GameSim extends Component {
     console.log(this.state);
   };
 
-  // async componentDidMount() {
-  // let res = await axios.get(
-  //     "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
-  //   );
+  async astrologicalStats() {
+    // let res = await axios.get(
+    //     "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
+    //   );
+    console.log(this.state);
+    let team1 = this.state.teams[this.state.selectedTeam1];
+    const promises = team1.map(async (eachPlayer) => {
+      return await axios.post(
+        `https://aztro.sameerkumar.website/?sign=${eachPlayer.ZodiacSign}&day=today`
+      );
+    });
+    console.log(promises);
 
-  //  let res = this.state.teams[this.state.selectedTeam1].map(
-  //   async await axios.post(
-  //       `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
-  //     );
+    let newArray = await Promise.all(promises);
+    console.log(newArray);
+    // Promise.all(promises)
+    // .then((response) => console.log(response))
+    // .catch((error) => console.log(error));
+    // const promises = this.state.teams[this.state.selectedTeam1].map(
+    // async (player) => {
+    //   let r = await axios.post(
+    //     `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
+    //   );
+    //   console.log(r);
 
-  // const promises = this.state.teams[this.state.selectedTeam1].map(
-  //   async (player) => {
-  //     let r = await axios.post(
-  //       `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
-  //     );
-  //     console.log(r);
+    // let randomMood = {
+    //   rmood: randomMoods[Math.floor(Math.random() * randomMoods.length)],
+    // };
+    // return { ...r.data, ...player, ...randomMood };
+    //   }
+    // );
 
-  // let randomMood = {
-  //   rmood: randomMoods[Math.floor(Math.random() * randomMoods.length)],
-  // };
-  // return { ...r.data, ...player, ...randomMood };
-  //   }
-  // );
-
-  // Promise.all(promises).then((infoData) => {
-  //   console.log(infoData);
-  //   this.setState({
-  //     team: infoData,
-  //   });
-  // }
+    //   Promise.all(promises).then((infoData) => {
+    //     console.log(infoData);
+    //     this.setState({
+    //       team: infoData,
+    //     });
+    //   });
+  }
 
   displayTeam1 = () => {
     let startingTeam1 = this.state.teams[this.state.selectedTeam1];
-
+    console.log(this.state.teams[this.state.selectedTeam1]);
     let team1 = startingTeam1.map((player, i) => {
       console.log(startingTeam1[i].Name);
       return (
@@ -67,9 +76,9 @@ class GameSim extends Component {
 
   displayTeam2 = () => {
     let startingTeam2 = this.state.teams[this.state.selectedTeam2];
-
+    console.log(this.state.teams[this.state.selectedTeam2]);
     let team2 = startingTeam2.map((player, i) => {
-      // console.log(startingTeam2[i].Name);
+      console.log(startingTeam2[i].Name);
       return (
         <div>
           <li key={player.Name}>{startingTeam2[i].Name}</li>
@@ -84,12 +93,14 @@ class GameSim extends Component {
 
   submitForm = (event) => {
     event.preventDefault();
+    this.astrologicalStats();
     this.setState({
       display: true,
     });
   };
 
   render() {
+    console.log(this.state);
     console.log(this.props);
 
     return (
