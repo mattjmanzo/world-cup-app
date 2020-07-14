@@ -11,7 +11,7 @@ const Argentina = {
       JerseyColor: "Blue",
       SuperstarStatus: "False",
       PlayerPicture:
-        "https://resources.premierleague.com/premierleague/photos/players/250x250/p20310.png",
+        "https://s.hs-data.com/bilder/spieler/gross/17550.jpg",
     },
 
     {
@@ -22,7 +22,7 @@ const Argentina = {
       JerseyNumber: "3",
       JerseyColor: "Blue",
       SuperstarStatus: "False",
-      PlayerPicture: "https://i.ytimg.com/vi/H9REk2OSLPM/maxresdefault.jpg",
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/169182.jpg",
     },
     {
       Name: "Federico Fazio",
@@ -33,7 +33,7 @@ const Argentina = {
       JerseyColor: "Blue",
       SuperstarStatus: "False",
       PlayerPicture:
-        "https://worldcup.sportmatch.com/images/web/players/argentina/federico-fazio.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/73415.jpg",
     },
     {
       Name: "Nicolas Otamendi",
@@ -44,7 +44,7 @@ const Argentina = {
       JerseyColor: "Blue",
       SuperstarStatus: "False",
       PlayerPicture:
-        "https://m.media-amazon.com/images/M/MV5BMWQxZWI0N2ItZGMzMy00N2Y1LThlNTYtZDFjOGVlODg1ZDhlXkEyXkFqcGdeQXVyODEyMTAwMDI@._V1_UY317_CR27,0,214,317_AL_.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/114545.jpg",
     },
     {
       Name: "Gabriel Mercado",
@@ -65,7 +65,7 @@ const Argentina = {
       JerseyColor: "Blue",
       SuperstarStatus: "False",
       PlayerPicture:
-        "https://upload.wikimedia.org/wikipedia/commons/8/8c/NIG-ARG_%285%29.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/43864.jpg",
     },
     {
       Name: "Javier Mascherano",
@@ -76,7 +76,7 @@ const Argentina = {
       JerseyColor: "Blue",
       SuperstarStatus: "False",
       PlayerPicture:
-        "https://i.pinimg.com/originals/41/ae/2e/41ae2ee0e1d18da2bb41457ff985a961.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/22185.jpg",
     },
     {
       Name: "Giovani Lo Celso",
@@ -87,7 +87,7 @@ const Argentina = {
       JerseyColor: "White",
       SuperstarStatus: "False",
       PlayerPicture:
-        "https://cdn.vox-cdn.com/thumbor/QVclgsN3Y4tmLZ1GdCaZVpPZDe4=/0x0:3185x4713/1200x800/filters:focal(1234x914:1742x1422)/cdn.vox-cdn.com/uploads/chorus_image/image/66203664/1160323486.jpg.0.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/317683.jpg",
     },
     {
       Name: "Paulo Dybala",
@@ -98,7 +98,7 @@ const Argentina = {
       JerseyColor: "Blue",
       SuperstarStatus: "False",
       PlayerPicture:
-        "https://sportshub.cbsistatic.com/i/r/2020/04/29/fd8c07c3-7352-4094-806c-521bed164122/thumbnail/1200x675/3fcede754cb41c7a968b3e448c924fa9/paulo-dybala-juventus.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/205118.jpg",
     },
     {
       Name: "Lionel Messi",
@@ -109,7 +109,7 @@ const Argentina = {
       JerseyColor: "Blue",
       SuperstarStatus: "True",
       PlayerPicture:
-        "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ec595d45f39760007b05c07%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D989%26cropX2%3D2480%26cropY1%3D74%26cropY2%3D1564",
+        "https://s.hs-data.com/bilder/spieler/gross/26622.jpg",
     },
     {
       Name: "Sergio Aguero",
@@ -120,7 +120,7 @@ const Argentina = {
       JerseyColor: "Blue",
       SuperstarStatus: "False",
       PlayerPicture:
-        "https://www.mancity.com/meta/media/ekcdk54z/2019-sergio-aguero_1947.png",
+        "https://s.hs-data.com/bilder/spieler/gross/43370.jpg",
     },
   ],
   Formation: "4-4-2",
@@ -257,7 +257,7 @@ const Spain = {
       JerseyColor: "Red",
       SuperstarStatus: "False",
       PlayerPicture:
-        "https://upload.wikimedia.org/wikipedia/commons/6/68/David_de_Gea_2017.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/148647.jpg",
     },
     {
       Name: "Jordi Alba",
@@ -268,7 +268,7 @@ const Spain = {
       JerseyColor: "Red",
       SuperstarStatus: "True",
       PlayerPicture:
-        "https://en.as.com/futbol/imagenes/2020/01/23/copa_del_rey/1579771260_194272_1579771436_noticia_normal.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/125417.jpg",
     },
     {
       Name: "Sergio Ramos",
@@ -279,7 +279,7 @@ const Spain = {
       JerseyColor: "Red",
       SuperstarStatus: "False",
       PlayerPicture:
-        "https://en.as.com/tikitakas/imagenes/2019/02/23/portada/1550919555_521513_1550919850_noticia_normal.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/19198.jpg",
     },
     {
       Name: "Gerard Pique",
@@ -290,7 +290,7 @@ const Spain = {
       JerseyColor: "Red",
       SuperstarStatus: "True",
       PlayerPicture:
-        "https://icdn.football-espana.net/wp-content/uploads/2020/06/Pique-Sevilla.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/27798.jpg",
     },
     {
       Name: "Dani Carvajal",
@@ -300,7 +300,7 @@ const Spain = {
       JerseyNumber: "2",
       JerseyColor: "Red",
       SuperstarStatus: "False",
-      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/191377.jpg",
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/191377.jpg"
     },
     {
       Name: "Andres Iniesta",
@@ -311,7 +311,7 @@ const Spain = {
       JerseyColor: "Red",
       SuperstarStatus: "True",
       PlayerPicture:
-        "https://upload.wikimedia.org/wikipedia/commons/6/67/Andrés_Iniesta.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/5057.jpg",
     },
     {
       Name: "Isco",
@@ -322,7 +322,7 @@ const Spain = {
       JerseyColor: "Red",
       SuperstarStatus: "False",
       PlayerPicture:
-        "https://en.as.com/futbol/imagenes/2019/03/14/primera/1552554947_117211_1552555120_noticia_normal.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/177605.jpg",
     },
     {
       Name: "Sergio Busquets",
@@ -333,17 +333,18 @@ const Spain = {
       JerseyColor: "Red",
       SuperstarStatus: "False",
       PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/124973.jpg",
+      
     },
     {
-      Name: "Thiago Silva",
+      Name: "Thiago",
       Position: "Midfielder",
-      DOB: "09/22/1984",
-      ZodiacSign: "Virgo",
-      JerseyNumber: "2",
+      DOB: "04/11/1991",
+      ZodiacSign: "Aries",
+      JerseyNumber: "10",
       JerseyColor: "Red",
       SuperstarStatus: "True",
       PlayerPicture:
-        "https://en.as.com/en/imagenes/2020/05/10/football/1589115185_787877_noticia_normal.jpg",
+        "https://s.hs-data.com/bilder/spieler/gross/142540.jpg",
     },
     {
       Name: "Koke",
@@ -353,7 +354,7 @@ const Spain = {
       JerseyNumber: "6",
       JerseyColor: "Red",
       SuperstarStatus: "False",
-      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/154352.jpg",
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/154352.jpg"
     },
     {
       Name: "Diego Costa",
@@ -369,6 +370,121 @@ const Spain = {
   Formation: "4-5-1",
 };
 
-const teams = { Argentina, Brazil, Spain }; //Peru,
 
-export default teams;
+const Peru = {
+  StartingXI: [
+    {
+      Name: "Pedro Gallese",
+      Position: "Goalkeeper",
+      DOB: "23/02/1990",
+      ZodiacSign: "Pisces",
+      JerseyNumber: 1,
+      JerseyColor: "Black",
+      SuperstarStatus: False,
+      PlayerPicture: "https://upload.wikimedia.org/wikipedia/commons/6/63/Palestino_-_Alianza_Lima_20190204_01.jpg",
+  },
+  {
+      Name: "Luis Advincula",
+      Position: "Defender",
+      DOB: "02/03/1990",
+      ZodiacSign: "Pisces",
+      JerseyNumber: 17,
+      JerseyColor: "Red",
+      SuperstarStatus: False,
+      PlayerPicture: "https://www.mykhel.com/thumb/250x90x250/football/players/1/98901.jpg",
+  },
+  {
+      Name: "Anderson Santamaria",
+      Position: "Defender",
+      DOB: "01/10/1992",
+      ZodiacSign: "Capricorn",
+      JerseyNumber: 4,
+      JerseyColor: "Red",
+      SuperstarStatus: False,
+      PlayerPicture: "https://www.playmakerstats.com/img/jogadores/70/619970_med__20191022170331_anderson_santamaria.png",
+  },
+  {
+      Name: "Christian Ramos",
+      Position: "Defender",
+      DOB: "11/04/1988",
+      ZodiacSign: "Scorpio",
+      JerseyNumber: 15,
+      JerseyColor: "Red",
+      SuperstarStatus: False,
+      PlayerPicture: "https://worldcup.sportmatch.com/images/web/players/peru/christian-ramos.jpg",
+  },
+  {
+      Name: "Miguel Trauco",
+      Position: "Defender",
+      DOB: "08/25/1992",
+      ZodiacSign: "Virgo",
+      JerseyNumber: 6,
+      JerseyColor: "Red",
+      SuperstarStatus: False,
+      PlayerPicture: "https://s.hs-data.com/bilder/spieler/gross/180812.jpg",
+  },
+  {
+      Name: "Pedro Aquino",
+      Position: "Midfielder",
+      DOB: "04/13/1995",
+      ZodiacSign: "Aries",
+      JerseyNumber: 23,
+      JerseyColor: "Red",
+      SuperstarStatus: False,
+      PlayerPicture: "https://worldcup.sportmatch.com/images/web/players/peru/pedro-aquino.jpg",
+  },
+  {
+      Name: "Yoshimar Yotun",
+      Position: "Midfielder",
+      DOB: "04/07/1990",
+      ZodiacSign: "Aries",
+      JerseyNumber: 19,
+      JerseyColor: "Red",
+      SuperstarStatus: False,
+      PlayerPicture: "https://b.fssta.com/uploads/application/soccer/headshots/15190.vresize.350.425.medium.88.png",
+  },
+  {
+      Name: "Andre Carrillo",
+      Position: "Midfielder",
+      DOB: "06/14/1991",
+      ZodiacSign: "Gemini",
+      JerseyNumber: 18,
+      JerseyColor: "Red",
+      SuperstarStatus: False,
+      PlayerPicture: "https://resources.premierleague.com/premierleague/photos/players/250x250/p100412.png",
+  },
+  {
+      Name: "Christian Cueva",
+      Position: "Midfielder",
+      DOB: "11/23/1991",
+      ZodiacSign: "Sagittarius",
+      JerseyNumber: 8,
+      JerseyColor: "Red",
+      SuperstarStatus: False,
+      PlayerPicture: "https://www4.pictures.zimbio.com/gi/Christian+Cueva+Peru+vs+Scotland+International+9mDerddCnR2l.jpg",
+  },
+  {
+      Name: "Edison Flores",
+      Position: "Midfielder",
+      DOB: "05/14/1994",
+      ZodiacSign: "Taurus",
+      JerseyNumber: 20,
+      JerseyColor: "Red",
+      SuperstarStatus: False,
+      PlayerPicture: "https://i.pinimg.com/474x/ed/0d/0e/ed0d0ece09a5857c349f2712902d97a6.jpg",
+  },
+  {
+      Name: "Paolo Guerrero",
+      Position: "Forward",
+      DOB: "01/01/1984",
+      ZodiacSign: "Capricorn",
+      JerseyNumber: 20,
+      JerseyColor: "Red",
+      SuperstarStatus: True,
+      PlayerPicture: "https://www.gannett-cdn.com/-mm-/09efb665528c6930edb54d1fcd94d3cb862ee6ab/c=0-489-4926-3272/local/-/media/2018/05/31/USATODAY/USATODAY/636634043607672563-AFP-AFP-15I2GR-100265318.JPG", 
+  }
+  ]
+
+const teams = { Argentina, Brazil, Spain, Peru }; //
+
+export default
