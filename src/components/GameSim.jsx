@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import axios from "axios";
 import teams from "../teams.js";
+import stadiums from "../stadiums.js";
 
 class GameSim extends Component {
   state = {
     teams: teams,
+    stadiums: stadiums,
     display: false,
+    selectedStadium: "",
+    date: "",
+    hour: "",
+    weatherPanelDisplay: false,
+    weather: "",
   };
 
   onChangeHandler = (e) => {
@@ -16,44 +23,91 @@ class GameSim extends Component {
     console.log(this.state);
   };
 
-  async astrologicalStats() {
-    let res = await axios.get(
-      "https://cors-anywhere.herokuapp.com/https://horoscope-api.herokuapp.com/horoscope/year/libra"
-    );
+  onStadiumChangeHandler = (e) => {
+    console.log(e.target.name, e.target.value);
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
     console.log(this.state);
+  };
+
+  onTimeChangeHandler = (e) => {
+    console.log(e.target.name, e.target.value);
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+    console.log(this.state);
+  };
+
+  onDateChangeHandler = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+    console.log(this.state);
+  };
+
+  async astrologicalStats() {
+    //Weather API
+    let weather = await axios.get(
+      `http://api.weatherapi.com/v1/current.json?key=ded140817fa64dcb9dd161358201407&q=${this.state.selectedStadium}`
+    );
+    this.setState({
+      weather: weather,
+    });
+    console.log(weather);
+
+    //Running 3 API per team
+
+    //First Team
     let team1 = this.state.teams[this.state.selectedTeam1];
-    const promises = team1.map(async (eachPlayer) => {
+
+    const team1FirstAPI = team1.map(async (eachPlayer) => {
       return await axios.post(
         `https://aztro.sameerkumar.website/?sign=${eachPlayer.ZodiacSign}&day=today`
       );
     });
-    console.log(promises);
+    console.log(team1FirstAPI);
+    let team1FirstAPIPromises = await Promise.all(team1FirstAPI);
+    console.log(team1FirstAPIPromises);
 
-    let newArray = await Promise.all(promises);
-    console.log(newArray);
-    // Promise.all(promises)
-    // .then((response) => console.log(response))
-    // .catch((error) => console.log(error));
-    // const promises = this.state.teams[this.state.selectedTeam1].map(
-    // async (player) => {
-    //   let r = await axios.post(
-    //     `https://aztro.sameerkumar.website/?sign=${player.ZodiacSign}&day=today`
-    //   );
-    //   console.log(r);
+    const team1SecondAPI = team1.map(async (eachPlayer) => {
+      return await axios.get(
+        `https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com//horoscope/today/${eachPlayer.ZodiacSign}`
+      );
+    });
+    console.log(team1SecondAPI);
+    let team1SecondAPIPromises = await Promise.all(team1SecondAPI);
+    console.log(team1SecondAPIPromises);
 
-    // let randomMood = {
-    //   rmood: randomMoods[Math.floor(Math.random() * randomMoods.length)],
-    // };
-    // return { ...r.data, ...player, ...randomMood };
-    //   }
-    // );
+    const team1ThirdAPI = team1.map(async (eachPlayer) => {
+      return await axios.get(
+        `https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/week/${eachPlayer.ZodiacSign}`
+      );
+    });
+    console.log(team1ThirdAPI);
+    let team1ThirdAPIPromises = await Promise.all(team1ThirdAPI);
+    console.log(team1ThirdAPIPromises);
 
-    //   Promise.all(promises).then((infoData) => {
-    //     console.log(infoData);
-    //     this.setState({
-    //       team: infoData,
-    //     });
-    //   });
+    //Second Team
+    let team2 = this.state.teams[this.state.selectedTeam2];
+    const team2FirstAPI = team2.map(async (eachPlayer) => {
+      return await axios.post(
+        `https://aztro.sameerkumar.website/?sign=${eachPlayer.ZodiacSign}&day=today`
+      );
+    });
+    console.log(team2FirstAPI);
+
+    let newArray2 = await Promise.all(team2FirstAPI);
+    console.log(newArray2);
+
+    const team2SecondAPI = team1.map(async (eachPlayer) => {
+      return await axios.get(
+        `https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com//horoscope/today/${eachPlayer.ZodiacSign}`
+      );
+    });
+    console.log(team2SecondAPI);
+    let team2SecondAPIPromises = await Promise.all(team2SecondAPI);
+    console.log(team2SecondAPIPromises);
   }
 
   displayTeam1 = () => {
@@ -62,10 +116,10 @@ class GameSim extends Component {
     let team1 = startingTeam1.map((player, i) => {
       console.log(startingTeam1[i].Name);
       return (
-        <div>
-          <li key={player.Name}>{startingTeam1[i].Name}</li>
-          <li key={player.Name}>{startingTeam1[i].Position}</li>
-          <li key={player.Name}>{startingTeam1[i].ZodiacSign}</li>
+        <div key={player.Name}>
+          <li>{startingTeam1[i].Name}</li>
+          <li>{startingTeam1[i].Position}</li>
+          <li>{startingTeam1[i].ZodiacSign}</li>
           <img src={startingTeam1[i].PlayerPicture} />
         </div>
       );
@@ -76,13 +130,13 @@ class GameSim extends Component {
   displayTeam2 = () => {
     let startingTeam2 = this.state.teams[this.state.selectedTeam2];
     console.log(this.state.teams[this.state.selectedTeam2]);
-    let team2 = startingTeam2.map((player, i) => {
+    let team2 = startingTeam2?.map((player, i) => {
       console.log(startingTeam2[i].Name);
       return (
-        <div>
-          <li key={player.Name}>{startingTeam2[i].Name}</li>
-          <li key={player.Name}>{startingTeam2[i].Position}</li>
-          <li key={player.Name}>{startingTeam2[i].ZodiacSign}</li>
+        <div key={player.Name}>
+          <li>{startingTeam2[i].Name}</li>
+          <li>{startingTeam2[i].Position}</li>
+          <li>{startingTeam2[i].ZodiacSign}</li>
           <img src={startingTeam2[i].PlayerPicture} />
         </div>
       );
@@ -90,12 +144,32 @@ class GameSim extends Component {
     return team2;
   };
 
+  stadiumWeatherPanel = () => {
+    console.log(this.state.stadiums);
+    return (
+      <div className="">
+        <h2>Stadium:{this.state.selectedStadium}</h2>
+        <h4>Temperature:{this.state.weather?.data?.current.temp_f}</h4>
+        <p>
+          Description:
+          {
+            this.state.stadiums.find(
+              (s) => s.name === this.state.selectedStadium
+            )?.description
+          }
+        </p>
+      </div>
+    );
+  };
+
   submitForm = (event) => {
     event.preventDefault();
     this.astrologicalStats();
+    this.stadiumWeatherPanel();
     this.setState({
       display: true,
     });
+    console.log(this.state);
   };
 
   render() {
@@ -109,8 +183,10 @@ class GameSim extends Component {
             Please choose your teams for single match, date and hour and let the
             astrological gods decide a winner
           </h4>
+
           <br />
-          <label for="team1">Team 1</label>
+
+          {/* <label for="team1">Team 1</label> */}
           <select
             name="selectedTeam1"
             id="team1"
@@ -127,8 +203,10 @@ class GameSim extends Component {
                 </option>
               ))}
           </select>
+
           <br />
-          <label for="hour">Team 2</label>
+
+          {/* <label for="hour">Team 2</label> */}
           <select name="selectedTeam2" id="" onChange={this.onChangeHandler}>
             <option value="" disabled selected>
               Choose team
@@ -141,17 +219,47 @@ class GameSim extends Component {
                 </option>
               ))}
           </select>
+
           <br />
-          <label for="date">Date</label>
+
+          {/* <label for="stadium">Stadium</label> */}
+          <select
+            name="selectedStadium"
+            id=""
+            onChange={this.onStadiumChangeHandler}
+          >
+            <option value="" disabled selected>
+              Select Stadium
+            </option>
+            <option value="Moscow">Moscow</option>
+            <option value="St Peterburg">St Peterburg</option>
+            <option value="Kazan">Kazan</option>
+            <option value="Sochi">Sochi</option>
+            <option value="Nizhny Novgorod">Nizhny Novgorod</option>
+            <option value="Kaliningrad">Kaliningrad</option>
+            <option value="Volgograd">Volgograd</option>
+            <option value="Rostov-on-don">Rostov-on-don</option>
+            <option value="Ekaterinburg">Ekaterinburg</option>
+            <option value="Samara">Samara</option>
+            <option value="Saranks">Saranks</option>
+          </select>
+
+          <br />
+
+          {/* <label for="date">Date</label> */}
           <input
+            onChange={this.onDateChangeHandler}
             type="text"
             id="fordate"
             name="date"
-            placeholder="mm/dd/yyyy"
+            placeholder="Insert date: mm/dd/yyyy"
+            value={this.state.date}
           />
+
           <br />
-          <label for="hour">Hour</label>
-          <select name="hour" id="">
+
+          {/* <label for="hour">Hour</label> */}
+          <select name="hour" id="" onChange={this.onTimeChangeHandler}>
             <option value="" disabled selected>
               Select hour
             </option>
@@ -180,13 +288,14 @@ class GameSim extends Component {
             <option value="11pm">11pm</option>
             <option value="12am">12am</option>
           </select>
+
           <br />
+
           <input type="submit" value="Confirm" />
         </form>
-        <h4>Team 1</h4>
         {this.state.display ? this.displayTeam1() : ""}
-        <h4>Team 2</h4>
         {this.state.display ? this.displayTeam2() : ""}
+        {this.state.display ? this.stadiumWeatherPanel() : ""}
       </div>
     );
   }

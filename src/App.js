@@ -83,7 +83,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path="/game-sim" component={GameSim} />
-          <Route exact path="/" component={LandingPage} />
+          {/* <Route exact path="/" component={LandingPage} /> */}
           {/* <Route exact path="/form" component={Form} /> */}
         </Switch>
         <Header />
