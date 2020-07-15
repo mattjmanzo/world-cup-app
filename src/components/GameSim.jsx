@@ -3,6 +3,10 @@ import axios from "axios";
 import teams from "../teams.js";
 import stadiums from "../stadiums.js";
 import colors from "../colors.js";
+import horoscopeData from "../horoscopeData.json";
+import Sentiment from "sentiment";
+
+const sentiment = new Sentiment();
 
 const zodiacSigns = [
   "Aries",
@@ -31,8 +35,11 @@ class GameSim extends Component {
     hour: "",
     weatherPanelDisplay: false,
     weather: "",
+    horoscopes: horoscopeData,
     team1FirstAPI: [],
     team2FirstAPI: [],
+    team1WordCloud: {},
+    team2WordCloud: {},
     score: [0, 0],
   };
 
@@ -50,8 +57,15 @@ class GameSim extends Component {
             let week = await axios.get(
               `https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/week/${sign}`
             );
+            let specialAPI = await axios.post(
+              `https://aztro.sameerkumar.website/?sign=${sign}&day=today`
+            );
             console.log("got horoscope for", sign);
-            horoscopes[sign] = { today: today.data, week: week.data };
+            horoscopes[sign] = {
+              today: today.data,
+              week: week.data,
+              specialAPI: specialAPI.data,
+            };
             resolve();
           }, i * 1000);
         })
@@ -59,6 +73,8 @@ class GameSim extends Component {
     });
 
     Promise.all(promises).then((res) => {
+      console.log(String(horoscopes));
+      console.log(JSON.stringify(horoscopes));
       this.setState(
         {
           horoscopes,
@@ -111,133 +127,203 @@ class GameSim extends Component {
     this.setState({
       weather: weather,
     });
-    // console.log(weather);
-
-    //Running 3 API per team
-
-    //First Team
-
-    let team1 = this.state.teams[this.state.selectedTeam1];
-
-    //First API "aztro"//Getting color, compatibility, lucky_number, lucky_time, mood //
-    //It's an array of 11 players // We access to each one by adding [indexNumber].data.<variable>
-    const team1FirstAPI = team1.map(async (eachPlayer) => {
-      return await axios.post(
-        `https://aztro.sameerkumar.website/?sign=${eachPlayer.ZodiacSign}&day=today`
-      );
-    });
-
-    // console.log(team1FirstAPI);
-    let team1FirstAPIPromises = await Promise.all(team1FirstAPI);
-    console.log(team1FirstAPIPromises);
-
-    this.setState(
-      {
-        team1FirstAPI: team1FirstAPIPromises,
-      },
-      () => {
-        this.scoreByColor();
-      }
-    );
-
-    //Second API
-    const team1SecondAPI = team1.map(async (eachPlayer, i) => {
-      console.log(
-        eachPlayer.Name,
-        " is a ",
-        eachPlayer.ZodiacSign,
-        "and his horoscopr is ",
-        this.state.horoscopes[eachPlayer.ZodiacSign]
-      );
-    });
-    // console.log(team1SecondAPI);
-    let team1SecondAPIPromises = await Promise.all(team1SecondAPI);
-    // console.log(team1SecondAPIPromises);
-
-    //Third API
-    const team1ThirdAPI = team1.map(async (eachPlayer) => {
-      console.log(
-        eachPlayer.Name,
-        " is a ",
-        eachPlayer.ZodiacSign,
-        "and his horoscopr is ",
-        this.state.horoscopes[eachPlayer.ZodiacSign]
-      );
-      //return await axios.get(
-      //`https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/week/${eachPlayer.ZodiacSign}`
-      //);
-    });
-    // console.log(team1ThirdAPI);
-    let team1ThirdAPIPromises = await Promise.all(team1ThirdAPI);
-    // console.log(team1ThirdAPIPromises);
-
-    //Second Team
-
-    let team2 = this.state.teams[this.state.selectedTeam2];
-
-    //First API "aztro"//Getting color, compatibility, lucky_number, lucky_time, mood //
-    //It's an array of 11 players // We access to each one by adding [indexNumber].data.<variable>
-    const team2FirstAPI = team2.map(async (eachPlayer) => {
-      return await axios.post(
-        `https://aztro.sameerkumar.website/?sign=${eachPlayer.ZodiacSign}&day=today`
-      );
-    });
-
-    // console.log(team2FirstAPI);
-
-    let newArray2 = await Promise.all(team2FirstAPI);
-    // console.log(newArray2);
-
-    //Second API
-    const team2SecondAPI = team1.map(async (eachPlayer) => {
-      console.log(
-        eachPlayer.Name,
-        " is a ",
-        eachPlayer.ZodiacSign,
-        "and his horoscopr is ",
-        this.state.horoscopes[eachPlayer.ZodiacSign]
-      );
-      //return await axios.get(
-      //`https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com//horoscope/today/${eachPlayer.ZodiacSign}`
-      //);
-    });
-    // console.log(team2SecondAPI);
-    let team2SecondAPIPromises = await Promise.all(team2SecondAPI);
-    // console.log(team2SecondAPIPromises);
-
-    //Third API
-    const team2ThirdAPI = team2.map(async (eachPlayer) => {
-      console.log(
-        eachPlayer.Name,
-        " is a ",
-        eachPlayer.ZodiacSign,
-        "and his horoscopr is ",
-        this.state.horoscopes[eachPlayer.ZodiacSign]
-      );
-      //return await axios.get(
-      //`https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/week/${eachPlayer.ZodiacSign}`
-      //);
-    });
-    // console.log(team2ThirdAPI);
-    let team2ThirdAPIPromises = await Promise.all(team2ThirdAPI);
-    // console.log(team2ThirdAPIPromises);
   }
+  // console.log(weather);
+
+  //Running 3 API per team
+
+  //First Team
+
+  // let team1 = this.state.teams[this.state.selectedTeam1];
+
+  //First API "aztro"//Getting color, compatibility, lucky_number, lucky_time, mood //
+  //It's an array of 11 players // We access to each one by adding [indexNumber].data.<variable>
+  // const team1FirstAPI = team1.map(async (eachPlayer) => {
+  //   return await axios.post(
+  //     `https://aztro.sameerkumar.website/?sign=${eachPlayer.ZodiacSign}&day=today`
+  //   );
+  // });
+
+  // // console.log(team1FirstAPI);
+  // let team1FirstAPIPromises = await Promise.all(team1FirstAPI);
+  // console.log(team1FirstAPIPromises);
+
+  // this.setState(
+  //   {
+  //     team1FirstAPI: team1FirstAPIPromises,
+  //   },
+  //   () => {
+  //     this.scoreByColor();
+  //   }
+  // );
+
+  // this.setState(
+  //   {
+  //     team1FirstAPI: team1FirstAPIPromises,
+  //   },
+  //   () => {
+  //     this.scoreByColor();
+  //   }
+  // );
+
+  //Second API
+  // const team1SecondAPI = team1.map(async (eachPlayer, i) => {
+  //   console.log(
+  //     eachPlayer.Name,
+  //     " is a ",
+  //     eachPlayer.ZodiacSign,
+  //     "and his horoscopr is ",
+  //     this.state.horoscopes[eachPlayer.ZodiacSign]
+  //   );
+  // });
+  // // console.log(team1SecondAPI);
+  // let team1SecondAPIPromises = await Promise.all(team1SecondAPI);
+  // // console.log(team1SecondAPIPromises);
+
+  //Third API
+  // const team1ThirdAPI = team1.map(async (eachPlayer) => {
+  //   console.log(
+  //     eachPlayer.Name,
+  //     " is a ",
+  //     eachPlayer.ZodiacSign,
+  //     "and his horoscopr is ",
+  //     this.state.horoscopes[eachPlayer.ZodiacSign]
+  //   );
+  //   //return await axios.get(
+  //   //`https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/week/${eachPlayer.ZodiacSign}`
+  //   //);
+  // });
+  // // console.log(team1ThirdAPI);
+  // let team1ThirdAPIPromises = await Promise.all(team1ThirdAPI);
+  // // console.log(team1ThirdAPIPromises);
+
+  //Second Team
+
+  // let team2 = this.state.teams[this.state.selectedTeam2];
+
+  //First API "aztro"//Getting color, compatibility, lucky_number, lucky_time, mood //
+  //It's an array of 11 players // We access to each one by adding [indexNumber].data.<variable>
+  // const team2FirstAPI = team2.map(async (eachPlayer) => {
+  //   return await axios.post(
+  //     `https://aztro.sameerkumar.website/?sign=${eachPlayer.ZodiacSign}&day=today`
+  //   );
+  // });
+
+  // console.log(team2FirstAPI);
+
+  // let newArray2 = await Promise.all(team2FirstAPI);
+  // console.log(newArray2);
+
+  //Second API
+  // const team2SecondAPI = team1.map(async (eachPlayer) => {
+  //   console.log(
+  //     eachPlayer.Name,
+  //     " is a ",
+  //     eachPlayer.ZodiacSign,
+  //     "and his horoscopr is ",
+  //     this.state.horoscopes[eachPlayer.ZodiacSign]
+  //   );
+  //   //return await axios.get(
+  //   //`https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com//horoscope/today/${eachPlayer.ZodiacSign}`
+  //   //);
+  // });
+  // // console.log(team2SecondAPI);
+  // let team2SecondAPIPromises = await Promise.all(team2SecondAPI);
+  // // console.log(team2SecondAPIPromises);
+
+  // //Third API
+  // const team2ThirdAPI = team2.map(async (eachPlayer) => {
+  //   console.log(
+  //     eachPlayer.Name,
+  //     " is a ",
+  //     eachPlayer.ZodiacSign,
+  //     "and his horoscopr is ",
+  //     this.state.horoscopes[eachPlayer.ZodiacSign]
+  //   );
+  //return await axios.get(
+  //`https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/week/${eachPlayer.ZodiacSign}`
+  //);
+  //   });
+  //   // console.log(team2ThirdAPI);
+  //   let team2ThirdAPIPromises = await Promise.all(team2ThirdAPI);
+  //   // console.log(team2ThirdAPIPromises);
+  // }
 
   //Display Teams in render
   displayTeam1 = () => {
     let startingTeam1 = this.state.teams[this.state.selectedTeam1];
     // console.log(this.state.teams[this.state.selectedTeam1]);
+    let wordCloud = {};
+    //team1WordCloud
+    let score = 0;
     let team1 = startingTeam1.map((player, i) => {
       // console.log(startingTeam1[i].Name);
+      let result = sentiment.analyze(
+        this.state.horoscopes[player.ZodiacSign].today.horoscope
+      );
+      let result2 = sentiment.analyze(
+        this.state.horoscopes[player.ZodiacSign].week.horoscope
+      );
+      console.log(result, result2);
+      let playerscore = result.score + result2.score;
+      let playerWords = [...result.words, ...result2.words];
+      playerWords.map((word) => {
+        wordCloud[word] ? wordCloud[word]++ : (wordCloud[word] = 1);
+      });
+      score += playerscore;
+      let hPlayer = this.state.horoscopes[player.ZodiacSign];
       return (
-        <div key={player.Name}>
-          <li>{startingTeam1[i].Name}</li>
+        <div style={{ backgroundColor: player.JerseyColor }} key={player.Name}>
+          <li style={{ color: hPlayer.specialAPI.color }}>
+            {startingTeam1[i].Name}
+          </li>
           <li>{startingTeam1[i].Position}</li>
           <li>{startingTeam1[i].ZodiacSign}</li>
+          <li>{playerscore}</li>
+          <li>
+            {player.JerseyColor} {hPlayer.specialAPI.color}
+          </li>
+          <p>{hPlayer.today.horoscope}</p>
+          <p>{hPlayer.week.horoscope}</p>
           <img src={startingTeam1[i].PlayerPicture} />
         </div>
       );
     });
+    console.log("team1 has score", score, team1);
+
+    let cloud = [];
+
+    for (let w in wordCloud) {
+      cloud.push(
+        React.createElement(
+          "li",
+          { className: "word", style: { fontSize: wordCloud[w] * 10 + "px" } },
+          w
+        )
+      );
+    }
+
+    // let cloud = React.createElement("ul", {}, [
+    //   React.createElement(
+    //     "li",
+    //     { className: "brown", style: { fontSize: "24px" } },
+    //     "Chocolate"
+    //   ),
+    //   React.createElement("li", { className: "white" }, "Vanilla"),
+    //   React.createElement("li", { className: "yellow" }, "Banana"),
+    // ]);
+    team1.unshift(cloud);
+    // this.setState({
+    //   team1WordCloud: wordCloud,
+    //   team1Score: score,
+    // });
+    //React.createElement(
+    // type,
+    // [props],
+    // [...children]
+    //)
+    //let wordCloudDiv = React.createElement("div", wordCloud, <div></div>)
+    console.log("wordCloud", wordCloud);
     return team1;
   };
 
@@ -286,10 +372,11 @@ class GameSim extends Component {
 
     //First API "aztro"//Getting color, compatibility, lucky_number, lucky_time, mood //
     //It's an array of 11 players // We access to each one by adding [indexNumber].data.<variable>
-    let team1ColorsFromAPI = colorTeam1FromApi.map((element) => {
-      console.log(element.data.color);
-    });
-    console.log(team1ColorsFromAPI);
+    //   let team1ColorsFromAPI = colorTeam1FromApi.map((element) => {
+    //     teamName = this.state.selectedTeam1;
+    //     if(element.data.color===teams.teamName;
+    //   });
+    //   console.log(team1ColorsFromAPI);
   };
 
   //Confirm button that sends all info to APIs and display players and stats
