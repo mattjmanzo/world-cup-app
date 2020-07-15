@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
 import soccer from "./csvjson";
-import Header from "./components/Header";
 import Sentiment from "sentiment";
 import { Switch, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
@@ -86,7 +85,6 @@ class App extends Component {
           <Route exact path="/" component={LandingPage} />
           {/* <Route exact path="/form" component={Form} /> */}
         </Switch>
-        <Header />
         {/* {this.showTeamData()} */}
       </div>
     );
