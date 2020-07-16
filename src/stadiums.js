@@ -1,8 +1,8 @@
 const stadiums = [
   {
     name: "Moscow",
-    description:
-      "The Russian capital, a city of more than 12 million people, is home to two World Cup venues.<br>Moscow’s Luzhniki stadium, which will host seven matches including the final and opening match, has undergone extensive reconstruction work since 2013 to expand capacity to 81,000 seats.<br>Spartak stadium, home to the Russian Premier League club of the same name, will host five matches, including one in the round of 16.",
+    description: `The Russian capital, a city of more than 12 million people, is home to two World Cup venues. Moscow’s Luzhniki stadium, which will host seven matches including the final and opening match, has undergone extensive reconstruction work since 2013 to expand capacity to 81,000 seats.
+    Spartak stadium, home to the Russian Premier League club of the same name, will host five matches, including one in the round of 16.`,
     image: "url",
   },
   {
