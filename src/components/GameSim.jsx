@@ -203,17 +203,20 @@ class GameSim extends Component {
   stadiumWeatherPanel = () => {
     // console.log(this.state.stadiums);
     return (
-      <div className="">
-        <h2>Stadium:{this.state.selectedStadium}</h2>
-        <h4>Temperature:{this.state.weather?.data?.current.temp_f}</h4>
-        <p>
-          Description:
-          {
-            this.state.stadiums.find(
-              (s) => s.name === this.state.selectedStadium
-            )?.description
-          }
-        </p>
+      <div style={{ display: "flex" }}>
+        <img src={this.state.selectedStadium.image} />
+        <div>
+          <h2>Stadium:{this.state.selectedStadium}</h2>
+          <h4>Temperature:{this.state.weather?.data?.current.temp_f}</h4>
+          <p>
+            Description:
+            {
+              this.state.stadiums.find(
+                (s) => s.name === this.state.selectedStadium
+              )?.description
+            }
+          </p>
+        </div>
       </div>
     );
   };
@@ -632,7 +635,15 @@ class GameSim extends Component {
           </div>
           <div className="banner--fadeBottom" />
         </header>
-        <div>{this.state.display ? this.stadiumWeatherPanel() : ""}</div>
+        <div
+          style={{
+            width: "100%",
+            backgroundColor: "rgb(100, 100, 100)",
+          }}
+        >
+          {/* {" "} */}
+          {this.state.display ? this.stadiumWeatherPanel() : ""}
+        </div>
         <div className="row">
           <h2>Team 1</h2>
           <div className="cards">{team1Imgs}</div>
