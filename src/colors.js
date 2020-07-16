@@ -8,6 +8,8 @@ const SALMON = { rgb: { r: 250, g: 128, b: 114 } };
 
 const DARKSALMON = { rgb: { r: 233, g: 150, b: 122 } };
 
+const SKYBLUE = { rgb: { r: 153, g: 170, b: 187 } };
+
 const LIGHTSALMON = { rgb: { r: 255, g: 160, b: 122 } };
 
 const CRIMSON = { rgb: { r: 220, g: 20, b: 60 } };
@@ -168,11 +170,13 @@ const STEELBLUE = { rgb: { r: 70, g: 130, b: 180 } };
 
 const LIGHTSTEELBLUE = { rgb: { r: 176, g: 196, b: 222 } };
 
+const SHADOWBLACK = { rgb: { r: 191, g: 175, b: 178 } };
+
 const POWDERBLUE = { rgb: { r: 176, g: 224, b: 230 } };
 
 const LIGHTBLUE = { rgb: { r: 173, g: 216, b: 230 } };
 
-const SKYBLUE = { rgb: { r: 135, g: 206, b: 235 } };
+// const SKYBLUE = { rgb: { r: 135, g: 206, b: 235 } };
 
 const LIGHTSKYBLUE = { rgb: { r: 135, g: 206, b: 250 } };
 
@@ -281,10 +285,18 @@ const SLATEGRAY = { rgb: { r: 112, g: 128, b: 144 } };
 const DARKSLATEGRAY = { rgb: { r: 47, g: 79, b: 79 } };
 
 const BLACK = { rgb: { r: 0, g: 0, b: 0 } };
+
 const COPPER = { rgb: { r: 72, g: 45, b: 20 } };
 
+const NAVYBLUE = { rgb: { r: 0, g: 0, b: 128 } };
+
 const colors = {
+  SHADOWBLACK,
+
+  NAVYBLUE,
+
   COPPER,
+
   INDIANRED,
 
   LIGHTCORAL,
