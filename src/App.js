@@ -81,7 +81,7 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/game-sim" component={GameSim} />
+          <Route exact path="/" component={GameSim} />
           {/* <Route exact path="/" component={LandingPage} /> */}
           {/* <Route exact path="/form" component={Form} /> */}
         </Switch>
