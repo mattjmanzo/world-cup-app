@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "./App.css";
-import soccer from "./csvjson";
-import Sentiment from "sentiment";
+// import soccer from "./csvjson";
+// import Header from "./components/Header";
+// import Sentiment from "sentiment";
 import { Switch, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
+// import LandingPage from "./components/LandingPage";
 import GameSim from "./components/GameSim";
 // import Form from "./components/Form";
 

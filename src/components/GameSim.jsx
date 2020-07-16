@@ -122,7 +122,7 @@ class GameSim extends Component {
         wordCloud[word] ? wordCloud[word]++ : (wordCloud[word] = 1);
       });
       score += playerscore;
-      let hPlayer = this.state.horoscopes[player.ZodiacSign];
+      // let hPlayer = this.state.horoscopes[player.ZodiacSign];
       return (
         <div className="card" key={player.Name}>
           <div className="card-inner">
@@ -179,7 +179,7 @@ class GameSim extends Component {
 
     let theCloud = React.createElement("ul", { className: "cloud" }, cloud);
 
-    team1.unshift(theCloud);
+    team1.push(theCloud);
 
     return team1;
   };
@@ -222,33 +222,42 @@ class GameSim extends Component {
     let startingTeam1 = this.state.teams[this.state.selectedTeam1];
     console.log(colors, startingTeam1);
     let goals = startingTeam1.reduce((currentGoals, player) => {
+      console.log(
+        colors[
+          this.state.horoscopes[
+            player.ZodiacSign
+          ].specialAPI.color.toUpperCase()
+        ],
+        this.state.horoscopes[player.ZodiacSign].specialAPI.color.toUpperCase()
+      );
       if (
         player.JerseyColor ===
         this.state.horoscopes[player.ZodiacSign].specialAPI.color
       ) {
         return (currentGoals += 2);
-      } else if (
-        colors[player.JerseyColor.toUpperCase()].rgb.r +
-          colors[player.JerseyColor.toUpperCase()].rgb.g +
-          colors[player.JerseyColor.toUpperCase()].rgb.b >
-        colors[
-          this.state.horoscopes[
-            player.ZodiacSign
-          ].specialAPI.color.toUpperCase()
-        ].rgb.r +
-          colors[
-            this.state.horoscopes[
-              player.ZodiacSign
-            ].specialAPI.color.toUpperCase()
-          ].rgb.g +
-          colors[
-            this.state.horoscopes[
-              player.ZodiacSign
-            ].specialAPI.color.toUpperCase()
-          ].rgb.b
-      ) {
-        return (currentGoals += 1);
       }
+      // else if (
+      //   colors[player.JerseyColor.toUpperCase()].rgb.r +
+      //     colors[player.JerseyColor.toUpperCase()].rgb.g +
+      //     colors[player.JerseyColor.toUpperCase()].rgb.b >
+      //   colors[
+      //     this.state.horoscopes[
+      //       player.ZodiacSign
+      //     ].specialAPI.color.toUpperCase()
+      //   ].rgb.r +
+      //     colors[
+      //       this.state.horoscopes[
+      //         player.ZodiacSign
+      //       ].specialAPI.color.toUpperCase()
+      //     ].rgb.g +
+      //     colors[
+      //       this.state.horoscopes[
+      //         player.ZodiacSign
+      //       ].specialAPI.color.toUpperCase()
+      //     ].rgb.b
+      // ) {
+      //   return (currentGoals += 1);
+      // }
       return currentGoals;
     }, 0);
     console.log("color goals: ", goals);
