@@ -214,12 +214,19 @@ class GameSim extends Component {
         }}
       >
         <img
-          src={this.state.selectedStadium.image}
+          src={
+            this.state.stadiums.find(
+              (s) => s.name === this.state.selectedStadium
+            )?.image
+          }
+          alt="Stadium Image"
           style={{
-            width: "500px",
-            height: "400px",
+            width: "700px",
+            height: "450px",
             padding: "50px",
             justifyContent: "flex-start",
+            // maxWidth: "100%",
+            // maxHeight: "100%",
           }}
         />
         <div
