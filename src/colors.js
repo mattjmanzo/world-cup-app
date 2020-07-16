@@ -281,8 +281,10 @@ const SLATEGRAY = { rgb: { r: 112, g: 128, b: 144 } };
 const DARKSLATEGRAY = { rgb: { r: 47, g: 79, b: 79 } };
 
 const BLACK = { rgb: { r: 0, g: 0, b: 0 } };
+const COPPER = { rgb: { r: 72, g: 45, b: 20 } };
 
-const colors = [
+const colors = {
+  COPPER,
   INDIANRED,
 
   LIGHTCORAL,
@@ -290,8 +292,6 @@ const colors = [
   SALMON,
 
   DARKSALMON,
-
-  LIGHTSALMON,
 
   CRIMSON,
 
@@ -382,8 +382,6 @@ const colors = [
   SLATEBLUE,
 
   DARKSLATEBLUE,
-
-  MEDIUMSLATEBLUE,
 
   GREENYELLOW,
 
@@ -568,6 +566,6 @@ const colors = [
   DARKSLATEGRAY,
 
   BLACK,
-];
+};
 
 export default colors;
