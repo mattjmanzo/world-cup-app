@@ -217,6 +217,7 @@ class GameSim extends Component {
           src={this.state.selectedStadium.image}
           style={{
             width: "500px",
+            height: "400px",
             padding: "50px",
             justifyContent: "flex-start",
           }}
@@ -610,16 +611,16 @@ class GameSim extends Component {
                     Select Stadium
                   </option>
                   <option value="Moscow">Moscow</option>
-                  <option value="St Peterburg">St Peterburg</option>
+                  <option value="St Petersburg">St Petersburg</option>
                   <option value="Kazan">Kazan</option>
                   <option value="Sochi">Sochi</option>
                   <option value="Nizhny Novgorod">Nizhny Novgorod</option>
                   <option value="Kaliningrad">Kaliningrad</option>
                   <option value="Volgograd">Volgograd</option>
-                  <option value="Rostov-on-don">Rostov-on-don</option>
+                  <option value="Rostov-on-Don">Rostov-on-Don</option>
                   <option value="Ekaterinburg">Ekaterinburg</option>
                   <option value="Samara">Samara</option>
-                  <option value="Saranks">Saranks</option>
+                  <option value="Saransk">Saransk</option>
                 </select>
 
                 {/* <label for="hour">Hour</label> */}
@@ -680,6 +681,9 @@ class GameSim extends Component {
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             {wordCloud} {this.state.display ? this.displayFinalScore() : ""}{" "}
             {wordCloud2}
+          </div>
+          <div style={{ backgroundColor: "rgb(100,100,100" }}>
+            <h1>Created by Kolade, Carlos and Matthew</h1>
           </div>
         </div>
       </div>
