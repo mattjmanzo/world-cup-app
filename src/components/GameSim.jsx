@@ -464,7 +464,9 @@ class GameSim extends Component {
       team1Score,
       team2Score,
     });
+  };
 
+  displayFinalScore = () => {
     return (
       <div className="">
         <h2>"The predicted score for this match is:"</h2>
@@ -638,9 +640,10 @@ class GameSim extends Component {
           </div>
         </div>
         <div>{this.state.display ? this.stadiumWeatherPanel() : ""}</div>
-        {/* <div>{this.state.display ? this.scoreGoal() : ""}</div> */}
+        <div>{this.state.display ? this.displayFinalScore() : ""}</div>
       </div>
     );
   }
 }
+
 export default GameSim;
