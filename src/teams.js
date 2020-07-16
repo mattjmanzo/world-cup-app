@@ -458,4 +458,4 @@ let Peru = [
 
 const teams = { Argentina, Brazil, Spain, Peru };
 
-export default teams
+export default teams;

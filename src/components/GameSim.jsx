@@ -3,10 +3,31 @@ import axios from "axios";
 import teams from "../teams.js";
 import image from '../img/world-cupbackground.jpg';
 import Header from './Header';
-import { Button } from '@material-ui/core';
 import stadiums from "../stadiums.js";
+import colors from "../colors.js";
+import horoscopeData from "../horoscopeData.json";
+import Sentiment from "sentiment";
+
+const sentiment = new Sentiment();
+
+const zodiacSigns = [
+  "Aries",
+  "Taurus",
+  "Gemini",
+  "Cancer",
+  "Leo",
+  "Virgo",
+  "Libra",
+  "Scorpio",
+  "Sagittarius",
+  "Capricorn",
+  "Aquarius",
+  "Pisces",
+];
 
 class GameSim extends Component {
+  //State
+
   state = {
     teams: teams,
     stadiums: stadiums,
@@ -16,16 +37,65 @@ class GameSim extends Component {
     hour: "",
     weatherPanelDisplay: false,
     weather: "",
+    horoscopes: horoscopeData,
     team1FirstAPI: [],
     team2FirstAPI: [],
+    team1WordCloud: {},
+    team2WordCloud: {},
     score: [0, 0],
   };
+
+  //Merging info from 3 APIs into an array of 12 zodiac signs and setting up the state value of horoscopes to horoscopeData
+
+  async componentDidMount() {
+    console.log("mount");
+    let horoscopes = {};
+    let promises = [];
+    zodiacSigns.map((sign, i) => {
+      promises.push(
+        new Promise((resolve, reject) => {
+          return setTimeout(async () => {
+            let today = await axios.get(
+              `https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/today/${sign}`
+            );
+            let week = await axios.get(
+              `https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/week/${sign}`
+            );
+            let specialAPI = await axios.post(
+              `https://aztro.sameerkumar.website/?sign=${sign}&day=today`
+            );
+            console.log("got horoscope for", sign);
+            horoscopes[sign] = {
+              today: today.data,
+              week: week.data,
+              specialAPI: specialAPI.data,
+            };
+            resolve();
+          }, i * 1000);
+        })
+      );
+    });
+
+    Promise.all(promises).then((res) => {
+      console.log(String(horoscopes));
+      console.log(JSON.stringify(horoscopes));
+      this.setState(
+        {
+          horoscopes,
+        },
+        () => console.log("all horoscopes", this.state.horoscopes)
+      );
+    });
+  }
+
+  //Event handlers
+
   onChangeHandler = (e) => {
     // console.log(e.target.name, e.target.value);
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   onStadiumChangeHandler = (e) => {
@@ -33,7 +103,7 @@ class GameSim extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   onTimeChangeHandler = (e) => {
@@ -41,7 +111,7 @@ class GameSim extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   onDateChangeHandler = (e) => {
@@ -51,84 +121,43 @@ class GameSim extends Component {
     // console.log(this.state);
   };
 
-  async astrologicalStats() {
+  //Weather information for stadium
+
+  async getWeather() {
     //Weather API
     let weather = await axios.get(
       `http://api.weatherapi.com/v1/current.json?key=ded140817fa64dcb9dd161358201407&q=${this.state.selectedStadium}`
     );
     this.setState({
-      weather: weather,
+      weather,
     });
-    // console.log(weather);
-
-    //Running 3 API per team
-
-    //First Team
-    let team1 = this.state.teams[this.state.selectedTeam1];
-
-    const team1FirstAPI = team1.map(async (eachPlayer) => {
-      return await axios.post(
-        `https://aztro.sameerkumar.website/?sign=${eachPlayer.ZodiacSign}&day=today`
-      );
-    });
-    
-    
-    let team1FirstAPIPromises = await Promise.all(team1FirstAPI);
-    // console.log(team1FirstAPIPromises);
-
-    this.setState({
-      team1FirstAPI: team1FirstAPIPromises,
-    });
-    console.log(this.state.team1FirstAPI[0].data);
-
-    const team1SecondAPI = team1.map(async (eachPlayer) => {
-      return await axios.get(
-        `https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com//horoscope/today/${eachPlayer.ZodiacSign}`
-      );
-    });
-    
-    let team1SecondAPIPromises = await Promise.all(team1SecondAPI);
-    // console.log(team1SecondAPIPromises);
-    this.setState({
-      team2FirstAPI: team1SecondAPIPromises,
-    });
-
-    console.log(this.state.team2FirstAPI.data);
-    
-    const team1ThirdAPI = team1.map(async (eachPlayer) => {
-      return await axios.get(
-        `https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/week/${eachPlayer.ZodiacSign}`
-      );
-    });
-    // console.log(team1ThirdAPI);
-    let team1ThirdAPIPromises = await Promise.all(team1ThirdAPI);
-    console.log(team1ThirdAPIPromises);
-
-    //Second Team
-    let team2 = this.state.teams[this.state.selectedTeam2];
-    const team2FirstAPI = team2.map(async (eachPlayer) => {
-      return await axios.post(
-        `https://aztro.sameerkumar.website/?sign=${eachPlayer.ZodiacSign}&day=today`
-      );
-    });
-
-    let newArray2 = await Promise.all(team2FirstAPI);
-    // console.log(newArray2);
-
-    const team2SecondAPI = team1.map(async (eachPlayer) => {
-      return await axios.get(
-        `https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com//horoscope/today/${eachPlayer.ZodiacSign}`
-      );
-    });
-    let team2SecondAPIPromises = await Promise.all(team2SecondAPI);
-    // console.log(team2SecondAPIPromises);
   }
+
+  //Display Teams in render
   displayTeam1 = () => {
     let startingTeam1 = this.state.teams[this.state.selectedTeam1];
+    // console.log(this.state.teams[this.state.selectedTeam1]);
+    let wordCloud = {};
+    //team1WordCloud
+    let score = 0;
     let team1 = startingTeam1.map((player, i) => {
       // console.log(startingTeam1[i].Name);
+      let result = sentiment.analyze(
+        this.state.horoscopes[player.ZodiacSign].today.horoscope
+      );
+      let result2 = sentiment.analyze(
+        this.state.horoscopes[player.ZodiacSign].week.horoscope
+      );
+      console.log(result, result2);
+      let playerscore = result.score + result2.score;
+      let playerWords = [...result.words, ...result2.words];
+      playerWords.map((word) => {
+        wordCloud[word] ? wordCloud[word]++ : (wordCloud[word] = 1);
+      });
+      score += playerscore;
+      let hPlayer = this.state.horoscopes[player.ZodiacSign];
       return (
-        <div className="card">
+        <div className="card" key={player.Name}>
           <div className="card-inner">
             <div className="card-front">
               <img className="row___picture" src={startingTeam1[i].PlayerPicture} alt={startingTeam1[i].Name}></img>
@@ -144,12 +173,58 @@ class GameSim extends Component {
         </div>
       );
     });
+    console.log("team1 has score", score, team1);
+
+    let cloud = [];
+
+    for (let w in wordCloud) {
+      cloud.push(
+        React.createElement(
+          "li",
+          {
+            className: "word",
+            style: {
+              color: "#" + (((1 << 24) * Math.random()) | 0).toString(16),
+              fontSize: wordCloud[w] * 10 + "px",
+              position: "absolute",
+              top: Math.random() * 500 + "px",
+              left: Math.random() * 500 + "px",
+              //transform: "rotate(" + 90 * Math.random() + "deg)",
+            },
+          },
+          w
+        )
+      );
+    }
+
+    let theCloud = React.createElement("ul", { className: "cloud" }, cloud);
+
+    team1.unshift(theCloud);
+
     return team1;
   };
   displayTeam2 = () => {
     let startingTeam2 = this.state.teams[this.state.selectedTeam2];
-    let team2 = startingTeam2?.map((player, i) => {
-      // console.log(startingTeam2[i].Name);
+    // console.log(this.state.teams[this.state.selectedTeam2]);
+    let wordCloud = {};
+    //team1WordCloud
+    let score = 0;
+    let team2 = startingTeam2.map((player, i) => {
+      // console.log(startingTeam1[i].Name);
+      let result = sentiment.analyze(
+        this.state.horoscopes[player.ZodiacSign].today.horoscope
+      );
+      let result2 = sentiment.analyze(
+        this.state.horoscopes[player.ZodiacSign].week.horoscope
+      );
+      console.log(result, result2);
+      let playerscore = result.score + result2.score;
+      let playerWords = [...result.words, ...result2.words];
+      playerWords.map((word) => {
+        wordCloud[word] ? wordCloud[word]++ : (wordCloud[word] = 1);
+      });
+      score += playerscore;
+      let hPlayer = this.state.horoscopes[player.ZodiacSign];
       return (
         <div className="card">
           <div className="card-inner">
@@ -167,20 +242,38 @@ class GameSim extends Component {
         </div>
       );
     });
+    console.log("team1 has score", score, team2);
+
+    let cloud = [];
+
+    for (let w in wordCloud) {
+      cloud.push(
+        React.createElement(
+          "li",
+          {
+            className: "word",
+            style: {
+              color: "#" + (((1 << 24) * Math.random()) | 0).toString(16),
+              fontSize: wordCloud[w] * 10 + "px",
+              position: "absolute",
+              top: Math.random() * 500 + "px",
+              left: Math.random() * 500 + "px",
+              //transform: "rotate(" + 90 * Math.random() + "deg)",
+            },
+          },
+          w
+        )
+      );
+    }
+
+    let theCloud = React.createElement("ul", { className: "cloud" }, cloud);
+
+    team2.unshift(theCloud);
+
     return team2;
   };
 
-  scoreByColor = () => {
-    let colorTeam1FromApi = this.state.team1FirstAPI;
-    let colorTeam2FromApi = this.state.team2FirstAPI;
-
-    colorTeam1FromApi.map( item => {
-      console.log(item.data.color);
-    })
-  };
-
-  
-  
+  //Weather Panel with Stadium name and brief description
 
   stadiumWeatherPanel = () => {
     // console.log(this.state.stadiums);
@@ -200,15 +293,150 @@ class GameSim extends Component {
     );
   };
 
+  //Functions to score goals
+
+  // scoreGoal = () => {
+    //Using color, compatibility, lucky_number, lucky_time, mood from specialAPI(in horoscopeData.json)//
+
+    // let team1Score = 0;
+
+    //Scoring by colors
+
+    // let startingTeam1 = this.state.teams[this.state.selectedTeam1];
+    // console.log(colors);
+    // let goalByColorTeam1 = startingTeam1.map((player) => {
+    //   if (
+    //     player.JerseyColor ===
+    //     this.state.horoscopes[player.ZodiacSign].specialAPI.color
+    //   ) {
+    //     return (team1Score += 2);
+    //   } else if (
+    //     colors[player.JerseyColor.toUpperCase()].rgb.r +
+    //       colors[player.JerseyColor.toUpperCase()].rgb.g +
+    //       colors[player.JerseyColor.toUpperCase()].rgb.b >
+    //     colors[
+    //       this.state.horoscopes[
+    //         player.ZodiacSign
+    //       ].specialAPI.color.toUpperCase()
+    //     ].rgb.r +
+    //       colors[
+    //         this.state.horoscopes[
+    //           player.ZodiacSign
+    //         ].specialAPI.color.toUpperCase()
+    //       ].rgb.g +
+    //       colors[
+    //         this.state.horoscopes[
+    //           player.ZodiacSign
+    //         ].specialAPI.color.toUpperCase()
+    //       ].rgb.b
+    //   ) {
+    //     return (team1Score += 1);
+    //   }
+    // });
+
+    // console.log(team1Score);
+
+    // Scoring by moods
+
+    // const moods = [
+    //   "Creative",
+    //   "Energetic",
+    //   "Cautious",
+    //   "Collaborative",
+    //   "Mellow",
+    //   "Hopeful",
+    //   "Focus",
+    //   "Relaxed",
+    //   "Sweet",
+    //   "Serious",
+    //   "Responsible",
+    // ];
+
+    // let charactersPerName = (playerName) => {
+    //   let count = 0;
+    //   for (i = 0; i < playerName.length; i++) {
+    //     if (playerName.charAt(i) != " ") {
+    //       count++;
+    //     }
+    //     return count;
+    //   }
+    // };
+
+    // let loopArrayNTimes = (n, array) => {
+    //   for (i = 0; i < n; i++) {
+    //     return array[n % array.length];
+    //   }
+    // };
+
+    // let goalByMood = startingTeam1.map((player) => {
+    //   let numberCharacters = charactersPerName(player.name);
+    //   let playerMood = loopArrayNTimes(numberCharacters, moods);
+    //   if (
+    //     playerMood === this.state.horoscopes[player.ZodiacSign].specialAPI.mood
+    //   ) {
+    //     return (team1Score += 1);
+    //   } else {
+    //     console.log("no goal");
+    //   }
+    // });
+
+    // Scoring by Lucky Number
+
+    // let goalByLuckyNumber = startingTeam1.map((player) => {
+    //   if (
+    //     player.JerseyNumber ===
+    //     this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_number
+    //   ) {
+    //     return (team1Score += 2);
+    //   } else if (
+    //     player.JerseyNumber >
+    //     this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_number
+    //   ) {
+    //     return (team1Score += 1);
+    //   }
+    // });
+
+    // goalByLuckyNumber();
+
+    ////Scoring by Compatibility
+
+    // let goalByCompatibility = startingTeam1.map((player) => {}
+
+    // Scoring by Lucky Time
+    // let goalByLuckyTime = startingTeam1.map((player) => {
+    //   if (
+    //     this.state.hour ===
+    //     this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_time
+    //   ) {
+    //     console.log((team1Score += 1));
+    //     return (team1Score += 1);
+    //   }
+    // });
+
+    // goalByLuckyTime();
+
+  //   let team2Score = 0;
+  // };
+
+  //Confirm button that sends all info to APIs and display players and stats
+
   submitForm = (event) => {
     event.preventDefault();
-    this.astrologicalStats();
+    this.getWeather();
     this.stadiumWeatherPanel();
     this.setState({
       display: true,
     });
+    console.log(this.state);
+    // this.scoreGoal();
   };
+
+  //Render
+
   render() {
+    console.log(this.state);
+    // console.log(this.props);
+
     return (
       <div>
       <header className="banner"
@@ -342,29 +570,3 @@ class GameSim extends Component {
   }
 }
 export default GameSim;
-// let team1 = this.state.teams[this.state.selectedTeam1];
-// let signs = this.state.teams[this.state.selectedTeam1]
-//   .concat(this.state.teams[this.state.selectedTeam2])
-//   .reduce(
-//     (a, v) => (a.includes(v.ZodiacSign) ? a : [...a, v.ZodiacSign]),
-//     []
-//   );
-// // console.log(signs);
-// const promises = signs.map(async (sign) => {
-//   return await axios.post(
-//     `https://aztro.sameerkumar.website/?sign=${sign}&day=today`
-//   );
-// });
-// // console.log(promises);
-// let newArray = await Promise.all(promises);
-// let changedPlayers = this.state.teams[this.state.selectedTeam1]
-//   .concat(this.state.teams[this.state.selectedTeam2])
-//   .map((player) => {
-//     return {
-//       ...player,
-//       ZodiacSign: newArray.find(
-//         (v) => v.data.compatibility.toLowerCase() === player.ZodiacSign
-//       ),
-//     };
-//   });
-// console.log(newArray, changedPlayers);
