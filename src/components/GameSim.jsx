@@ -179,9 +179,9 @@ class GameSim extends Component {
       );
     }
 
-    let theCloud = React.createElement("ul", { className: "cloud" }, cloud);
+    //let theCloud = React.createElement("ul", { className: "cloud" }, cloud);
 
-    team1.push(theCloud);
+    team1.unshift(<ul className="cloud">{cloud}</ul>);
 
     return team1;
   };
@@ -502,7 +502,16 @@ class GameSim extends Component {
   render() {
     // console.log(this.state);
     // console.log(this.props);
-
+    const team1AllData = this.state.display
+      ? this.displayTeam(this.state.selectedTeam1)
+      : "";
+    const team1Imgs = team1AllData.slice(1);
+    const wordCloud = team1AllData[0];
+    const team2AllData = this.state.display
+      ? this.displayTeam(this.state.selectedTeam2)
+      : "";
+    const team2Imgs = team2AllData.slice(1);
+    const wordCloud2 = team2AllData[0];
     return (
       <div>
         <header
@@ -623,24 +632,19 @@ class GameSim extends Component {
           </div>
           <div className="banner--fadeBottom" />
         </header>
+        <div>{this.state.display ? this.stadiumWeatherPanel() : ""}</div>
         <div className="row">
           <h2>Team 1</h2>
-          <div className="cards">
-            {this.state.display
-              ? this.displayTeam(this.state.selectedTeam1)
-              : ""}
-          </div>
+          <div className="cards">{team1Imgs}</div>
         </div>
         <div className="row">
           <h2>Team 2</h2>
-          <div className="cards">
-            {this.state.display
-              ? this.displayTeam(this.state.selectedTeam2)
-              : ""}
+          <div className="cards">{team2Imgs}</div>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            {wordCloud} {this.state.display ? this.displayFinalScore() : ""}{" "}
+            {wordCloud2}
           </div>
         </div>
-        <div>{this.state.display ? this.stadiumWeatherPanel() : ""}</div>
-        <div>{this.state.display ? this.displayFinalScore() : ""}</div>
       </div>
     );
   }
