@@ -81,8 +81,7 @@ class GameSim extends Component {
         {
           horoscopes,
         },
-        // () => console.log("all horoscopes", this.state.horoscopes)
-        () => this.scoreGoal()
+        () => console.log("all horoscopes", this.state.horoscopes)
       );
     });
   }
@@ -302,47 +301,59 @@ class GameSim extends Component {
 
     //Scoring by colors
 
-    // let startingTeam1 = this.state.teams[this.state.selectedTeam1];
-
+    let startingTeam1 = this.state.teams[this.state.selectedTeam1];
+    console.log(colors);
     // let goalByColorTeam1 = startingTeam1.map((player) => {
     //   if (
     //     player.JerseyColor ===
     //     this.state.horoscopes[player.ZodiacSign].specialAPI.color
     //   ) {
     //     return (team1Score += 2);
-    //   }
-    //   else if (
-    //             colors[player.JerseyColor.toUpperCase()].r +
-    //             colors[player.JerseyColor.toUpperCase()].g +
-    //             colors[player.JerseyColor.toUpperCase()].b >
-    //             colors[this.state.horoscopes[player.ZodiacSign].specialAPI.color].r +
-    //             colors[this.state.horoscopes[player.ZodiacSign].specialAPI.color].g +
-    //             colors[this.state.horoscopes[player.ZodiacSign].specialAPI.color].b
-    //             ) {
+    //   } else if (
+    //     colors[player.JerseyColor.toUpperCase()].rgb.r +
+    //       colors[player.JerseyColor.toUpperCase()].rgb.g +
+    //       colors[player.JerseyColor.toUpperCase()].rgb.b >
+    //     colors[
+    //       this.state.horoscopes[
+    //         player.ZodiacSign
+    //       ].specialAPI.color.toUpperCase()
+    //     ].rgb.r +
+    //       colors[
+    //         this.state.horoscopes[
+    //           player.ZodiacSign
+    //         ].specialAPI.color.toUpperCase()
+    //       ].rgb.g +
+    //       colors[
+    //         this.state.horoscopes[
+    //           player.ZodiacSign
+    //         ].specialAPI.color.toUpperCase()
+    //       ].rgb.b
+    //   ) {
     //     return (team1Score += 1);
-    //   };
+    //   }
+    // });
 
-    //   console.log(team1Score);
+    console.log(team1Score);
 
-    //Scoring by moods
+    // Scoring by moods
 
-    // let moods = [
-    //   "Creative",
-    //   "Energetic",
-    //   "Cautious",
-    //   "Collaborative",
-    //   "Mellow",
-    //   "Hopeful",
-    //   "Focus",
-    //   "Relaxed",
-    //   "Sweet",
-    //   "Serious",
-    //   "Responsible",
-    // ];
+    const moods = [
+      "Creative",
+      "Energetic",
+      "Cautious",
+      "Collaborative",
+      "Mellow",
+      "Hopeful",
+      "Focus",
+      "Relaxed",
+      "Sweet",
+      "Serious",
+      "Responsible",
+    ];
 
     // let charactersPerName = (playerName) => {
     //   let count = 0;
-    //   for (let i = 0; i < playerName.length; i++) {
+    //   for (i = 0; i < playerName.length; i++) {
     //     if (playerName.charAt(i) != " ") {
     //       count++;
     //     }
@@ -351,7 +362,7 @@ class GameSim extends Component {
     // };
 
     // let loopArrayNTimes = (n, array) => {
-    //   for (let i = 0; i < n; i++) {
+    //   for (i = 0; i < n; i++) {
     //     return array[n % array.length];
     //   }
     // };
@@ -368,39 +379,43 @@ class GameSim extends Component {
     //   }
     // });
 
-    //Scoring by Lucky Number
+    // Scoring by Lucky Number
 
     // let goalByLuckyNumber = startingTeam1.map((player) => {
-    //   if(player.JerseyNumber===this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_number){
-    //     return team1Score+=2
-    //   } else if (player.JerseyNumber>this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_number){
-    //     return team1Score+=1
-    //   };
+    //   if (
+    //     player.JerseyNumber ===
+    //     this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_number
+    //   ) {
+    //     return (team1Score += 2);
+    //   } else if (
+    //     player.JerseyNumber >
+    //     this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_number
+    //   ) {
+    //     return (team1Score += 1);
+    //   }
     // });
+
+    // goalByLuckyNumber();
 
     ////Scoring by Compatibility
 
     // let goalByCompatibility = startingTeam1.map((player) => {}
 
-    //Scoring by Lucky Time
+    // Scoring by Lucky Time
     // let goalByLuckyTime = startingTeam1.map((player) => {
-    //   (if this.state.hour===this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_time){
-    //     return team1Score+=1
-    //   }
-    // })
-
-    let team2Score = 0;
-    // let startingTeam2 = this.state.teams[this.state.selectedTeam2];
-    // let goalByColorTeam2 = startingTeam2.map((player) => {
     //   if (
-    //     player.JerseyColor ===
-    //     this.state.horoscopes[player.ZodiacSign].specialAPI.color
+    //     this.state.hour ===
+    //     this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_time
     //   ) {
-    //     return (team2Score += 2);
+    //     console.log((team1Score += 1));
+    //     return (team1Score += 1);
     //   }
     // });
-    console.log(team2Score);
-  };
+
+    // goalByLuckyTime();
+
+  //   let team2Score = 0;
+  // };
 
   //Confirm button that sends all info to APIs and display players and stats
 
