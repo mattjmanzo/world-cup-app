@@ -1,7 +1,7 @@
-// import React, { Component } from "react";
-// import { Link } from "react-router-dom";
-// import Country from "./Country";
-// import * as teams from "../teams";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import * as teams from "../teams";
+import Banner from './Banner';
 
 // class LandingPage extends Component {
 //   state = {

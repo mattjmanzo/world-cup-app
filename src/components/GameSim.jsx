@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import teams from "../teams.js";
+import image from "../img/world-cupbackground.jpg";
+import Header from "./Header";
 import stadiums from "../stadiums.js";
 import colors from "../colors.js";
 import horoscopeData from "../horoscopeData.json";
@@ -120,21 +122,34 @@ class GameSim extends Component {
         wordCloud[word] ? wordCloud[word]++ : (wordCloud[word] = 1);
       });
       score += playerscore;
-      let hPlayer = this.state.horoscopes[player.ZodiacSign];
+      // let hPlayer = this.state.horoscopes[player.ZodiacSign];
       return (
-        <div style={{ backgroundColor: player.JerseyColor }} key={player.Name}>
-          <li style={{ color: hPlayer.specialAPI.color }}>
-            {startingTeam1[i].Name}
-          </li>
-          <li>{startingTeam1[i].Position}</li>
-          <li>{startingTeam1[i].ZodiacSign}</li>
-          <li>{playerscore}</li>
-          {/* <li>
-            {player.JerseyColor} {hPlayer.specialAPI.color}
-          </li> */}
-          <p>{hPlayer.today.horoscope}</p>
-          <p>{hPlayer.week.horoscope}</p>
-          <img src={startingTeam1[i].PlayerPicture} alt="" />
+        <div className="card" key={player.Name}>
+          <div className="card-inner">
+            <div className="card-front">
+              <img
+                className="row___picture"
+                src={startingTeam1[i].PlayerPicture}
+                alt={startingTeam1[i].Name}
+              ></img>
+            </div>
+            <div className="card-back" key={player.Name}>
+              <ul>
+                <li>
+                  <strong>Name:</strong>
+                  {startingTeam1[i].Name}
+                </li>
+                <li>
+                  <strong>Position:</strong>
+                  {startingTeam1[i].Position}
+                </li>
+                <li>
+                  <strong>Zodiac Sign:</strong>
+                  {startingTeam1[i].ZodiacSign}
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       );
     });
@@ -357,123 +372,143 @@ class GameSim extends Component {
 
     return (
       <div>
-        <form action="/action_page.php" onSubmit={this.submitForm}>
-          <h4>
-            Please choose your teams for single match, date and hour and let the
-            astrological gods decide a winner
-          </h4>
+        <header
+          className="banner"
+          style={{
+            backgroundSize: "cover",
+            backgroundImage: `url(${image})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <Header></Header>
+          <div className="banner__content">
+            <form action="/action_page.php" onSubmit={this.submitForm}>
+              <fieldset>
+                <legend>
+                  <span className="number">1</span>Please choose your teams for
+                  the match
+                </legend>
+                <label for="team1">Team 1</label>
+                <select
+                  name="selectedTeam1"
+                  id="team1"
+                  onChange={this.onChangeHandler}
+                >
+                  <option value="" disabled selected>
+                    Choose team
+                  </option>
+                  {Object.keys(this.state.teams)
+                    .filter((team) => team !== this.state.selectedTeam2)
+                    .map((team) => (
+                      <option value={team} key={team}>
+                        {team}
+                      </option>
+                    ))}
+                </select>
 
-          <br />
+                {/* <label for="hour">Team 2</label> */}
+                <label for="team2">Team 2</label>
+                <select
+                  name="selectedTeam2"
+                  id="team2"
+                  onChange={this.onChangeHandler}
+                >
+                  <option value="" disabled selected>
+                    Choose team
+                  </option>
+                  {Object.keys(this.state.teams)
+                    .filter((team) => team !== this.state.selectedTeam1)
+                    .map((team) => (
+                      <option value={team} key={team}>
+                        {team}
+                      </option>
+                    ))}
+                </select>
+              </fieldset>
 
-          {/* <label for="team1">Team 1</label> */}
-          <select
-            name="selectedTeam1"
-            id="team1"
-            onChange={this.onChangeHandler}
-          >
-            <option value="" disabled selected>
-              Choose team
-            </option>
-            {Object.keys(this.state.teams)
-              .filter((team) => team !== this.state.selectedTeam2)
-              .map((team) => (
-                <option value={team} key={team}>
-                  {team}
-                </option>
-              ))}
-          </select>
+              {/* <label for="stadium">Stadium</label> */}
+              <fieldset>
+                <label for="stadium">Pick Stadium</label>
+                <select
+                  name="selectedStadium"
+                  id="stadium"
+                  onChange={this.onChangeHandler}
+                >
+                  <option value="" disabled selected>
+                    Select Stadium
+                  </option>
+                  <option value="Moscow">Moscow</option>
+                  <option value="St Peterburg">St Peterburg</option>
+                  <option value="Kazan">Kazan</option>
+                  <option value="Sochi">Sochi</option>
+                  <option value="Nizhny Novgorod">Nizhny Novgorod</option>
+                  <option value="Kaliningrad">Kaliningrad</option>
+                  <option value="Volgograd">Volgograd</option>
+                  <option value="Rostov-on-don">Rostov-on-don</option>
+                  <option value="Ekaterinburg">Ekaterinburg</option>
+                  <option value="Samara">Samara</option>
+                  <option value="Saranks">Saranks</option>
+                </select>
 
-          <br />
+                {/* <label for="hour">Hour</label> */}
+                <label for="stadium">Game Time?</label>
+                <select name="hour" id="" onChange={this.onChangeHandler}>
+                  <option value="" disabled selected>
+                    Select hour
+                  </option>
+                  <option value="1am">1am</option>
+                  <option value="2am">2am</option>
+                  <option value="3am">3am</option>
+                  <option value="4am">4am</option>
+                  <option value="5am">5am</option>
+                  <option value="6am">6am</option>
+                  <option value="7am">7am</option>
+                  <option value="8am">8am</option>
+                  <option value="9am">9am</option>
+                  <option value="10am">10am</option>
+                  <option value="11am">11am</option>
+                  <option value="12pm">12pm</option>
+                  <option value="1pm">1pm</option>
+                  <option value="2pm">2pm</option>
+                  <option value="3pm">3pm</option>
+                  <option value="4pm">4pm</option>
+                  <option value="5pm">5pm</option>
+                  <option value="6pm">6pm</option>
+                  <option value="7pm">7pm</option>
+                  <option value="8pm">8pm</option>
+                  <option value="9pm">9pm</option>
+                  <option value="10pm">10pm</option>
+                  <option value="11pm">11pm</option>
+                  <option value="12am">12am</option>
+                </select>
 
-          {/* <label for="hour">Team 2</label> */}
-          <select name="selectedTeam2" id="" onChange={this.onChangeHandler}>
-            <option value="" disabled selected>
-              Choose team
-            </option>
-            {Object.keys(this.state.teams)
-              .filter((team) => team !== this.state.selectedTeam1)
-              .map((team) => (
-                <option value={team} key={team}>
-                  {team}
-                </option>
-              ))}
-          </select>
-
-          <br />
-
-          {/* <label for="stadium">Stadium</label> */}
-          <select name="selectedStadium" id="" onChange={this.onChangeHandler}>
-            <option value="" disabled selected>
-              Select Stadium
-            </option>
-            <option value="Moscow">Moscow</option>
-            <option value="St Peterburg">St Peterburg</option>
-            <option value="Kazan">Kazan</option>
-            <option value="Sochi">Sochi</option>
-            <option value="Nizhny Novgorod">Nizhny Novgorod</option>
-            <option value="Kaliningrad">Kaliningrad</option>
-            <option value="Volgograd">Volgograd</option>
-            <option value="Rostov-on-don">Rostov-on-don</option>
-            <option value="Ekaterinburg">Ekaterinburg</option>
-            <option value="Samara">Samara</option>
-            <option value="Saranks">Saranks</option>
-          </select>
-
-          <br />
-
-          {/* <label for="date">Date</label> */}
-          <input
-            onChange={this.onChangeHandler}
-            type="text"
-            id="fordate"
-            name="date"
-            placeholder="Insert date: mm/dd/yyyy"
-            value={this.state.date}
-          />
-
-          <br />
-
-          {/* <label for="hour">Hour</label> */}
-          <select name="hour" id="" onChange={this.onChangeHandler}>
-            <option value="" disabled selected>
-              Select hour
-            </option>
-            <option value="1am">1am</option>
-            <option value="2am">2am</option>
-            <option value="3am">3am</option>
-            <option value="4am">4am</option>
-            <option value="5am">5am</option>
-            <option value="6am">6am</option>
-            <option value="7am">7am</option>
-            <option value="8am">8am</option>
-            <option value="9am">9am</option>
-            <option value="10am">10am</option>
-            <option value="11am">11am</option>
-            <option value="12pm">12pm</option>
-            <option value="1pm">1pm</option>
-            <option value="2pm">2pm</option>
-            <option value="3pm">3pm</option>
-            <option value="4pm">4pm</option>
-            <option value="5pm">5pm</option>
-            <option value="6pm">6pm</option>
-            <option value="7pm">7pm</option>
-            <option value="8pm">8pm</option>
-            <option value="9pm">9pm</option>
-            <option value="10pm">10pm</option>
-            <option value="11pm">11pm</option>
-            <option value="12am">12am</option>
-          </select>
-
-          <br />
-
-          <input type="submit" value="Confirm" />
-        </form>
-        {this.state.display ? this.displayTeam(this.state.selectedTeam1) : ""}
-        {this.state.display ? this.displayTeam(this.state.selectedTeam2) : ""}
-        {this.state.display ? this.stadiumWeatherPanel() : ""}
+                <br />
+              </fieldset>
+              <input type="submit" value="Confirm" />
+            </form>
+          </div>
+          <div className="banner--fadeBottom" />
+        </header>
+        <div className="row">
+          <h2>Team 1</h2>
+          <div className="cards">
+            {this.state.display
+              ? this.displayTeam(this.state.selectedTeam1)
+              : ""}
+          </div>
+        </div>
+        <div className="row">
+          <h2>Team 2</h2>
+          <div className="cards">
+            {this.state.display
+              ? this.displayTeam(this.state.selectedTeam2)
+              : ""}
+          </div>
+        </div>
+        <div>{this.state.display ? this.stadiumWeatherPanel() : ""}</div>
       </div>
     );
   }
 }
-
 export default GameSim;
