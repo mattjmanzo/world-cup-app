@@ -45,6 +45,8 @@ class GameSim extends Component {
     score: [0, 0],
     selectedTeam1: "",
     selectedTeam2: "",
+    team1Score: 0,
+    team2Score: 0,
   };
 
   //Merging info from 3 APIs into an array of 12 zodiac signs and setting up the state value of horoscopes to horoscopeData
@@ -218,46 +220,55 @@ class GameSim extends Component {
 
   //Functions to score goals
 
+  //TEAM 1
   colorScore = () => {
     let startingTeam1 = this.state.teams[this.state.selectedTeam1];
     console.log(colors, startingTeam1);
     let goals = startingTeam1.reduce((currentGoals, player) => {
       console.log(
         colors[
-          this.state.horoscopes[
-            player.ZodiacSign
-          ].specialAPI.color.toUpperCase()
+          this.state.horoscopes[player.ZodiacSign].specialAPI.color
+            .toUpperCase()
+            .split(" ")
+            .join("")
         ],
-        this.state.horoscopes[player.ZodiacSign].specialAPI.color.toUpperCase()
+        this.state.horoscopes[player.ZodiacSign].specialAPI.color
+          .toUpperCase()
+          .split(" ")
+          .join("")
       );
       if (
         player.JerseyColor ===
         this.state.horoscopes[player.ZodiacSign].specialAPI.color
+          .split(" ")
+          .join("")
       ) {
         return (currentGoals += 2);
+      } else if (
+        colors[player.JerseyColor.toUpperCase()].rgb.r +
+          colors[player.JerseyColor.toUpperCase()].rgb.g +
+          colors[player.JerseyColor.toUpperCase()].rgb.b >
+        colors[
+          this.state.horoscopes[player.ZodiacSign].specialAPI.color
+            .toUpperCase()
+            .split(" ")
+            .join("")
+        ].rgb.r +
+          colors[
+            this.state.horoscopes[player.ZodiacSign].specialAPI.color
+              .toUpperCase()
+              .split(" ")
+              .join("")
+          ].rgb.g +
+          colors[
+            this.state.horoscopes[player.ZodiacSign].specialAPI.color
+              .toUpperCase()
+              .split(" ")
+              .join("")
+          ].rgb.b
+      ) {
+        return (currentGoals += 1);
       }
-      // else if (
-      //   colors[player.JerseyColor.toUpperCase()].rgb.r +
-      //     colors[player.JerseyColor.toUpperCase()].rgb.g +
-      //     colors[player.JerseyColor.toUpperCase()].rgb.b >
-      //   colors[
-      //     this.state.horoscopes[
-      //       player.ZodiacSign
-      //     ].specialAPI.color.toUpperCase()
-      //   ].rgb.r +
-      //     colors[
-      //       this.state.horoscopes[
-      //         player.ZodiacSign
-      //       ].specialAPI.color.toUpperCase()
-      //     ].rgb.g +
-      //     colors[
-      //       this.state.horoscopes[
-      //         player.ZodiacSign
-      //       ].specialAPI.color.toUpperCase()
-      //     ].rgb.b
-      // ) {
-      //   return (currentGoals += 1);
-      // }
       return currentGoals;
     }, 0);
     console.log("color goals: ", goals);
@@ -317,47 +328,158 @@ class GameSim extends Component {
     return luckyTimeGoals;
   };
 
+  //TEAM 2
+  colorScore = () => {
+    let startingTeam2 = this.state.teams[this.state.selectedTeam2];
+    console.log(colors, startingTeam2);
+    let goals = startingTeam2.reduce((currentGoals, player) => {
+      console.log(
+        colors[
+          this.state.horoscopes[player.ZodiacSign].specialAPI.color
+            .toUpperCase()
+            .split(" ")
+            .join("")
+        ],
+        this.state.horoscopes[player.ZodiacSign].specialAPI.color
+          .toUpperCase()
+          .split(" ")
+          .join("")
+      );
+      if (
+        player.JerseyColor ===
+        this.state.horoscopes[player.ZodiacSign].specialAPI.color
+          .split(" ")
+          .join("")
+      ) {
+        return (currentGoals += 2);
+      } else if (
+        colors[player.JerseyColor.toUpperCase()].rgb.r +
+          colors[player.JerseyColor.toUpperCase()].rgb.g +
+          colors[player.JerseyColor.toUpperCase()].rgb.b >
+        colors[
+          this.state.horoscopes[player.ZodiacSign].specialAPI.color
+            .toUpperCase()
+            .split(" ")
+            .join("")
+        ].rgb.r +
+          colors[
+            this.state.horoscopes[player.ZodiacSign].specialAPI.color
+              .toUpperCase()
+              .split(" ")
+              .join("")
+          ].rgb.g +
+          colors[
+            this.state.horoscopes[player.ZodiacSign].specialAPI.color
+              .toUpperCase()
+              .split(" ")
+              .join("")
+          ].rgb.b
+      ) {
+        return (currentGoals += 1);
+      }
+      return currentGoals;
+    }, 0);
+    console.log("color goals: ", goals);
+    return goals;
+  };
+
+  moodScore = () => {
+    // Scoring by moods
+    let startingTeam2 = this.state.teams[this.state.selectedTeam2];
+    let moodGoals = 0;
+
+    const moods = [
+      "Creative",
+      "Energetic",
+      "Cautious",
+      "Collaborative",
+      "Mellow",
+      "Hopeful",
+      "Focus",
+      "Relaxed",
+      "Sweet",
+      "Serious",
+      "Responsible",
+    ];
+
+    startingTeam2.forEach((player) => {
+      let numberCharacters = player.Name.split(" ").join("").length;
+      let playerMood = moods[numberCharacters % moods.length];
+      // console.log(player, numberCharacters, playerMood);
+      if (
+        playerMood === this.state.horoscopes[player.ZodiacSign].specialAPI.mood
+      ) {
+        moodGoals += 1;
+      }
+      // else {
+      //   console.log("no goal");
+      // }
+    });
+    console.log("mood goals: ", moodGoals);
+    return moodGoals;
+  };
+
+  luckyTimeScore = () => {
+    let startingTeam2 = this.state.teams[this.state.selectedTeam2];
+    let luckyTimeGoals = 0;
+    // Scoring by Lucky Time
+    startingTeam2.forEach((player) => {
+      if (
+        this.state.hour ===
+        this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_time
+      ) {
+        console.log((luckyTimeGoals += 1));
+        return (luckyTimeGoals += 1);
+      }
+    });
+    console.log("team 2 lucky time goals", luckyTimeGoals);
+    return luckyTimeGoals;
+  };
+
   scoreGoal = () => {
     //Using color, compatibility, lucky_number, lucky_time, mood from specialAPI(in horoscopeData.json)//
-    // let startingTeam1 = this.state.teams[this.state.selectedTeam1];
+
     let team1Score = 0;
 
     team1Score += this.colorScore();
     console.log("current goals: ", team1Score);
     team1Score += this.moodScore();
-
     console.log("current goals: ", team1Score);
-
     team1Score += this.luckyTimeScore();
-
     console.log("current goals: ", team1Score);
 
-    // Scoring by Lucky Number
+    let team2Score = 0;
 
-    // let goalByLuckyNumber = startingTeam1.map((player) => {
-    //   if (
-    //     player.JerseyNumber ===
-    //     this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_number
-    //   ) {
-    //     return (team1Score += 2);
-    //   } else if (
-    //     player.JerseyNumber >
-    //     this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_number
-    //   ) {
-    //     return (team1Score += 1);
-    //   }
-    // });
+    team2Score += this.colorScore();
+    console.log("current goals: ", team2Score);
+    team2Score += this.moodScore();
+    console.log("current goals: ", team2Score);
+    team2Score += this.luckyTimeScore();
+    console.log("current goals: ", team2Score);
 
-    // goalByLuckyNumber();
-
-    ////Scoring by Compatibility
-
-    // let goalByCompatibility = startingTeam1.map((player) => {}
-
-    // goalByLuckyTime();
-
-    //   let team2Score = 0;
     console.log("cross your toes and hairs ", team1Score);
+    console.log("cross your toes and hairs ", team2Score);
+
+    this.setState({
+      team1Score,
+      team2Score,
+    });
+
+    return (
+      <div className="">
+        <h2>"The predicted score for this match is:"</h2>
+        <div className="">
+          <div className="team1Score">
+            <h4>{this.state.selectedTeam1}</h4>
+            <p>{this.state.team1Score}</p>
+          </div>
+          <div className="team2Score">
+            <h4>{this.state.selectedTeam2}</h4>
+            <p>{this.state.team2Score}</p>
+          </div>
+        </div>
+      </div>
+    );
   };
 
   //Confirm button that sends all info to APIs and display players and stats
@@ -516,6 +638,7 @@ class GameSim extends Component {
           </div>
         </div>
         <div>{this.state.display ? this.stadiumWeatherPanel() : ""}</div>
+        {/* <div>{this.state.display ? this.scoreGoal() : ""}</div> */}
       </div>
     );
   }
