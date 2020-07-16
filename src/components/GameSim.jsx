@@ -4,7 +4,7 @@ import teams from "../teams.js";
 import stadiums from "../stadiums.js";
 import colors from "../colors.js";
 import horoscopeData from "../horoscopeData.json";
-import Sentiment from "sentiment";
+import Sentiment from "sentiment"; // check if a word/phrase is positive or negative
 
 const sentiment = new Sentiment();
 
@@ -41,6 +41,8 @@ class GameSim extends Component {
     team1WordCloud: {},
     team2WordCloud: {},
     score: [0, 0],
+    selectedTeam1: "",
+    selectedTeam2: "",
   };
 
   //Merging info from 3 APIs into an array of 12 zodiac signs and setting up the state value of horoscopes to horoscopeData
@@ -49,7 +51,7 @@ class GameSim extends Component {
     console.log("mount");
     let horoscopes = {};
     let promises = [];
-    zodiacSigns.map((sign, i) => {
+    zodiacSigns.forEach((sign, i) => {
       promises.push(
         new Promise((resolve, reject) => {
           return setTimeout(async () => {
@@ -62,7 +64,7 @@ class GameSim extends Component {
             let specialAPI = await axios.post(
               `https://aztro.sameerkumar.website/?sign=${sign}&day=today`
             );
-            console.log("got horoscope for", sign);
+            // console.log("got horoscope for", sign);
             horoscopes[sign] = {
               today: today.data,
               week: week.data,
@@ -75,13 +77,13 @@ class GameSim extends Component {
     });
 
     Promise.all(promises).then((res) => {
-      console.log(String(horoscopes));
-      console.log(JSON.stringify(horoscopes));
+      // console.log(String(horoscopes));
+      // console.log(JSON.stringify(horoscopes));
       this.setState(
         {
           horoscopes,
-        },
-        () => console.log("all horoscopes", this.state.horoscopes)
+        }
+        // () => console.log("all horoscopes", this.state.horoscopes)
       );
     });
   }
@@ -96,45 +98,10 @@ class GameSim extends Component {
     // console.log(this.state);
   };
 
-  onStadiumChangeHandler = (e) => {
-    // console.log(e.target.name, e.target.value);
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-    // console.log(this.state);
-  };
-
-  onTimeChangeHandler = (e) => {
-    // console.log(e.target.name, e.target.value);
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-    // console.log(this.state);
-  };
-
-  onDateChangeHandler = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-    // console.log(this.state);
-  };
-
-  //Weather information for stadium
-
-  async getWeather() {
-    //Weather API
-    let weather = await axios.get(
-      `http://api.weatherapi.com/v1/current.json?key=ded140817fa64dcb9dd161358201407&q=${this.state.selectedStadium}`
-    );
-    this.setState({
-      weather,
-    });
-  }
-
   //Display Teams in render
-  displayTeam1 = () => {
-    let startingTeam1 = this.state.teams[this.state.selectedTeam1];
-    // console.log(this.state.teams[this.state.selectedTeam1]);
+  displayTeam = (teamName) => {
+    let startingTeam1 = this.state.teams[teamName];
+    // console.log(this.state.teams[teamName]);
     let wordCloud = {};
     //team1WordCloud
     let score = 0;
@@ -146,10 +113,10 @@ class GameSim extends Component {
       let result2 = sentiment.analyze(
         this.state.horoscopes[player.ZodiacSign].week.horoscope
       );
-      console.log(result, result2);
+      // console.log(result, result2);
       let playerscore = result.score + result2.score;
       let playerWords = [...result.words, ...result2.words];
-      playerWords.map((word) => {
+      playerWords.forEach((word) => {
         wordCloud[word] ? wordCloud[word]++ : (wordCloud[word] = 1);
       });
       score += playerscore;
@@ -167,7 +134,7 @@ class GameSim extends Component {
           </li> */}
           <p>{hPlayer.today.horoscope}</p>
           <p>{hPlayer.week.horoscope}</p>
-          <img src={startingTeam1[i].PlayerPicture} />
+          <img src={startingTeam1[i].PlayerPicture} alt="" />
         </div>
       );
     });
@@ -202,75 +169,17 @@ class GameSim extends Component {
     return team1;
   };
 
-  displayTeam2 = () => {
-    let startingTeam2 = this.state.teams[this.state.selectedTeam2];
-    // console.log(this.state.teams[this.state.selectedTeam2]);
-    let wordCloud = {};
-    //team1WordCloud
-    let score = 0;
-    let team2 = startingTeam2.map((player, i) => {
-      // console.log(startingTeam1[i].Name);
-      let result = sentiment.analyze(
-        this.state.horoscopes[player.ZodiacSign].today.horoscope
-      );
-      let result2 = sentiment.analyze(
-        this.state.horoscopes[player.ZodiacSign].week.horoscope
-      );
-      console.log(result, result2);
-      let playerscore = result.score + result2.score;
-      let playerWords = [...result.words, ...result2.words];
-      playerWords.map((word) => {
-        wordCloud[word] ? wordCloud[word]++ : (wordCloud[word] = 1);
-      });
-      score += playerscore;
-      let hPlayer = this.state.horoscopes[player.ZodiacSign];
-      return (
-        <div style={{ backgroundColor: player.JerseyColor }} key={player.Name}>
-          <li style={{ color: hPlayer.specialAPI.color }}>
-            {startingTeam2[i].Name}
-          </li>
-          <li>{startingTeam2[i].Position}</li>
-          <li>{startingTeam2[i].ZodiacSign}</li>
-          <li>{playerscore}</li>
-          {/* <li>
-            {player.JerseyColor} {hPlayer.specialAPI.color}
-          </li> */}
-          <p>{hPlayer.today.horoscope}</p>
-          <p>{hPlayer.week.horoscope}</p>
-          <img src={startingTeam2[i].PlayerPicture} />
-        </div>
-      );
+  //Weather information for stadium
+
+  async getWeather() {
+    //Weather API
+    let weather = await axios.get(
+      `http://api.weatherapi.com/v1/current.json?key=ded140817fa64dcb9dd161358201407&q=${this.state.selectedStadium}`
+    );
+    this.setState({
+      weather,
     });
-    console.log("team1 has score", score, team2);
-
-    let cloud = [];
-
-    for (let w in wordCloud) {
-      cloud.push(
-        React.createElement(
-          "li",
-          {
-            className: "word",
-            style: {
-              color: "#" + (((1 << 24) * Math.random()) | 0).toString(16),
-              fontSize: wordCloud[w] * 10 + "px",
-              position: "absolute",
-              top: Math.random() * 500 + "px",
-              left: Math.random() * 500 + "px",
-              //transform: "rotate(" + 90 * Math.random() + "deg)",
-            },
-          },
-          w
-        )
-      );
-    }
-
-    let theCloud = React.createElement("ul", { className: "cloud" }, cloud);
-
-    team2.unshift(theCloud);
-
-    return team2;
-  };
+  }
 
   //Weather Panel with Stadium name and brief description
 
@@ -294,48 +203,47 @@ class GameSim extends Component {
 
   //Functions to score goals
 
-  scoreGoal = () => {
-    //Using color, compatibility, lucky_number, lucky_time, mood from specialAPI(in horoscopeData.json)//
-
-    let team1Score = 0;
-
-    //Scoring by colors
-
+  colorScore = () => {
     let startingTeam1 = this.state.teams[this.state.selectedTeam1];
-    console.log(colors);
-    // let goalByColorTeam1 = startingTeam1.map((player) => {
-    //   if (
-    //     player.JerseyColor ===
-    //     this.state.horoscopes[player.ZodiacSign].specialAPI.color
-    //   ) {
-    //     return (team1Score += 2);
-    //   } else if (
-    //     colors[player.JerseyColor.toUpperCase()].rgb.r +
-    //       colors[player.JerseyColor.toUpperCase()].rgb.g +
-    //       colors[player.JerseyColor.toUpperCase()].rgb.b >
-    //     colors[
-    //       this.state.horoscopes[
-    //         player.ZodiacSign
-    //       ].specialAPI.color.toUpperCase()
-    //     ].rgb.r +
-    //       colors[
-    //         this.state.horoscopes[
-    //           player.ZodiacSign
-    //         ].specialAPI.color.toUpperCase()
-    //       ].rgb.g +
-    //       colors[
-    //         this.state.horoscopes[
-    //           player.ZodiacSign
-    //         ].specialAPI.color.toUpperCase()
-    //       ].rgb.b
-    //   ) {
-    //     return (team1Score += 1);
-    //   }
-    // });
+    console.log(colors, startingTeam1);
+    let goals = startingTeam1.reduce((currentGoals, player) => {
+      if (
+        player.JerseyColor ===
+        this.state.horoscopes[player.ZodiacSign].specialAPI.color
+      ) {
+        return (currentGoals += 2);
+      } else if (
+        colors[player.JerseyColor.toUpperCase()].rgb.r +
+          colors[player.JerseyColor.toUpperCase()].rgb.g +
+          colors[player.JerseyColor.toUpperCase()].rgb.b >
+        colors[
+          this.state.horoscopes[
+            player.ZodiacSign
+          ].specialAPI.color.toUpperCase()
+        ].rgb.r +
+          colors[
+            this.state.horoscopes[
+              player.ZodiacSign
+            ].specialAPI.color.toUpperCase()
+          ].rgb.g +
+          colors[
+            this.state.horoscopes[
+              player.ZodiacSign
+            ].specialAPI.color.toUpperCase()
+          ].rgb.b
+      ) {
+        return (currentGoals += 1);
+      }
+      return currentGoals;
+    }, 0);
+    console.log("color goals: ", goals);
+    return goals;
+  };
 
-    console.log(team1Score);
-
+  moodScore = () => {
     // Scoring by moods
+    let startingTeam1 = this.state.teams[this.state.selectedTeam1];
+    let moodGoals = 0;
 
     const moods = [
       "Creative",
@@ -351,33 +259,54 @@ class GameSim extends Component {
       "Responsible",
     ];
 
-    // let charactersPerName = (playerName) => {
-    //   let count = 0;
-    //   for (i = 0; i < playerName.length; i++) {
-    //     if (playerName.charAt(i) != " ") {
-    //       count++;
-    //     }
-    //     return count;
-    //   }
-    // };
+    startingTeam1.forEach((player) => {
+      let numberCharacters = player.Name.split(" ").join("").length;
+      let playerMood = moods[numberCharacters % moods.length];
+      // console.log(player, numberCharacters, playerMood);
+      if (
+        playerMood === this.state.horoscopes[player.ZodiacSign].specialAPI.mood
+      ) {
+        moodGoals += 1;
+      }
+      // else {
+      //   console.log("no goal");
+      // }
+    });
+    console.log("mood goals: ", moodGoals);
+    return moodGoals;
+  };
 
-    // let loopArrayNTimes = (n, array) => {
-    //   for (i = 0; i < n; i++) {
-    //     return array[n % array.length];
-    //   }
-    // };
+  luckyTimeScore = () => {
+    let startingTeam1 = this.state.teams[this.state.selectedTeam1];
+    let luckyTimeGoals = 0;
+    // Scoring by Lucky Time
+    startingTeam1.forEach((player) => {
+      if (
+        this.state.hour ===
+        this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_time
+      ) {
+        console.log((luckyTimeGoals += 1));
+        return (luckyTimeGoals += 1);
+      }
+    });
+    console.log("lucky time goasl", luckyTimeGoals);
+    return luckyTimeGoals;
+  };
 
-    // let goalByMood = startingTeam1.map((player) => {
-    //   let numberCharacters = charactersPerName(player.name);
-    //   let playerMood = loopArrayNTimes(numberCharacters, moods);
-    //   if (
-    //     playerMood === this.state.horoscopes[player.ZodiacSign].specialAPI.mood
-    //   ) {
-    //     return (team1Score += 1);
-    //   } else {
-    //     console.log("no goal");
-    //   }
-    // });
+  scoreGoal = () => {
+    //Using color, compatibility, lucky_number, lucky_time, mood from specialAPI(in horoscopeData.json)//
+    // let startingTeam1 = this.state.teams[this.state.selectedTeam1];
+    let team1Score = 0;
+
+    team1Score += this.colorScore();
+    console.log("current goals: ", team1Score);
+    team1Score += this.moodScore();
+
+    console.log("current goals: ", team1Score);
+
+    team1Score += this.luckyTimeScore();
+
+    console.log("current goals: ", team1Score);
 
     // Scoring by Lucky Number
 
@@ -401,21 +330,11 @@ class GameSim extends Component {
 
     // let goalByCompatibility = startingTeam1.map((player) => {}
 
-    // Scoring by Lucky Time
-    // let goalByLuckyTime = startingTeam1.map((player) => {
-    //   if (
-    //     this.state.hour ===
-    //     this.state.horoscopes[player.ZodiacSign].specialAPI.lucky_time
-    //   ) {
-    //     console.log((team1Score += 1));
-    //     return (team1Score += 1);
-    //   }
-    // });
-
     // goalByLuckyTime();
 
-  //   let team2Score = 0;
-  // };
+    //   let team2Score = 0;
+    console.log("cross your toes and hairs ", team1Score);
+  };
 
   //Confirm button that sends all info to APIs and display players and stats
 
@@ -433,7 +352,7 @@ class GameSim extends Component {
   //Render
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     // console.log(this.props);
 
     return (
@@ -483,11 +402,7 @@ class GameSim extends Component {
           <br />
 
           {/* <label for="stadium">Stadium</label> */}
-          <select
-            name="selectedStadium"
-            id=""
-            onChange={this.onStadiumChangeHandler}
-          >
+          <select name="selectedStadium" id="" onChange={this.onChangeHandler}>
             <option value="" disabled selected>
               Select Stadium
             </option>
@@ -508,7 +423,7 @@ class GameSim extends Component {
 
           {/* <label for="date">Date</label> */}
           <input
-            onChange={this.onDateChangeHandler}
+            onChange={this.onChangeHandler}
             type="text"
             id="fordate"
             name="date"
@@ -519,7 +434,7 @@ class GameSim extends Component {
           <br />
 
           {/* <label for="hour">Hour</label> */}
-          <select name="hour" id="" onChange={this.onTimeChangeHandler}>
+          <select name="hour" id="" onChange={this.onChangeHandler}>
             <option value="" disabled selected>
               Select hour
             </option>
@@ -553,8 +468,8 @@ class GameSim extends Component {
 
           <input type="submit" value="Confirm" />
         </form>
-        {this.state.display ? this.displayTeam1() : ""}
-        {this.state.display ? this.displayTeam2() : ""}
+        {this.state.display ? this.displayTeam(this.state.selectedTeam1) : ""}
+        {this.state.display ? this.displayTeam(this.state.selectedTeam2) : ""}
         {this.state.display ? this.stadiumWeatherPanel() : ""}
       </div>
     );

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "./App.css";
-import soccer from "./csvjson";
+// import soccer from "./csvjson";
 import Header from "./components/Header";
-import Sentiment from "sentiment";
+// import Sentiment from "sentiment";
 import { Switch, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
+// import LandingPage from "./components/LandingPage";
 import GameSim from "./components/GameSim";
 // import Form from "./components/Form";
 
@@ -82,7 +82,7 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/game-sim" component={GameSim} />
+          <Route exact path="/" component={GameSim} />
           {/* <Route exact path="/" component={LandingPage} /> */}
           {/* <Route exact path="/form" component={Form} /> */}
         </Switch>
