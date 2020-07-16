@@ -203,13 +203,39 @@ class GameSim extends Component {
   stadiumWeatherPanel = () => {
     // console.log(this.state.stadiums);
     return (
-      <div style={{ display: "flex" }}>
-        <img src={this.state.selectedStadium.image} />
-        <div>
-          <h2>Stadium:{this.state.selectedStadium}</h2>
-          <h4>Temperature:{this.state.weather?.data?.current.temp_f}</h4>
+      <div
+        style={{
+          padding: "0px",
+          display: "flex",
+          width: "100vw",
+          height: "50vh",
+          backgroundColor: "rgb(100,100,100)",
+          display: "flex",
+        }}
+      >
+        <img
+          src={this.state.selectedStadium.image}
+          style={{
+            width: "500px",
+            padding: "50px",
+            justifyContent: "flex-start",
+          }}
+        />
+        <div
+          style={{
+            margin: "0",
+            padding: "30px 50px 30px 10px",
+            justifyContent: "flex-start",
+          }}
+        >
+          <h2>{this.state.selectedStadium} Soccer Stadium</h2>
+          <h4>Temperature</h4>
           <p>
-            Description:
+            Farenheit:{this.state.weather?.data?.current.temp_f}
+            {"\n"}
+            Celcius:{this.state.weather?.data?.current.temp_c}
+          </p>
+          <p>
             {
               this.state.stadiums.find(
                 (s) => s.name === this.state.selectedStadium

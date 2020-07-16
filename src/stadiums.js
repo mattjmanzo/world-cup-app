@@ -47,7 +47,7 @@ const stadiums = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/FWC_2018_-_Group_D_-_NGA_v_ISL_-_Stadium_Panorama.jpg/1297px-FWC_2018_-_Group_D_-_NGA_v_ISL_-_Stadium_Panorama.jpg",
   },
   {
-    name: "Rostov On Don",
+    name: "Rostov-on-don",
     description:
       "Located on the left bank of the Don River, the 45,000-seat Rostov Arena will host five World Cup matches, including one round-of-16 match.<br>Rostov-on-Don, a major transportation hub home to more than one million people, is located near Russia’s border with Ukraine.",
     image: "https://i.ytimg.com/vi/qPrfFYsfmyw/maxresdefault.jpg",
