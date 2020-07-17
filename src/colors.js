@@ -290,7 +290,15 @@ const COPPER = { rgb: { r: 72, g: 45, b: 20 } };
 
 const NAVYBLUE = { rgb: { r: 0, g: 0, b: 128 } };
 
+const PEACH = { rgb: { r: 100, g: 90, b: 71 } };
+
+const ROSEPINK = { rgb: { r: 100, g: 75, b: 80 } };
+
 const colors = {
+  ROSEPINK,
+
+  PEACH,
+
   SHADOWBLACK,
 
   NAVYBLUE,

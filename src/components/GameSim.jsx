@@ -225,8 +225,6 @@ class GameSim extends Component {
             height: "450px",
             padding: "50px",
             justifyContent: "flex-start",
-            // maxWidth: "100%",
-            // maxHeight: "100%",
           }}
         />
         <div
