@@ -181,7 +181,7 @@ class GameSim extends Component {
 
     //let theCloud = React.createElement("ul", { className: "cloud" }, cloud);
 
-    team1.unshift(<ul className="cloud">{cloud}</ul>);
+    team1.unshift(<div ><ul className="wordcloud">{cloud}</ul></div>);
 
     return team1;
   };
