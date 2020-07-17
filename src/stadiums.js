@@ -30,7 +30,7 @@ const stadiums = [
   {
     name: "Nizhny Novgorod",
     description:
-      "The newly-built 45,000-seat World Cup venue in Nizhny Novgorod will host six matches including a quarter-final.<br>Nizhny Novgorod, located some 400 kilometres east of Moscow at the confluence of the Volga and Oka rivers, is Russia’s fifth largest city by population.",
+      "The newly-built 45,000-seat World Cup venue in Nizhny Novgorod will host six matches including a quarter-final. Nizhny Novgorod, located some 400 kilometres east of Moscow at the confluence of the Volga and Oka rivers, is Russia’s fifth largest city by population.",
     image: "https://i.ytimg.com/vi/_m3dK8_XVlo/maxresdefault.jpg",
   },
   {

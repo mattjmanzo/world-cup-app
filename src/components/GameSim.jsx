@@ -155,7 +155,7 @@ class GameSim extends Component {
         </div>
       );
     });
-    console.log("team1 has score", score, team1);
+    console.log(startingTeam1);
 
     let cloud = [];
 
@@ -169,7 +169,7 @@ class GameSim extends Component {
               color: "#" + (((1 << 24) * Math.random()) | 0).toString(16),
               fontSize: wordCloud[w] * 10 + "px",
               position: "absolute",
-              top: Math.random() * 500 + "px",
+              top: Math.random() * 400 + "px",
               left: Math.random() * 500 + "px",
               //transform: "rotate(" + 90 * Math.random() + "deg)",
             },
@@ -181,7 +181,11 @@ class GameSim extends Component {
 
     //let theCloud = React.createElement("ul", { className: "cloud" }, cloud);
 
-    team1.unshift(<ul className="cloud">{cloud}</ul>);
+    team1.unshift(
+      <div>
+        <ul className="wordcloud">{cloud}</ul>
+      </div>
+    );
 
     return team1;
   };
@@ -191,7 +195,7 @@ class GameSim extends Component {
   async getWeather() {
     //Weather API
     let weather = await axios.get(
-      `http://api.weatherapi.com/v1/current.json?key=ded140817fa64dcb9dd161358201407&q=${this.state.selectedStadium}`
+      `https://api.weatherapi.com/v1/current.json?key=ded140817fa64dcb9dd161358201407&q=${this.state.selectedStadium}`
     );
     this.setState({
       weather,
@@ -743,7 +747,7 @@ class GameSim extends Component {
               <input type="submit" value="Confirm" />
             </form>
           </div>
-          <div className="banner--fadeBottom" />
+          {/* <div className="banner--fadeBottom" /> */}
         </header>
         <div
           style={{
@@ -769,7 +773,7 @@ class GameSim extends Component {
         </div>
         <div className="row">
           {this.state.display ? (
-            <div className="teams-logo" style={{ marginTop: "40px" }}>
+            <div className="teams-logo">
               <h2>Team 2 {this.state.selectedTeam2}</h2>
             </div>
           ) : (

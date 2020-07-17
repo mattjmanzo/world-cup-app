@@ -227,8 +227,8 @@ form input[type="button"]:hover {
   position: relative;
   justify-content: space-between;
   background: white;
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 300px;
 }
 
 .teams {
@@ -289,10 +289,24 @@ form input[type="button"]:hover {
   box-shadow: 3px 6px rgba(0, 0, 0, 0.05);
 }
 .teams-logo {
-  margin-top: 20px;
+  margin-top: 60px;
   color: #fff;
   font-size: 20px;
   font-weight: 100;
   font-style: italic;
   text-align: center;
+}
+.wordcloud {
+  width: 250px;
+  height: 260px;
+  position: relative;
+  color: #333;
+  margin: 20px auto 0;
+  text-align: center;
+}
+
+.wordcloud li {
+  width: 100px;
+  height: 260px;
+  position: relative;
 }
