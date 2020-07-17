@@ -427,8 +427,8 @@ class GameSim extends Component {
   };
 
   //TEAM 2
-  colorScore = () => {
-    let startingTeam2 = this.state.teams[this.state.selectedTeam2];
+  colorScore = (team) => {
+    let startingTeam2 = this.state.teams[team];
     console.log(colors, startingTeam2);
     let goals = startingTeam2.reduce((currentGoals, player) => {
       console.log(
@@ -481,9 +481,9 @@ class GameSim extends Component {
     return goals;
   };
 
-  moodScore = () => {
+  moodScore = (team) => {
     // Scoring by moods
-    let startingTeam2 = this.state.teams[this.state.selectedTeam2];
+    let startingTeam2 = this.state.teams[team];
     let moodGoals = 0;
 
     const moods = [
@@ -525,8 +525,8 @@ class GameSim extends Component {
     return moodGoals;
   };
 
-  luckyTimeScore = () => {
-    let startingTeam2 = this.state.teams[this.state.selectedTeam2];
+  luckyTimeScore = (team) => {
+    let startingTeam2 = this.state.teams[team];
     let luckyTimeGoals = 0;
     // Scoring by Lucky Time
     startingTeam2.forEach((player) => {
@@ -547,20 +547,20 @@ class GameSim extends Component {
 
     let team1Score = 0;
 
-    team1Score += this.colorScore();
+    team1Score += this.colorScore(this.state.selectedTeam1);
     console.log("current goals: ", team1Score);
-    team1Score += this.moodScore();
+    team1Score += this.moodScore(this.state.selectedTeam1);
     console.log("current goals: ", team1Score);
-    team1Score += this.luckyTimeScore();
+    team1Score += this.luckyTimeScore(this.state.selectedTeam1);
     console.log("current goals: ", team1Score);
 
     let team2Score = 0;
 
-    team2Score += this.colorScore();
+    team2Score += this.colorScore(this.state.selectedTeam2);
     console.log("current goals: ", team2Score);
-    team2Score += this.moodScore();
+    team2Score += this.moodScore(this.state.selectedTeam2);
     console.log("current goals: ", team2Score);
-    team2Score += this.luckyTimeScore();
+    team2Score += this.luckyTimeScore(this.state.selectedTeam2);
     console.log("current goals: ", team2Score);
 
     console.log("cross your toes and hairs ", team1Score);
@@ -665,8 +665,6 @@ class GameSim extends Component {
                       </option>
                     ))}
                 </select>
-
-                {/* <label for="hour">Team 2</label> */}
                 <label for="team2">Team 2</label>
                 <select
                   name="selectedTeam2"
@@ -685,8 +683,6 @@ class GameSim extends Component {
                     ))}
                 </select>
               </fieldset>
-
-              {/* <label for="stadium">Stadium</label> */}
               <fieldset>
                 <label for="stadium">Pick Stadium</label>
                 <select
@@ -755,7 +751,6 @@ class GameSim extends Component {
             backgroundColor: "rgb(100, 100, 100)",
           }}
         >
-          {/* {" "} */}
           {this.state.display ? this.stadiumWeatherPanel() : ""}
         </div>
         <div className="row">
@@ -781,9 +776,9 @@ class GameSim extends Component {
             ""
           )}
           <div className="cards">{team2Imgs}</div>
-          <div style={{ backgroundColor: "rgb(100,100,100" }}>
+          {/* <div style={{ backgroundColor: "rgb(100,100,100" }}>
             <h1>Created by Kolade, Carlos and Matthew</h1>
-          </div>
+          </div> */}
         </div>
       </div>
     );
