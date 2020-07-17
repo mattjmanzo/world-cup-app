@@ -155,7 +155,7 @@ class GameSim extends Component {
         </div>
       );
     });
-    console.log("team1 has score", score, team1);
+    console.log(startingTeam1);
 
     let cloud = [];
 
