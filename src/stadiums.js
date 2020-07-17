@@ -57,7 +57,7 @@ const stadiums = [
     description:
       "The 35,000-seat Ekaterinburg Arena, originally built in the 1950s, has undergone a major facelift to host four group stage matches next summer. Located on the eastern slopes of the Ural mountains, at the crossroads of Europe and Asia, Ekaterinburg is the easternmost host city.",
     image:
-      "https://media.coliseum-online.com/2020/05/Coliseum-Summit-News-Ekatarinenburg-Arena.jpg",
+      "https://www.sportsmirchi.com/wp-content/uploads/2017/11/Ekaterinburg-Arena-Stadium.jpg",
   },
   {
     name: "Samara",

@@ -755,7 +755,6 @@ class GameSim extends Component {
             backgroundColor: "rgb(100, 100, 100)",
           }}
         >
-          {/* {" "} */}
           {this.state.display ? this.stadiumWeatherPanel() : ""}
         </div>
         <div className="row">
@@ -781,9 +780,9 @@ class GameSim extends Component {
             ""
           )}
           <div className="cards">{team2Imgs}</div>
-          <div style={{ backgroundColor: "rgb(100,100,100" }}>
+          {/* <div style={{ backgroundColor: "rgb(100,100,100" }}>
             <h1>Created by Kolade, Carlos and Matthew</h1>
-          </div>
+          </div> */}
         </div>
       </div>
     );
