@@ -225,8 +225,6 @@ class GameSim extends Component {
             height: "450px",
             padding: "50px",
             justifyContent: "flex-start",
-            // maxWidth: "100%",
-            // maxHeight: "100%",
           }}
         />
         <div
@@ -237,13 +235,76 @@ class GameSim extends Component {
           }}
         >
           <h2>{this.state.selectedStadium} Soccer Stadium</h2>
-          <h4>Temperature</h4>
-          <p>
-            Farenheit:{this.state.weather?.data?.current.temp_f}
-            {"\n"}
-            Celcius:{this.state.weather?.data?.current.temp_c}
-          </p>
-          <p>
+          <div style={{}}>
+            <h4
+              style={{
+                marginTop: "20px",
+                marginBottom: "20px",
+                width: "262px",
+                padding: "10px",
+                backgroundColor: "rgb(184, 16, 16)",
+                color: "white",
+                fontSize: "15px",
+                textAlign: "center",
+              }}
+            >
+              TEMPERATURE
+            </h4>
+            <div styles={{ marginTop: "20px", width: "200px" }}>
+              <spam
+                style={{
+                  backgroundColor: "green",
+                  textAlign: "center",
+                  color: "white",
+                  fontSize: "20px",
+                  padding: "10px 20px",
+                }}
+              >
+                F
+              </spam>
+              <spam
+                style={{
+                  backgroundColor: "white",
+                  textAlign: "center",
+                  color: "black",
+                  fontSize: "20px",
+                  padding: "10px 20px",
+                }}
+              >
+                {Math.round(this.state.weather?.data?.current.temp_f)}
+              </spam>
+              <spam
+                style={{
+                  marginLeft: "30px",
+                  backgroundColor: "green",
+                  textAlign: "center",
+                  color: "white",
+                  fontSize: "20px",
+                  padding: "10px 20px",
+                }}
+              >
+                C
+              </spam>
+              <spam
+                style={{
+                  backgroundColor: "white",
+                  textAlign: "center",
+                  color: "black",
+                  fontSize: "20px",
+                  padding: "10px 20px",
+                }}
+              >
+                {Math.round(this.state.weather?.data?.current.temp_c)}
+              </spam>
+            </div>
+          </div>
+          <p
+            style={{
+              color: "white",
+              marginTop: "40px",
+              fontSize: "20px",
+            }}
+          >
             {
               this.state.stadiums.find(
                 (s) => s.name === this.state.selectedStadium
@@ -437,6 +498,14 @@ class GameSim extends Component {
       "Sweet",
       "Serious",
       "Responsible",
+      "Cheerful",
+      "Reflective",
+      "Gloomy",
+      "Humorous",
+      "Melancholy",
+      "Idyllic",
+      "Whimsical",
+      "Romantic",
     ];
 
     startingTeam2.forEach((player) => {
@@ -507,11 +576,19 @@ class GameSim extends Component {
     return (
       <div className="score-box">
         <div className="teams">
-          <div className="elem"><h4>{this.state.selectedTeam1}</h4></div>
-          <div className="elem"><h4>Vs</h4></div>
-          <div className="elem"><h4>{this.state.selectedTeam2}</h4></div>
-       </div>
-        <div className="score-intro"><p>The predicted score for this match is:</p></div>
+          <div className="elem">
+            <h4>{this.state.selectedTeam1}</h4>
+          </div>
+          <div className="elem">
+            <h4>Vs</h4>
+          </div>
+          <div className="elem">
+            <h4>{this.state.selectedTeam2}</h4>
+          </div>
+        </div>
+        <div className="score-intro">
+          <p>The predicted score for this match is:</p>
+        </div>
         <div className="score">
           <div className="teamScore">
             <p>{this.state.team1Score}</p>
@@ -682,15 +759,27 @@ class GameSim extends Component {
           {this.state.display ? this.stadiumWeatherPanel() : ""}
         </div>
         <div className="row">
-          {this.state.display ? <div className="teams-logo"><h2>Team 1</h2></div> : ""}
+          {this.state.display ? (
+            <div className="teams-logo">
+              <h2>Team 1</h2>
+            </div>
+          ) : (
+            ""
+          )}
           <div className="cards">{team1Imgs}</div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-            {wordCloud} {this.state.display ? this.displayFinalScore() : ""}{" "}
-            {wordCloud2}
-          </div>
+          {wordCloud} {this.state.display ? this.displayFinalScore() : ""}{" "}
+          {wordCloud2}
+        </div>
         <div className="row">
-          {this.state.display ? <div className="teams-logo"><h2>Team 2</h2></div> : ""}
+          {this.state.display ? (
+            <div className="teams-logo">
+              <h2>Team 2</h2>
+            </div>
+          ) : (
+            ""
+          )}
           <div className="cards">{team2Imgs}</div>
           <div style={{ backgroundColor: "rgb(100,100,100" }}>
             <h1>Created by Kolade, Carlos and Matthew</h1>

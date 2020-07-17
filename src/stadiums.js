@@ -16,7 +16,7 @@ const stadiums = [
   {
     name: "Kazan",
     description:
-      "The Kazan Arena was inaugurated in 2013 when it hosted the opening and closing ceremonies of the Summer Universiade. The venue will host six World Cup matches including a quarter-final.<br>Located some 700 kilometres east of Moscow, Kazan has hosted a string of high-level sporting events in recent years including the 2015 World Aquatics Championships and the 2017 Confederations Cup.",
+      "The Kazan Arena was inaugurated in 2013 when it hosted the opening and closing ceremonies of the Summer Universiade. The venue will host six World Cup matches including a quarter-final. Located some 700 kilometres east of Moscow, Kazan has hosted a string of high-level sporting events in recent years including the 2015 World Aquatics Championships and the 2017 Confederations Cup.",
     image:
       "https://q-cf.bstatic.com/images/hotel/max1024x768/147/147682573.jpg",
   },
