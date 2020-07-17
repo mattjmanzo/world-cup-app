@@ -471,15 +471,18 @@ class GameSim extends Component {
 
   displayFinalScore = () => {
     return (
-      <div className="">
-        <h2>"The predicted score for this match is:"</h2>
-        <div className="">
-          <div className="team1Score">
-            <h4>{this.state.selectedTeam1}</h4>
+      <div className="score-box">
+        <div className="teams">
+          <div className="elem"><h4>{this.state.selectedTeam1}</h4></div>
+          <div className="elem"><h4>Vs</h4></div>
+          <div className="elem"><h4>{this.state.selectedTeam2}</h4></div>
+       </div>
+        <div className="score-intro"><p>The predicted score for this match is:</p></div>
+        <div className="score">
+          <div className="teamScore">
             <p>{this.state.team1Score}</p>
           </div>
-          <div className="team2Score">
-            <h4>{this.state.selectedTeam2}</h4>
+          <div className="teamScore">
             <p>{this.state.team2Score}</p>
           </div>
         </div>
@@ -648,13 +651,13 @@ class GameSim extends Component {
           <h2>Team 1</h2>
           <div className="cards">{team1Imgs}</div>
         </div>
-        <div className="row">
-          <h2>Team 2</h2>
-          <div className="cards">{team2Imgs}</div>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
             {wordCloud} {this.state.display ? this.displayFinalScore() : ""}{" "}
             {wordCloud2}
           </div>
+        <div className="row">
+          <h2>Team 2</h2>
+          <div className="cards">{team2Imgs}</div>
         </div>
       </div>
     );
