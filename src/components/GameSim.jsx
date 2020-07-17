@@ -203,13 +203,47 @@ class GameSim extends Component {
   stadiumWeatherPanel = () => {
     // console.log(this.state.stadiums);
     return (
-      <div style={{ display: "flex" }}>
-        <img src={this.state.selectedStadium.image} />
-        <div>
-          <h2>Stadium:{this.state.selectedStadium}</h2>
-          <h4>Temperature:{this.state.weather?.data?.current.temp_f}</h4>
+      <div
+        style={{
+          padding: "0px",
+          display: "flex",
+          width: "100vw",
+          height: "50vh",
+          backgroundColor: "rgb(100,100,100)",
+          display: "flex",
+        }}
+      >
+        <img
+          src={
+            this.state.stadiums.find(
+              (s) => s.name === this.state.selectedStadium
+            )?.image
+          }
+          alt="Stadium Image"
+          style={{
+            width: "700px",
+            height: "450px",
+            padding: "50px",
+            justifyContent: "flex-start",
+            // maxWidth: "100%",
+            // maxHeight: "100%",
+          }}
+        />
+        <div
+          style={{
+            margin: "0",
+            padding: "30px 50px 30px 10px",
+            justifyContent: "flex-start",
+          }}
+        >
+          <h2>{this.state.selectedStadium} Soccer Stadium</h2>
+          <h4>Temperature</h4>
           <p>
-            Description:
+            Farenheit:{this.state.weather?.data?.current.temp_f}
+            {"\n"}
+            Celcius:{this.state.weather?.data?.current.temp_c}
+          </p>
+          <p>
             {
               this.state.stadiums.find(
                 (s) => s.name === this.state.selectedStadium
@@ -587,16 +621,16 @@ class GameSim extends Component {
                     Select Stadium
                   </option>
                   <option value="Moscow">Moscow</option>
-                  <option value="St Peterburg">St Peterburg</option>
+                  <option value="St Petersburg">St Petersburg</option>
                   <option value="Kazan">Kazan</option>
                   <option value="Sochi">Sochi</option>
                   <option value="Nizhny Novgorod">Nizhny Novgorod</option>
                   <option value="Kaliningrad">Kaliningrad</option>
                   <option value="Volgograd">Volgograd</option>
-                  <option value="Rostov-on-don">Rostov-on-don</option>
+                  <option value="Rostov-on-Don">Rostov-on-Don</option>
                   <option value="Ekaterinburg">Ekaterinburg</option>
                   <option value="Samara">Samara</option>
-                  <option value="Saranks">Saranks</option>
+                  <option value="Saransk">Saransk</option>
                 </select>
 
                 {/* <label for="hour">Hour</label> */}
@@ -648,7 +682,7 @@ class GameSim extends Component {
           {this.state.display ? this.stadiumWeatherPanel() : ""}
         </div>
         <div className="row">
-          <h2>Team 1</h2>
+          {this.state.display ? <div className="teams-logo"><h2>Team 1</h2></div> : ""}
           <div className="cards">{team1Imgs}</div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -656,8 +690,11 @@ class GameSim extends Component {
             {wordCloud2}
           </div>
         <div className="row">
-          <h2>Team 2</h2>
+          {this.state.display ? <div className="teams-logo"><h2>Team 2</h2></div> : ""}
           <div className="cards">{team2Imgs}</div>
+          <div style={{ backgroundColor: "rgb(100,100,100" }}>
+            <h1>Created by Kolade, Carlos and Matthew</h1>
+          </div>
         </div>
       </div>
     );
@@ -665,3 +702,4 @@ class GameSim extends Component {
 }
 
 export default GameSim;
+// {this.state.display ? <div className="teams-logo"><h2>Team 1</h2></div> : ""}
