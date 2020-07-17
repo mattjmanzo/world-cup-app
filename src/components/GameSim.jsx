@@ -756,7 +756,7 @@ class GameSim extends Component {
         <div className="row">
           {this.state.display ? (
             <div className="teams-logo">
-              <h2>Team 1</h2>
+              <h2>Team 1 {this.state.selectedTeam1}</h2>
             </div>
           ) : (
             ""
@@ -769,8 +769,8 @@ class GameSim extends Component {
         </div>
         <div className="row">
           {this.state.display ? (
-            <div className="teams-logo">
-              <h2>Team 2</h2>
+            <div className="teams-logo" style={{ marginTop: "40px" }}>
+              <h2>Team 2 {this.state.selectedTeam2}</h2>
             </div>
           ) : (
             ""
