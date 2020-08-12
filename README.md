@@ -13,4 +13,4 @@ Using information based on each team such as the best color, moods, jersey numbe
 
 Give the app a try [here](https://astrological-world-cup.netlify.app/)
 
-![app image](./img/app_image.png)
+![app image](/src/img/app_image.png)
