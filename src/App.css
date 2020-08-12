@@ -297,16 +297,18 @@ form input[type="button"]:hover {
   text-align: center;
 }
 .wordcloud {
-  width: 250px;
-  height: 260px;
   position: relative;
   color: #333;
   margin: 20px auto 0;
   text-align: center;
 }
 
-.wordcloud li {
+/* .wordcloud li {
   width: 100px;
   height: 260px;
   position: relative;
+} */
+
+.content-center{
+  margin-left: 620px;
 }

@@ -171,7 +171,7 @@ class GameSim extends Component {
               position: "absolute",
               top: Math.random() * 400 + "px",
               left: Math.random() * 500 + "px",
-              //transform: "rotate(" + 90 * Math.random() + "deg)",
+              transform: "rotate(" + 90 * Math.random() + "deg)",
             },
           },
           w
@@ -767,9 +767,9 @@ class GameSim extends Component {
           )}
           <div className="cards">{team1Imgs}</div>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          {wordCloud} {this.state.display ? this.displayFinalScore() : ""}{" "}
-          {wordCloud2}
+        <div style={{ display: "flex", justifyContent: "space-between", maxWidth: "1000px"}}>
+         <div className="">{wordCloud}</div>  <div className="content-center">{this.state.display ? this.displayFinalScore() : ""}{" "}</div>
+         <div className="">{wordCloud2}</div>
         </div>
         <div className="row">
           {this.state.display ? (
